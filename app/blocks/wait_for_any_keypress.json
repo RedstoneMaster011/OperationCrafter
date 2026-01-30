@@ -1,0 +1,6 @@
+{
+    "name": "Wait for KeyPress",
+    "color": "#10b981",
+    "group": "Input",
+    "asm_code": "mov ah, 0x00\nint 0x16"
+}
