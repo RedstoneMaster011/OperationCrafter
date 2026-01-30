@@ -1,3 +1,4 @@
+import ctypes
 import os
 import sys
 
@@ -25,6 +26,10 @@ def get_icon_path():
 
 
 def main():
+
+    myappid = 'redstone.operation_crafter'
+    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+
     app = QApplication(sys.argv)
 
     icon_path = get_icon_path()

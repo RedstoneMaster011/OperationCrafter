@@ -1,0 +1,6 @@
+{
+    "name": "Reboot",
+    "color": "#ef4444",
+    "group": "System",
+    "asm_code": "jmp 0xFFFF:0x0000"
+}

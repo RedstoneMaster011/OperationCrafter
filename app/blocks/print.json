@@ -2,14 +2,18 @@
     "name": "Print to Screen",
     "color": "#007acc",
     "group": "Display",
-    "asm_code": "mov si, .msg_unique\ncall print_string\njmp .after_data\n.msg_unique db '{TEXT}', 13, 10, 0\n.after_data:",
+    "asm_code": "mov si, msg_{ID}\ncall print_string\njmp after_{ID}\nmsg_{ID} db '{TEXT}', 13, 10, 0\nafter_{ID}:",
     "inputs": [
+        {
+            "name": "ID",
+            "default": "1"
+        },
         {
             "name": "TEXT",
             "default": "Hello from Blocks!"
         }
     ],
     "req_funcs": [
-        "print_string:\n    pusha\n.loop:\n    lodsb\n    or al, al\n    jz .done\n    mov ah, 0x0e\n    int 0x10\n    jmp .loop\n.done:\n    popa\n    ret"
+        "print_string:\n    pusha\n    mov bh, 0\n.loop:\n    lodsb\n    or al, al\n    jz .done\n    mov ah, 0x0e\n    int 0x10\n    jmp .loop\n.done:\n    popa\n    ret"
     ]
 }
