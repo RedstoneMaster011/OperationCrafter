@@ -146,9 +146,22 @@ PrintToScreen: Prints text to the screen (does not work in graphics mode).
 
 ClearScreen (Text): Clears all text off the screen (does not work in graphics mode).
 
+MoveCursor: moves the text cursor to a point (like where text is placed)
+
 ### Advanced
 
 CustomCode: Lets you input custom code inside of the block editor.
+
+### System
+    
+Reboot: reboots the system
+Shutdown: shuts down the system
+
+### Input
+
+WaitForKeyPress: pauses until a key is pressed
+
+WaitForSpecificKey: pauses until a specific key is pressed
 
 # Functions
 To use functions, first create a new file and name it something, but it must be a .asm file.
