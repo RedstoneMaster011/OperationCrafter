@@ -1,0 +1,6 @@
+{
+    "name": "Show Cursor",
+    "color": "#94a3b8",
+    "group": "Display",
+    "asm_code": "mov ah, 0x01\nmov cx, 0x0607\nint 0x10"
+}

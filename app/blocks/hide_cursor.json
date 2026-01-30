@@ -1,0 +1,6 @@
+{
+    "name": "Hide Cursor",
+    "color": "#64748b",
+    "group": "Display",
+    "asm_code": "mov ah, 0x01\nmov cx, 0x2000\nint 0x10"
+}

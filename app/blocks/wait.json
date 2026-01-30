@@ -1,0 +1,9 @@
+{
+    "name": "Wait",
+    "color": "#fbbf24",
+    "group": "General",
+    "asm_code": "mov ax, {MS}\nmov cx, 1000\nmul cx\nmov cx, dx\nmov dx, ax\nmov ah, 0x86\nint 0x15",
+    "inputs": [
+        {"name": "MS", "default": "1000"}
+    ]
+}

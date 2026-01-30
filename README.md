@@ -126,6 +126,8 @@ Register: Registers a file to an ADDRESS (bootloader and kernel require this at 
 
 CallFunction: Calls a function in a file (to use, go to [[Functions](#functions)]).
 
+Wait: pauses for some amount of time
+
 ### Graphics
 
 EnableGraphicsMode: Enables graphics mode so you can use stuff in graphics.
@@ -147,6 +149,10 @@ PrintToScreen: Prints text to the screen (does not work in graphics mode).
 ClearScreen (Text): Clears all text off the screen (does not work in graphics mode).
 
 MoveCursor: moves the text cursor to a point (like where text is placed)
+
+HideCursor: hides the cursor (or blinking line)
+
+ShowCursor: shows the cursor (or blinking line)
 
 ### Advanced
 

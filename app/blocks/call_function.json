@@ -2,6 +2,7 @@
     "name": "Call Function",
     "color": "#ff5555",
     "asm_code": "call {FUNCTION}",
+    "group": "General",
     "req_funcs": ["%include \"{FILE}\""],
     "inputs": [
         {
