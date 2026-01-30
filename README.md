@@ -126,7 +126,7 @@ Register: Registers a file to an ADDRESS (bootloader and kernel require this at 
 
 CallFunction: Calls a function in a file (to use, go to [[Functions](#functions)]).
 
-Wait: pauses for some amount of time
+Wait: Pauses for some amount of time.
 
 ### Graphics
 
@@ -148,11 +148,11 @@ PrintToScreen: Prints text to the screen (does not work in graphics mode).
 
 ClearScreen (Text): Clears all text off the screen (does not work in graphics mode).
 
-MoveCursor: moves the text cursor to a point (like where text is placed)
+MoveCursor: Moves the text cursor to a point (where text will be placed).
 
-HideCursor: hides the cursor (or blinking line)
+HideCursor: Hides the cursor (the blinking line).
 
-ShowCursor: shows the cursor (or blinking line)
+ShowCursor: Shows the cursor (the blinking line).
 
 ### Advanced
 
@@ -160,14 +160,15 @@ CustomCode: Lets you input custom code inside of the block editor.
 
 ### System
     
-Reboot: reboots the system
-Shutdown: shuts down the system
+Reboot: Reboots the system.
+
+Shutdown: Shuts down the system.
 
 ### Input
 
-WaitForKeyPress: pauses until a key is pressed
+WaitForKeyPress: Pauses until a key is pressed.
 
-WaitForSpecificKey: pauses until a specific key is pressed
+WaitForSpecificKey: Pauses until a specific key is pressed.
 
 # Functions
 To use functions, first create a new file and name it something, but it must be a .asm file.
@@ -221,7 +222,7 @@ Download QEMU and NASM:
    - QEMU: https://qemu.weilnetz.de/w64/qemu-w64-setup-20251217.exe
    - NASM: https://www.nasm.us/pub/nasm/releasebuilds/3.01/win64/nasm-3.01-win64.zip
 
-Install QEMU by running the installer, then navigate to where QEMU was installed and copy the qemu folder to the project directory.
+Install QEMU by running the installer, then navigate to where QEMU was installed and copy the QEMU folder to the project directory.
 
 Extract the NASM zip file, rename the folder inside to `nasm`, and copy it to the project directory.
 
