@@ -1,0 +1,6 @@
+{
+    "name": "Disk Setup",
+    "color": "#8cba00",
+    "group": "Core",
+    "asm_code": "disk_load:\n    push dx\n    mov ah, 0x02\n    mov al, dh\n    mov ch, 0x00\n    mov dh, 0x00\n    mov cl, 0x02\n    int 0x13\n    jc disk_error\n    pop dx\n    ret\n\ndisk_error:\n    mov ah, 0x0e\n    mov al, 'E'\n    int 0x10\n    jmp $"
+}

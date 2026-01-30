@@ -1,0 +1,12 @@
+{
+    "name": "Custom Code",
+    "color": "#8634eb",
+    "group": "Advanced",
+    "asm_code": "{CODE}",
+    "inputs": [
+        {
+            "name": "CODE",
+            "default": ""
+        }
+    ]
+}

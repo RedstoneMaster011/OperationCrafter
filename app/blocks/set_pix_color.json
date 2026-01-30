@@ -1,0 +1,20 @@
+{
+    "name": "Set Pixel",
+    "color": "#ec4899",
+    "group": "Graphics",
+    "asm_code": "mov ah, 0x0C\nmov al, {COLOR}\nmov bh, 0\nmov cx, {X}\nmov dx, {Y}\nint 0x10",
+    "inputs": [
+        {
+            "name": "X",
+            "default": "0"
+        },
+        {
+            "name": "Y",
+            "default": "0"
+        },
+        {
+            "name": "COLOR",
+            "default": "15"
+        }
+    ]
+}

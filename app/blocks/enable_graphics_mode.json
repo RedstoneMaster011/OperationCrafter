@@ -1,0 +1,6 @@
+{
+    "name": "Enable Graphics Mode",
+    "color": "#6366f1",
+    "group": "Graphics",
+    "asm_code": "mov ax, 0x0013\nint 0x10"
+}

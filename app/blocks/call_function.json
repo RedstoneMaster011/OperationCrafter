@@ -1,0 +1,16 @@
+{
+    "name": "Call Function",
+    "color": "#ff5555",
+    "asm_code": "call {FUNCTION}",
+    "req_funcs": ["%include \"{FILE}\""],
+    "inputs": [
+        {
+            "name": "FILE",
+            "default": "functions.asm"
+        },
+        {
+            "name": "FUNCTION",
+            "default": "my_function"
+        }
+    ]
+}

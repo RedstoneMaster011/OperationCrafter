@@ -1,0 +1,6 @@
+{
+    "name": "Clear Screen (Text)",
+    "color": "#3b82f6",
+    "group": "Display",
+    "asm_code": "mov ah, 0x06\nmov al, 0\nmov bh, 0x07\nmov cx, 0\nmov dx, 0x184F\nint 0x10\nmov ah, 0x02\nmov bh, 0\nmov dx, 0\nint 0x10"
+}

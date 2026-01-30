@@ -1,0 +1,16 @@
+{
+    "name": "Draw Rectangle",
+    "color": "#ec4899",
+    "group": "Graphics",
+    "asm_code": "mov cx, {X1}\nmov dx, {Y1}\nmov si, {X2}\nmov di, {Y2}\nmov bl, {COLOR}\ncall draw_rect",
+    "req_funcs": [
+        "draw_rect:\n    pusha\n.row_loop:\n    push cx\n.col_loop:\n    mov ah, 0x0C\n    mov al, bl\n    mov bh, 0\n    int 0x10\n    inc cx\n    cmp cx, si\n    jle .col_loop\n    pop cx\n    inc dx\n    cmp dx, di\n    jle .row_loop\n    popa\n    ret"
+    ],
+    "inputs": [
+        {"name": "X1", "default": "0"},
+        {"name": "Y1", "default": "0"},
+        {"name": "X2", "default": "50"},
+        {"name": "Y2", "default": "50"},
+        {"name": "COLOR", "default": "15"}
+    ]
+}

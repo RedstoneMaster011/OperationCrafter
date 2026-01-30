@@ -1,0 +1,6 @@
+{
+    "name": "Disable Graphics Mode",
+    "color": "#10b981",
+    "group": "Graphics",
+    "asm_code": "mov ax, 0x0003\nint 0x10"
+}

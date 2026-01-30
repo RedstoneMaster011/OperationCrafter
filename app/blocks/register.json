@@ -1,0 +1,12 @@
+{
+    "name": "Register",
+    "color": "#1ecce3",
+    "group": "Core",
+    "asm_code": "[org {ADDRESS}]",
+    "inputs": [
+        {
+            "name": "ADDRESS",
+            "default": "0x1000"
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "name": "Halt",
+    "color": "#e31e59",
+    "group": "Core",
+    "asm_code": "jmp $"
+}
