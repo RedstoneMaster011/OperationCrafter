@@ -1,14 +1,15 @@
-import os
-import json
 import glob
-import zipfile
+import json
+import os
 import shutil
 import tempfile
+import zipfile
+
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QColor
 from PyQt6.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QTreeWidget,
                              QTreeWidgetItem, QPushButton, QFileDialog,
-                             QMessageBox, QHeaderView, QToolTip)
-from PyQt6.QtGui import QColor, QCursor
-from PyQt6.QtCore import Qt
+                             QMessageBox, QHeaderView)
 
 
 class PluginManager:

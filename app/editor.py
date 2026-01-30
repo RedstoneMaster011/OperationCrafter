@@ -1,20 +1,23 @@
-import os, shutil, json, glob
+import glob
+import json
+import os
+import shutil
+
+from PyQt6.QtCore import Qt, QEvent, QTimer, QRect, QPoint, QSize, QMimeData
+from PyQt6.QtGui import (QFileSystemModel, QShortcut, QKeySequence, QPainter,
+                         QColor, QTextCursor, QDrag)
 from PyQt6.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
                              QTextEdit, QTreeView, QPushButton, QSplitter,
                              QInputDialog, QMessageBox, QMenu, QTabWidget,
                              QTabBar, QRubberBand, QPlainTextEdit, QLineEdit,
                              QFrame, QDialog, QFormLayout, QDialogButtonBox,
-                             QStackedWidget, QTreeWidget, QTreeWidgetItem, QGraphicsView, QApplication, QFileDialog,
-                             QLabel)
-from PyQt6.QtGui import (QFileSystemModel, QShortcut, QKeySequence, QPainter,
-                         QColor, QTextCursor, QDrag, QKeyEvent, QMouseEvent)
-from PyQt6.QtCore import Qt, QEvent, QTimer, QRect, QPoint, QSize, QMimeData
+                             QStackedWidget, QTreeWidget, QTreeWidgetItem, QGraphicsView, QApplication, QLabel)
 
-from . import compiler
 from .PluginManager import PluginManager, PluginDialog
-from .highlight import SyntaxHighlighter
-from .emulator import OSLauncher
 from .block import BlockCanvas, VisualBlock
+from .emulator import OSLauncher
+from .highlight import SyntaxHighlighter
+
 
 class SettingsDialog(QDialog):
     def __init__(self, current_data, parent=None):

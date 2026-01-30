@@ -1,8 +1,11 @@
-import os, json, glob
-from PyQt6.QtWidgets import (QGraphicsItem, QGraphicsRectItem, QGraphicsTextItem,
-                             QGraphicsScene, QGraphicsView, QGraphicsProxyWidget, QLineEdit)
+import glob
+import json
+import os
+
+from PyQt6.QtCore import Qt, QPointF, QTimer
 from PyQt6.QtGui import QColor, QPen, QBrush
-from PyQt6.QtCore import Qt, QPointF, QRectF, QTimer
+from PyQt6.QtWidgets import (QGraphicsItem, QGraphicsRectItem, QGraphicsTextItem,
+                             QGraphicsScene, QGraphicsProxyWidget, QLineEdit)
 
 BLOCK_WIDTH = 250
 BLOCK_HEIGHT = 50

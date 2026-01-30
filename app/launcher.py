@@ -1,9 +1,11 @@
-import os, json
-
+import json
+import os
 from datetime import date
+
+from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QPushButton, QFileDialog,
                              QLabel, QHBoxLayout, QLineEdit, QStackedWidget, QApplication)
-from PyQt6.QtCore import Qt
+
 
 class Launcher(QWidget):
     def __init__(self, ide_window):

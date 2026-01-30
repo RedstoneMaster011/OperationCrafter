@@ -1,9 +1,12 @@
-import sys, os
-from PyQt6.QtWidgets import QApplication
+import os
+import sys
+
 from PyQt6.QtGui import QIcon
-from app.launcher import Launcher
-from app.editor import IDEWindow
+from PyQt6.QtWidgets import QApplication
+
 from app.compiler import Compiler
+from app.editor import IDEWindow
+from app.launcher import Launcher
 
 
 def get_icon_path():

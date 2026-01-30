@@ -1,5 +1,5 @@
-from PyQt6.QtGui import QSyntaxHighlighter, QTextCharFormat, QColor
 from PyQt6.QtCore import QRegularExpression
+from PyQt6.QtGui import QSyntaxHighlighter, QTextCharFormat, QColor
 
 
 class SyntaxHighlighter(QSyntaxHighlighter):
