@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.0 codeblock additions">
-      <change afterPath="$PROJECT_DIR$/app/blocks/hide_cursor.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/blocks/show_cursor.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/blocks/wait.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blocks/call_function.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/call_function.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/block.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/block.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +258,23 @@
       <option name="project" value="LOCAL" />
       <updated>1769809081166</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="v1.0 codeblock additions">
+      <option name="closed" value="true" />
+      <created>1769809479835</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1769809479835</updated>
+    </task>
+    <task id="LOCAL-00015" summary="v1.0 codeblock additions">
+      <option name="closed" value="true" />
+      <created>1769809581756</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1769809581756</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

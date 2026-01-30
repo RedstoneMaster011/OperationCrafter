@@ -79,6 +79,11 @@ class VisualBlock(QGraphicsRectItem):
             super().keyPressEvent(event)
 
     def mousePressEvent(self, event):
+        # This is vital: if you click a block to drag it,
+        # it needs to "jump" away from its parent so the
+        # parent stops trying to control it.
+        if not self.is_start:
+            self.setPos(self.pos().x() + 1, self.pos().y() + 1)
         super().mousePressEvent(event)
         self.setFocus()
 
@@ -101,28 +106,61 @@ class VisualBlock(QGraphicsRectItem):
         tx, ty = self.scenePos().x(), self.scenePos().y() + self.rect().height()
         for item in scene.items():
             if isinstance(item, VisualBlock) and item != self:
-                if abs(item.scenePos().x() - tx) < 5 and abs(item.scenePos().y() - ty) < 5:
+                # Increased margin to 10 so it's easier to catch the next block
+                if abs(item.scenePos().x() - tx) < 10 and abs(item.scenePos().y() - ty) < 10:
                     return item
         return None
 
     def itemChange(self, change, value):
-        if change == QGraphicsItem.GraphicsItemChange.ItemPositionChange and not self._is_updating:
-            self.prepareGeometryChange()
+        if change == QGraphicsItem.GraphicsItemChange.ItemPositionChange and self.scene():
+            # If a parent is already moving us, just accept the position and stop
+            if hasattr(self, '_is_updating') and self._is_updating:
+                return super().itemChange(change, value)
+
             new_pos = value
             old_pos = self.pos()
             diff = new_pos - old_pos
-            if self.is_start:
-                if new_pos.x() < 10: return QPointF(10, new_pos.y())
-            elif new_pos.x() < -50:
-                QTimer.singleShot(1, self.self_destruct)
-                return new_pos
-            child = self.get_child_block()
-            if child:
-                child._is_updating = True
-                child.setPos(child.pos() + diff)
-                child._is_updating = False
-            return super().itemChange(change, value)
+
+            # Look for children to pull along
+            current_child = getattr(self, 'child_block', None)
+
+            # Use a while loop to move the whole tail manually
+            while current_child:
+                # 1. Horizontal Alignment Check (within 5px)
+                # If the parent moved too far away sideways, disconnect
+                if abs(self.scenePos().x() - current_child.scenePos().x()) > 10:
+                    current_child.parent_block = None
+                    self.child_block = None
+                    break
+
+                # 2. Move the child without letting the child trigger its own itemChange
+                current_child._is_updating = True
+                current_child.setPos(current_child.pos() + diff)
+                current_child._is_updating = False
+
+                # 3. Move to the next block in the chain
+                current_child = getattr(current_child, 'child_block', None)
+
+            # Start block boundary check
+            if self.is_start and value.x() < 10:
+                return QPointF(10, value.y())
+
         return super().itemChange(change, value)
+
+    def find_block_at_bottom(self, parent_item):
+        scene = self.scene()
+        if not scene: return None
+
+        # Target coordinates: Bottom of the parent block
+        tx = parent_item.scenePos().x()
+        ty = parent_item.scenePos().y() + parent_item.rect().height()
+
+        for item in scene.items():
+            if isinstance(item, VisualBlock) and item != parent_item:
+                # Check if the block is within a 5-pixel snapping range
+                if abs(item.scenePos().x() - tx) < 5 and abs(item.scenePos().y() - ty) < 5:
+                    return item
+        return None
 
     def mouseReleaseEvent(self, event):
         super().mouseReleaseEvent(event)
@@ -142,15 +180,71 @@ class VisualBlock(QGraphicsRectItem):
         if self.is_start: return
         scene = self.scene()
         if not scene: return
+
+        # 1. Get current absolute position
         x, y = self.scenePos().x(), self.scenePos().y()
+
         for item in scene.items():
             if isinstance(item, VisualBlock) and item != self:
+                # 2. Safety: Don't snap to your own tail (prevents the 'Infinite Loop' crash)
+                if self.is_ancestor_of(item):
+                    continue
+
+                # 3. Target: Bottom of the potential parent
                 tx, ty = item.scenePos().x(), item.scenePos().y() + item.rect().height()
+
+                # 4. Snap Logic (30px range)
                 if abs(x - tx) < 30 and abs(y - ty) < 30:
+                    # Calculate how far the whole stack needs to jump
+                    diff = QPointF(tx, ty) - self.pos()
+
+                    # 5. Atomic Link Break (Disconnect from old parent)
+                    old_parent = getattr(self, 'parent_block', None)
+                    if old_parent:
+                        old_parent.child_block = None
+                        self.parent_block = None
+
+                    # 6. Gather the entire tail into a list FIRST
+                    # This prevents the loop from changing while we iterate
+                    chain_to_move = []
+                    curr = getattr(self, 'child_block', None)
+                    visited = {self}  # Loop protection
+                    while curr and curr not in visited:
+                        chain_to_move.append(curr)
+                        visited.add(curr)
+                        curr = getattr(curr, 'child_block', None)
+
+                    # 7. Move the Head
                     self._is_updating = True
                     self.setPos(tx, ty)
                     self._is_updating = False
+
+                    # 8. Move the Tail using the saved list
+                    for block in chain_to_move:
+                        block._is_updating = True
+                        block.setPos(block.pos() + diff)
+                        block._is_updating = False
+
+                    # 9. Finalize the new link
+                    item.child_block = self
+                    self.parent_block = item
+
+                    # 10. Sync colors and UI
+                    if hasattr(scene, 'refresh_vibrancy'):
+                        scene.refresh_vibrancy()
                     break
+
+    def is_ancestor_of(self, other):
+        curr = getattr(self, 'child_block', None)
+        visited = {self}
+        while curr:
+            if curr == other:
+                return True
+            if curr in visited:
+                break # Circular link detected, stop immediately
+            visited.add(curr)
+            curr = getattr(curr, 'child_block', None)
+        return False
 
     def self_destruct(self):
         scene = self.scene()

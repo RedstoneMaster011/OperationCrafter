@@ -94,9 +94,6 @@ blocks.
 
 Blocks connected to the Start block will be coded. Blocks not connected will not be coded.
 
-You can drag 2 blocks at a time, but only connect 1 block at a time.
-(May be changed later.)
-
 The blocks will change to a darker or lighter color when connected to
 the start block.
 
