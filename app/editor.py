@@ -293,11 +293,11 @@ class HelpDialog(QDialog):
 
         layout = QVBoxLayout(self)
 
-        self.msg_label = QLabel("There's right now no help.")
+        self.msg_label = QLabel("The Help is located in the README.md")
         self.msg_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(self.msg_label)
 
-        self.link_label = QLabel('README: <a href="https://example.com" style="color: #007acc;">README.MD</a>')
+        self.link_label = QLabel('README.md: <a href="https://github.com/RedstoneMaster011/OperationCrafter/blob/master/README.md" style="color: #007acc;">README.MD</a>')
         self.link_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.link_label.setOpenExternalLinks(True)
         layout.addWidget(self.link_label)
