@@ -1,4 +1,4 @@
-# <p style="color: aqua;">Operation Crafter</p>
+# Operation Crafter
 
 **Operation Crafter** is a visual IDE for creating bootable 16-bit floppy disk operating systems using block-based coding - like Scratch, but for OS development!
 
