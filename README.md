@@ -141,9 +141,11 @@ SetPixel: Sets a pixel at xy to a color (colors are 0 - 15).
 
 DrawRectangle: Sets a selection of pixels to a color (colors are 0 - 15).
 
+PrintToScreen (Graphics): Prints text to the screen
+
 ### Display
 
-PrintToScreen: Prints text to the screen (does not work in graphics mode).
+PrintToScreen (Text): Prints text to the screen
 
 ClearScreen (Text): Clears all text off the screen (does not work in graphics mode).
 

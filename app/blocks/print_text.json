@@ -1,0 +1,23 @@
+{
+    "name": "Print to Screen (Text)",
+    "color": "#007acc",
+    "group": "Display",
+    "asm_code": "mov si, msg_{ID}\nmov bl, {COLOR}\ncall print_string\njmp after_{ID}\nmsg_{ID} db '{TEXT}', 0\nafter_{ID}:",
+    "inputs": [
+        {
+            "name": "ID",
+            "default": "1"
+        },
+        {
+            "name": "TEXT",
+            "default": "Hello from blocks!"
+        },
+        {
+            "name": "COLOR",
+            "default": "15"
+        }
+    ],
+    "req_funcs": [
+        "print_string:\n    pusha\n.loop:\n    lodsb\n    or al, al\n    jz .done\n    mov ah, 0x09\n    mov bh, 0\n    mov cx, 1\n    int 0x10\n    mov ah, 0x03\n    int 0x10\n    inc dl\n    mov ah, 0x02\n    int 0x10\n    jmp .loop\n.done:\n    popa\n    ret"
+    ]
+}
