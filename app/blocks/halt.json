@@ -1,6 +1,6 @@
 {
     "name": "Halt",
-    "color": "#e31e59",
+    "color": "#7d0901",
     "group": "Core",
-    "asm_code": "jmp $"
+    "asm_code": "hlt"
 }

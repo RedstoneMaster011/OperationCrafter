@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.0 bugfixes">
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.0 misc">
+      <change afterPath="$PROJECT_DIR$/app/blocks/end.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/halt.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/halt.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,25 +51,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Batch.build.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lucas/Desktop/Tools/Python/OperationCrafter&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Batch.build.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Lucas/Desktop/Tools/Python/OperationCrafter/app/blocks"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Lucas\Desktop\Tools\Python\OperationCrafter\app\blocks" />
       <recent name="C:\Users\Lucas\Desktop\Tools\Python\OperationCrafter" />
       <recent name="C:\Users\Lucas\Desktop\Tools\Python\OperationCrafter\qemu" />
-      <recent name="C:\Users\Lucas\Desktop\Tools\Python\OperationCrafter\app\blocks" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Lucas\Desktop\Tools\Python\OperationCrafter\git_readme\TemplatePlugins" />
@@ -297,7 +300,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769811971233</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="v1.0 misc">
+      <option name="closed" value="true" />
+      <created>1769818041264</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1769818041264</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -317,6 +328,7 @@
     <MESSAGE value="v1.0 bugfixes, and changing codeblocks and additions" />
     <MESSAGE value="v1.0 codeblock additions" />
     <MESSAGE value="v1.0 bugfixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.0 bugfixes" />
+    <MESSAGE value="v1.0 misc" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.0 misc" />
   </component>
 </project>

@@ -115,7 +115,9 @@ Bootloader: Handles the bootloader side (main.asm is your bootloader; this handl
 
 DiskSetup: Handles the disk setup (disk.asm is your disk by default; this does not need a registry).
 
-Halt: Calls jmp $ or halts the OS (if you need the hlt command, use a custom code block in advanced).
+End: Calls jmp $ or Ends the OS
+
+Halt: Calls hlt command, halts the cpu
 
 Register: Registers a file to an ADDRESS (bootloader and kernel require this at the start of code).
 
