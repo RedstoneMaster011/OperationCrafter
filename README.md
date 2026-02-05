@@ -127,6 +127,8 @@ CallFunction: Calls a function in a file (to use, go to [[Functions](#functions)
 
 Wait: Pauses for some amount of time.
 
+JMPToFunction: jmps to a function and ends rest of the code.
+
 ### Graphics
 
 EnableGraphicsMode: Enables graphics mode so you can use stuff in graphics.
@@ -166,6 +168,8 @@ Reboot: Reboots the system.
 Shutdown: Shuts down the system.
 
 ### Input
+
+IfKeyCallFunction: checks if key is pressed, if so call function, if not continue.
 
 WaitForKeyPress: Pauses until a key is pressed.
 

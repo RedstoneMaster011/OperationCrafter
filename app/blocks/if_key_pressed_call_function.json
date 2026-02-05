@@ -1,0 +1,25 @@
+{
+    "name": "If Key, Call Function",
+    "color": "#ff5555",
+    "group": "Input",
+    "asm_code": "mov ah, 0x01\nint 0x16\njz .done_{ID}\nmov ah, 0x00\nint 0x16\ncmp al, {KEY_CODE}\njne .done_{ID}\ncall {FUNCTION}\n.done_{ID}:",
+    "req_funcs": ["%include \"{FILE}\""],
+    "inputs": [
+        {
+            "name": "ID",
+            "default": "1"
+        },
+        {
+            "name": "FILE",
+            "default": "functions.asm"
+        },
+        {
+            "name": "FUNCTION",
+            "default": "my_function"
+        },
+        {
+            "name": "KEY_CODE",
+            "default": "13"
+        }
+    ]
+}

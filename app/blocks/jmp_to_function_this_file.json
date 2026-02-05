@@ -1,0 +1,12 @@
+{
+    "name": "JMP to Function (This File)",
+    "color": "#ff5555",
+    "group": "General",
+    "asm_code": "jmp {FUNCTION}",
+    "inputs": [
+        {
+            "name": "FUNCTION",
+            "default": "my_function"
+        }
+    ]
+}
