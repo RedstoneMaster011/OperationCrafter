@@ -1,0 +1,15 @@
+{
+    "name": "If Random, Call Function",
+    "color": "#ff5555",
+    "group": "General",
+    "asm_code": "push ax\npush cx\npush dx\nmov ah, 0x00\nint 0x1a\nmov ax, dx\nmov dx, 0\nmov cx, {MAX}\nsub cx, {MIN}\ninc cx\ndiv cx\nadd dl, {MIN}\ncmp dl, {TARGET}\npop dx\npop cx\npop ax\njne .skip_{ID}\ncall {FUNCTION}\n.skip_{ID}:",
+    "req_funcs": ["%include \"{FILE}\""],
+    "inputs": [
+        { "name": "ID", "default": "1" },
+        { "name": "FILE", "default": "functions.asm" },
+        { "name": "FUNCTION", "default": "my_function" },
+        { "name": "MIN", "default": "1" },
+        { "name": "MAX", "default": "5" },
+        { "name": "TARGET", "default": "3" }
+    ]
+}

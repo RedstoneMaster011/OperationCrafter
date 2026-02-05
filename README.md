@@ -129,6 +129,8 @@ Wait: Pauses for some amount of time.
 
 JMPToFunction: jmps to a function and ends rest of the code.
 
+IfRandomCallFunction: if random is equal to a number, call function
+
 ### Graphics
 
 EnableGraphicsMode: Enables graphics mode so you can use stuff in graphics.
