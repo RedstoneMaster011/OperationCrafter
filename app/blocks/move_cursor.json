@@ -3,7 +3,6 @@
     "color": "#fbbf24",
     "group": "Display",
     "asm_code": "mov ah, 0x02\nmov bh, 0\nmov dh, {ROW}\nmov dl, {COL}\nint 0x10",
-    "req_funcs": [],
     "inputs": [
         {"name": "ROW", "default": "0"},
         {"name": "COL", "default": "0"}

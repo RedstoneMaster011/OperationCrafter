@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 even more code cleanup">
-      <change beforePath="$PROJECT_DIR$/app/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/editor.py" afterDir="false" />
-    </list>
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 fixed gui after code cleanup cus it broke." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -521,7 +519,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770415286440</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="v1.1 fixed gui after code cleanup cus it broke.">
+      <option name="closed" value="true" />
+      <created>1770415583162</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1770415583162</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -558,6 +564,7 @@
     <MESSAGE value="v1.1 changed play sound and import sound to be slighty better" />
     <MESSAGE value="v1.1 code cleanup (very much needed)" />
     <MESSAGE value="v1.1 even more code cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.1 even more code cleanup" />
+    <MESSAGE value="v1.1 fixed gui after code cleanup cus it broke." />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.1 fixed gui after code cleanup cus it broke." />
   </component>
 </project>
