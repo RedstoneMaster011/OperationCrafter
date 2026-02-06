@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 added metadata.py and version and copyright to launcher.py" />
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 added version to title of editor.py" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -439,7 +439,23 @@
       <option name="project" value="LOCAL" />
       <updated>1770341816888</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="v1.1 added metadata.py and version and copyright to launcher.py">
+      <option name="closed" value="true" />
+      <created>1770341865802</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1770341865802</updated>
+    </task>
+    <task id="LOCAL-00037" summary="v1.1 added version to title of editor.py">
+      <option name="closed" value="true" />
+      <created>1770341963747</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1770341963747</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -467,6 +483,7 @@
     <MESSAGE value="v1.1 changed print_text_graphics.json to have dif vars as print_text.json" />
     <MESSAGE value="v1.1 fixed clear_screen_graphics.json to clear graphics text too." />
     <MESSAGE value="v1.1 added metadata.py and version and copyright to launcher.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.1 added metadata.py and version and copyright to launcher.py" />
+    <MESSAGE value="v1.1 added version to title of editor.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.1 added version to title of editor.py" />
   </component>
 </project>
