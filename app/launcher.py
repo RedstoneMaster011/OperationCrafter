@@ -143,7 +143,7 @@ class Launcher(QWidget):
 
     def write_asm_templates(self, path):
         files = {
-            "main.asm": "[org 0x7c00]\nKERNEL_OFFSET equ 0x1000\n\nmov [BOOT_DRIVE], dl\nmov bp, 0x9000\nmov sp, bp\n\ncall load_kernel\njmp KERNEL_OFFSET\n\n%include \"disk.asm\"\n\nload_kernel:\n    mov bx, KERNEL_OFFSET\n    mov dh, 2\n    mov dl, [BOOT_DRIVE]\n    call disk_load\n    ret\n\nBOOT_DRIVE db 0\ntimes 510-($-$$) db 0\ndw 0xaa55",
+            "main.asm": "[org 0x7c00]\nKERNEL_OFFSET equ 0x1000\n\nmov [BOOT_DRIVE], dl\nmov bp, 0x9000\nmov sp, bp\n\ncall load_kernel\njmp KERNEL_OFFSET\n\n%include \"disk.asm\"\n\nload_kernel:\n    mov bx, KERNEL_OFFSET\n    mov dh, 32\n    mov dl, [BOOT_DRIVE]\n    call disk_load\n    ret\n\nBOOT_DRIVE db 0\ntimes 510-($-$$) db 0\ndw 0xaa55",
             "disk.asm": "disk_load:\n    push dx\n    mov ah, 0x02\n    mov al, dh\n    mov ch, 0x00\n    mov dh, 0x00\n    mov cl, 0x02\n    int 0x13\n    jc disk_error\n    pop dx\n    ret\n\ndisk_error:\n    mov ah, 0x0e\n    mov al, 'E'\n    int 0x10\n    jmp $",
             "kernel.asm": "[org 0x1000]\nmov si, MSG_HELLO\ncall print_string\n\njmp $\n\nprint_string:\n    mov ah, 0x0e\n.loop:\n    lodsb\n    cmp al, 0\n    je .done\n    int 0x10\n    jmp .loop\n.done:\n    ret\n\nMSG_HELLO db \"Hello World!\", 0"
         }

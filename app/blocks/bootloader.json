@@ -10,7 +10,7 @@
         },
         {
             "name": "SECTORS",
-            "default": "2"
+            "default": "32"
         }
     ]
 }

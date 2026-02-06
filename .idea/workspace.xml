@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 new codeblock!">
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 codeblock fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blocks/clear_screen_graphics.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/clear_screen_graphics.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blocks/draw_picture.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/draw_picture.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/bootloader.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/bootloader.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/launcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/launcher.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -475,7 +475,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770396158559</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="v1.1 codeblock fixes">
+      <option name="closed" value="true" />
+      <created>1770397123360</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1770397123360</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -506,6 +514,7 @@
     <MESSAGE value="v1.1 added version to title of editor.py" />
     <MESSAGE value="v1.1 changed version" />
     <MESSAGE value="v1.1 new codeblock!" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.1 new codeblock!" />
+    <MESSAGE value="v1.1 codeblock fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.1 codeblock fixes" />
   </component>
 </project>
