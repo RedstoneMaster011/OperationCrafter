@@ -180,6 +180,10 @@ WaitForKeyPress: Pauses until a key is pressed.
 
 WaitForSpecificKey: Pauses until a specific key is pressed.
 
+### Sound
+
+PlayBeep: plays a beep sound.
+
 # Functions
 To use functions, first create a new file and name it something, but it must be a .asm file.
 If you need help with this, go to [[Developing](#developing)].
