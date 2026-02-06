@@ -5,20 +5,20 @@ import shutil
 
 from PyQt6.QtCore import Qt, QEvent, QTimer, QRect, QPoint, QSize, QMimeData
 from PyQt6.QtGui import (QFileSystemModel, QShortcut, QKeySequence, QPainter,
-                         QColor, QTextCursor, QDrag)
+                         QColor, QTextCursor, QDrag, QImage)
 from PyQt6.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
                              QTextEdit, QTreeView, QPushButton, QSplitter,
                              QInputDialog, QMessageBox, QMenu, QTabWidget,
                              QTabBar, QRubberBand, QPlainTextEdit, QLineEdit,
                              QFrame, QDialog, QFormLayout, QDialogButtonBox,
-                             QStackedWidget, QTreeWidget, QTreeWidgetItem, QGraphicsView, QApplication, QLabel)
+                             QStackedWidget, QTreeWidget, QTreeWidgetItem, QGraphicsView, QApplication, QLabel,
+                             QFileDialog)
 
 import app.metadata
 from .PluginManager import PluginManager, PluginDialog
 from .block import BlockCanvas, VisualBlock
 from .emulator import OSLauncher
 from .highlight import SyntaxHighlighter
-
 
 class SettingsDialog(QDialog):
     def __init__(self, current_data, parent=None):
@@ -342,6 +342,41 @@ class IDEWindow(QMainWindow):
         self.terminal.setObjectName("terminal")
         self.plugin_manager.apply_plugin_theme(self)
 
+    def import_and_convert_png(self):
+        src_path, _ = QFileDialog.getOpenFileName(self, "Import PNG for OperationCrafter", "", "Images (*.png)")
+        if not src_path:
+            return
+
+        img = QImage(src_path)
+        if img.isNull():
+            self.show_error("Import Error", "Could not load the selected image.")
+            return
+
+        img = img.convertToFormat(QImage.Format.Format_Indexed8)
+
+        base_name = os.path.splitext(os.path.basename(src_path))[0]
+        res_name, ok = QInputDialog.getText(self, "Resource Name", "Enter name for file:", text=base_name+".asm")
+        if not ok or not res_name:
+            return
+
+        hex_values = []
+        for y in range(img.height()):
+            for x in range(img.width()):
+                hex_values.append(f"0x{img.pixelIndex(x, y):02x}")
+
+        asm_content = f"{res_name}_width dw {img.width()}\n"
+        asm_content += f"{res_name}_height dw {img.height()}\n"
+        asm_content += f"{res_name}_data: db " + ", ".join(hex_values)
+
+        dest_path = os.path.join(self.compiler.project_dir, f"{res_name}")
+        try:
+            with open(dest_path, "w") as f:
+                f.write(asm_content)
+
+            self.model.setRootPath(self.compiler.project_dir)
+        except Exception as e:
+            self.show_error("File Error", f"Failed to save resource: {str(e)}")
+
     def show_error(self, title, message):
         msg = QMessageBox(self)
         msg.setIcon(QMessageBox.Icon.Critical)
@@ -366,7 +401,8 @@ class IDEWindow(QMainWindow):
     def setup_ui(self):
         central = QWidget(); self.setCentralWidget(central); layout = QVBoxLayout(central)
         t_bar = QHBoxLayout()
-        for txt, func in [("Build (F5)", self.handle_build), ("Run (F6)", self.handle_run), ("Settings", self.open_settings_gui), ("Plugins", self.open_plugins_gui), ("Help", self.open_help_gui)]:
+        for txt, func in [("Build (F5)", self.handle_build), ("Run (F6)", self.handle_run), ("Settings", self.open_settings_gui), ("Plugins", self.open_plugins_gui),
+                          ("Help", self.open_help_gui)]:
             btn = QPushButton(txt); btn.clicked.connect(func); t_bar.addWidget(btn)
         t_bar.addStretch(); layout.addLayout(t_bar)
 
@@ -461,10 +497,10 @@ class IDEWindow(QMainWindow):
         menu.addAction("New Folder", lambda: self.add_folder(idx))
         menu.addSeparator()
 
-        if idx.isValid():
-            menu.addAction("Copy", lambda: setattr(self.tree, 'clipboard_path', self.model.filePath(idx)))
-            menu.addAction("Rename", lambda: self.rename_item(idx))
-            menu.addAction("Delete", self.delete_item)
+        menu.addAction("Copy", lambda: setattr(self.tree, 'clipboard_path', self.model.filePath(idx)))
+        menu.addAction("Rename", lambda: self.rename_item(idx))
+        menu.addAction("Delete", self.delete_item)
+        menu.addAction("Import/Convert PNG", self.import_and_convert_png)
 
         p_act = menu.addAction("Paste")
         p_act.setEnabled(hasattr(self.tree, 'clipboard_path'))
