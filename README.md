@@ -97,6 +97,9 @@ Blocks connected to the Start block will be coded. Blocks not connected will not
 The blocks will change to a darker or lighter color when connected to
 the start block.
 
+If the block has input "ID", then thats the ID of the block, every time you use that block in same file, change it
+so dont have dupe ID's for codeblocks in 1 file.
+
 To run QEMU, you first need to build. In the top corner, there's Build, Run, Settings, Plugins, and Help buttons.
 
 Press Build to create a bootable image, then press Run to run the emulator.

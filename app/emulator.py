@@ -27,7 +27,12 @@ class OSLauncher:
             return
 
         terminal_callback("Starting Emulation...")
-        cmd = [self.qemu_path, "-drive", f"format=raw,file={img_path}"]
+        cmd = [
+            self.qemu_path,
+            "-drive", f"format=raw,file={img_path}",
+            "-audiodev", "dsound,id=snd0",
+            "-machine", "pcspk-audiodev=snd0"
+        ]
         executable = cmd[0] if os.path.exists(self.qemu_path) else "qemu-system-x86_64"
 
         try:
