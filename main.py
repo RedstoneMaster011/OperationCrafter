@@ -9,7 +9,6 @@ from app.compiler import Compiler
 from app.editor import IDEWindow
 from app.launcher import Launcher
 
-
 def get_icon_path():
     if hasattr(sys, '_MEIPASS'):
         path = os.path.join(sys._MEIPASS, "icon.png")
@@ -23,7 +22,6 @@ def get_icon_path():
     if os.path.exists(path): return path
 
     return None
-
 
 def main():
 

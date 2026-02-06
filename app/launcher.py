@@ -1,6 +1,7 @@
 import json
 import os
 from datetime import date
+import app.metadata
 
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QPushButton, QFileDialog,
@@ -37,6 +38,7 @@ class Launcher(QWidget):
 
         header = QHBoxLayout()
         header.addStretch()
+
         close_btn = QPushButton("✕")
         close_btn.setObjectName("CloseBtn")
         close_btn.clicked.connect(self.close)
@@ -60,13 +62,19 @@ class Launcher(QWidget):
         icon_label = QLabel()
         app_icon = QApplication.windowIcon()
         if not app_icon.isNull():
-            icon_pixmap = app_icon.pixmap(128, 85)
+            icon_pixmap = app_icon.pixmap(75, 85)
             icon_label.setPixmap(icon_pixmap)
 
         icon_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         home_layout.addWidget(icon_label)
 
         home_layout.addStretch()
+
+        bottom_row = QHBoxLayout()
+        bottom_row.addWidget(QLabel(app.metadata.version), alignment=Qt.AlignmentFlag.AlignLeft)
+        bottom_row.addStretch()
+        bottom_row.addWidget(QLabel(app.metadata.copyright), alignment=Qt.AlignmentFlag.AlignRight)
+        home_layout.addLayout(bottom_row)
 
         self.setWindowIcon(QApplication.windowIcon())
 
@@ -95,6 +103,8 @@ class Launcher(QWidget):
         btn_back.clicked.connect(lambda: self.stack.setCurrentIndex(0))
         setup_layout.addWidget(btn_back)
         setup_layout.addStretch()
+
+        setup_layout.addLayout(bottom_row)
 
         self.stack.addWidget(self.home_page)
         self.stack.addWidget(self.setup_page)
