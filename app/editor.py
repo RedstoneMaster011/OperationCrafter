@@ -13,6 +13,7 @@ from PyQt6.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
                              QFrame, QDialog, QFormLayout, QDialogButtonBox,
                              QStackedWidget, QTreeWidget, QTreeWidgetItem, QGraphicsView, QApplication, QLabel)
 
+import app.metadata
 from .PluginManager import PluginManager, PluginDialog
 from .block import BlockCanvas, VisualBlock
 from .emulator import OSLauncher
@@ -359,7 +360,7 @@ class IDEWindow(QMainWindow):
         self.showMaximized()
         path_str = str(path)
         windows_path = path_str.replace("/", "\\")
-        self.setWindowTitle(f"Operation Crafter - {windows_path}")
+        self.setWindowTitle(f"Operation Crafter {app.metadata.version} - {windows_path}")
         self.setWindowIcon(QApplication.windowIcon())
 
     def setup_ui(self):
