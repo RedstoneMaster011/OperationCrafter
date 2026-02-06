@@ -374,13 +374,23 @@ class IDEWindow(QMainWindow):
             for t in range(total_steps):
                 if progress.wasCanceled(): return
 
-                index = magnitudes[:, t].argmax()
-                pitch = pitches[index, t]
+                magnitudes_at_t = magnitudes[:, t]
 
-                if magnitudes[index, t] > 0.3 and 37 < pitch < 4000:
-                    notes.append(int(pitch))
+                if magnitudes_at_t.max() > 0.2:
+                    index = magnitudes_at_t.argmax()
+                    pitch = pitches[index, t]
+
+                    if pitch > 1500:
+                        pitch = pitch / 2
+
+                    if 50 < pitch < 4000:
+                        notes.append(int(pitch))
+                    else:
+                        notes.append(pitch * 15)
                 else:
-                    notes.append(0)
+                    index = magnitudes_at_t.argmax()
+                    pitch = pitches[index, t]
+                    notes.append(pitch * 15)
 
                 if t % 5 == 0:
                     val = 30 + int((t / total_steps) * 60)
