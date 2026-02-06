@@ -1,5 +1,5 @@
 {
-    "name": "Play Beep (ms)",
+    "name": "Play Beep Sound",
     "color": "#e67e22",
     "group": "Sound",
     "asm_code": "mov al, 182\nout 67, al\nmov ax, {PITCH}\nout 66, al\nmov al, ah\nout 66, al\nin al, 97\nor al, 3\nout 97, al\nmov ax, {MS}\nmov cx, {FREQ}\nmul cx\nmov cx, dx\nmov dx, ax\nmov ah, 0x86\nint 0x15\nin al, 97\nand al, 252\nout 97, al",
