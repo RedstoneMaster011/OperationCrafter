@@ -12,14 +12,17 @@ from app.launcher import Launcher
 def get_icon_path():
     if hasattr(sys, '_MEIPASS'):
         path = os.path.join(sys._MEIPASS, "icon.png")
-        if os.path.exists(path): return path
+        if os.path.exists(path):
+            return path
 
     base_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
     path = os.path.join(base_dir, "icon.png")
-    if os.path.exists(path): return path
+    if os.path.exists(path):
+        return path
 
     path = os.path.abspath("icon.png")
-    if os.path.exists(path): return path
+    if os.path.exists(path):
+        return path
 
     return None
 
