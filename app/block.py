@@ -50,12 +50,12 @@ class VisualBlock(QGraphicsRectItem):
             edit.setText(str(inp.get('value', inp.get('default', ''))))
             edit.setFixedWidth(100)
             edit.setStyleSheet("""
-                        background: #1a1a1a 
-                        color: #00ffcc 
-                        border: 1px solid #444 
-                        font-size: 10px 
-                        font-family: 'Consolas'
-                    """)
+                                    background: #1a1a1a; 
+                                    color: #00ffcc; 
+                                    border: 1px solid #444; 
+                                    font-size: 10px; 
+                                    font-family: 'Consolas';
+                                """)
             edit.textChanged.connect(self.on_input_changed)
 
             proxy = QGraphicsProxyWidget(self)

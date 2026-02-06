@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 changed play sound and import sound to be slighty better">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/PluginManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/PluginManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/block.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/block.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/compiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/compiler.py" afterDir="false" />
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 even more code cleanup">
       <change beforePath="$PROJECT_DIR$/app/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/editor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/launcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/launcher.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -510,7 +505,23 @@
       <option name="project" value="LOCAL" />
       <updated>1770408382075</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="v1.1 code cleanup (very much needed)">
+      <option name="closed" value="true" />
+      <created>1770415252811</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1770415252811</updated>
+    </task>
+    <task id="LOCAL-00045" summary="v1.1 even more code cleanup">
+      <option name="closed" value="true" />
+      <created>1770415286440</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1770415286440</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -545,6 +556,8 @@
     <MESSAGE value="v1.1 changed default sector size to 32 instead of 2" />
     <MESSAGE value="v1.1 changed old blocks, and added a new block" />
     <MESSAGE value="v1.1 changed play sound and import sound to be slighty better" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.1 changed play sound and import sound to be slighty better" />
+    <MESSAGE value="v1.1 code cleanup (very much needed)" />
+    <MESSAGE value="v1.1 even more code cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.1 even more code cleanup" />
   </component>
 </project>

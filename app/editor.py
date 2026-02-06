@@ -561,7 +561,8 @@ class IDEWindow(QMainWindow):
         self.tabs.setTabsClosable(True)
         self.tabs.tabCloseRequested.connect(self.close_tab)
         self.tabs.tabBar().installEventFilter(self)
-        self.tabs.setStyleSheet("QTabBar::tab { background: #141414 color: #888 padding: 8px 12px border: 1px solid #252526 } QTabBar::tab:selected { background: #1e1e1e color: white border-bottom: 2px solid #007acc }")
+        self.tabs.setStyleSheet(
+            "QTabBar::tab { background: #141414; color: #888; padding: 8px 12px; border: 1px solid #252526; } QTabBar::tab:selected { background: #1e1e1e; color: white; border-bottom: 2px solid #007acc; }")
         self.splitter.addWidget(self.tree)
         self.splitter.addWidget(self.tabs)
         self.splitter.setSizes([250, 750])
@@ -569,7 +570,7 @@ class IDEWindow(QMainWindow):
         self.terminal = QTextEdit()
         self.terminal.setFixedHeight(120)
         self.terminal.setReadOnly(True)
-        self.terminal.setStyleSheet("background: #000 color: #d4d4d4 font-family: Consolas")
+        self.terminal.setStyleSheet("background: #000; color: #d4d4d4; font-family: Consolas;")
         layout.addWidget(self.terminal)
         central.setObjectName("main_window_central")
         self.plugin_manager.apply_plugin_theme(self)
@@ -877,4 +878,4 @@ class TabButton(QPushButton):
     def __init__(self, text, parent=None):
         super().__init__(text, parent)
         self.setFixedSize(16, 16)
-        self.setStyleSheet("QPushButton { color: #666 background: transparent border: none font-weight: bold } QPushButton:hover { color: #bbb background: #333 }")
+        self.setStyleSheet("QPushButton { color: #666; background: transparent; border: none; font-weight: bold; } QPushButton:hover { color: #bbb; background: #333; }")
