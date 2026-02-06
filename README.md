@@ -151,7 +151,7 @@ DrawRectangle: Sets a selection of pixels to a color (colors are 0 - 15).
 PrintToScreen (Graphics): Prints text to the screen
 
 DrawPicture: Draws a imported compiled picture file. (To import picures, right click tree
-view and click import/convert PNG)
+view and click import/convert .PNG (Raw Data))
 
 ### Display
 
@@ -177,7 +177,7 @@ Shutdown: Shuts down the system.
 
 ### Input
 
-IfKeyCallFunction: checks if key is pressed, if so call function, if not continue.
+IfKeyCallFunction: Checks if key is pressed, if so call function, if not continue.
 
 WaitForKeyPress: Pauses until a key is pressed.
 
@@ -185,7 +185,10 @@ WaitForSpecificKey: Pauses until a specific key is pressed.
 
 ### Sound
 
-PlayBeep: plays a beep sound.
+PlayBeep: Plays a beep sound.
+
+PlaySound: Plays a sound file. (To import sounds, right click tree
+view and click import/convert .OGG (Beeps). It will convert sound file to beep sounds.)
 
 # Functions
 To use functions, first create a new file and name it something, but it must be a .asm file.

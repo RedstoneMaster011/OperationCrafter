@@ -8,7 +8,7 @@
     ],
     "inputs": [
         { "name": "ID", "default": "1" },
-        { "name": "FILE", "default": "export.asm" },
+        { "name": "FILE", "default": "image.asm" },
         { "name": "X", "default": "0" },
         { "name": "Y", "default": "0" }
     ]

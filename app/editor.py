@@ -3,6 +3,7 @@ import json
 import os
 import shutil
 
+import librosa
 from PyQt6.QtCore import Qt, QEvent, QTimer, QRect, QPoint, QSize, QMimeData
 from PyQt6.QtGui import (QFileSystemModel, QShortcut, QKeySequence, QPainter,
                          QColor, QTextCursor, QDrag, QImage)
@@ -12,13 +13,14 @@ from PyQt6.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
                              QTabBar, QRubberBand, QPlainTextEdit, QLineEdit,
                              QFrame, QDialog, QFormLayout, QDialogButtonBox,
                              QStackedWidget, QTreeWidget, QTreeWidgetItem, QGraphicsView, QApplication, QLabel,
-                             QFileDialog)
+                             QFileDialog, QProgressDialog)
 
 import app.metadata
 from .PluginManager import PluginManager, PluginDialog
 from .block import BlockCanvas, VisualBlock
 from .emulator import OSLauncher
 from .highlight import SyntaxHighlighter
+
 
 class SettingsDialog(QDialog):
     def __init__(self, current_data, parent=None):
@@ -342,6 +344,72 @@ class IDEWindow(QMainWindow):
         self.terminal.setObjectName("terminal")
         self.plugin_manager.apply_plugin_theme(self)
 
+    def import_and_convert_ogg(self):
+        src_path, _ = QFileDialog.getOpenFileName(self, "Import OGG for Beeps", "", "Audio (*.ogg)")
+        if not src_path: return
+
+        progress = QProgressDialog("Processing Audio... Please wait.", "Cancel", 0, 100, self)
+        progress.setWindowTitle("Converting Sound")
+        progress.setWindowModality(Qt.WindowModality.WindowModal)
+        progress.show()
+        QApplication.processEvents()
+
+        try:
+            progress.setLabelText("Loading OGG file...")
+            progress.setValue(10)
+            QApplication.processEvents()
+
+            y, sr = librosa.load(src_path, sr=22050, mono=True)
+
+            progress.setLabelText("Analyzing...")
+            progress.setValue(30)
+            QApplication.processEvents()
+
+            hop_length = int(sr * 0.1)
+            pitches, magnitudes = librosa.piptrack(y=y, sr=sr, hop_length=hop_length)
+
+            notes = []
+            total_steps = pitches.shape[1]
+
+            for t in range(total_steps):
+                if progress.wasCanceled(): return
+
+                index = magnitudes[:, t].argmax()
+                pitch = pitches[index, t]
+
+                if magnitudes[index, t] > 0.3 and 37 < pitch < 4000:
+                    notes.append(int(pitch))
+                else:
+                    notes.append(0)
+
+                if t % 5 == 0:
+                    val = 30 + int((t / total_steps) * 60)
+                    progress.setValue(val)
+                    progress.setLabelText(f"Processing frame {t} of {total_steps}...")
+                    QApplication.processEvents()
+
+            progress.setValue(95)
+
+            base_name = os.path.splitext(os.path.basename(src_path))[0]
+            res_name, ok = QInputDialog.getText(self, "Sound Name", "Enter name for file:", text=base_name + ".asm")
+            if ok and res_name:
+                asm_content = f"dw {len(notes)}\n"
+                for freq in notes:
+                    asm_content += f"dw {freq}, 100\n"
+
+                dest_path = os.path.join(self.compiler.project_dir, res_name)
+                with open(dest_path, "w") as f:
+                    f.write(asm_content)
+
+                self.model.setRootPath(self.compiler.project_dir)
+
+            progress.setValue(100)
+            progress.close()
+
+        except Exception as e:
+            progress.close()
+            self.show_error("Conversion Error", f"Audio processing failed: {str(e)}")
+
     def import_and_convert_png(self):
         src_path, _ = QFileDialog.getOpenFileName(self, "Import PNG for OperationCrafter", "", "Images (*.png)")
         if not src_path:
@@ -500,7 +568,8 @@ class IDEWindow(QMainWindow):
         menu.addAction("Copy", lambda: setattr(self.tree, 'clipboard_path', self.model.filePath(idx)))
         menu.addAction("Rename", lambda: self.rename_item(idx))
         menu.addAction("Delete", self.delete_item)
-        menu.addAction("Import/Convert PNG", self.import_and_convert_png)
+        menu.addAction("Import/Convert .PNG (Raw Data)", self.import_and_convert_png)
+        menu.addAction("Import/Convert .OGG (Beeps)", self.import_and_convert_ogg)
 
         p_act = menu.addAction("Paste")
         p_act.setEnabled(hasattr(self.tree, 'clipboard_path'))
