@@ -272,7 +272,8 @@ class PluginDialog(QDialog):
 
     def toggle_plugin_status(self):
         selected = self.list_widget.currentItem()
-        if not selected: return
+        if not selected:
+            return
 
         old_path = selected.data(0, Qt.ItemDataRole.UserRole)
 

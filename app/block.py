@@ -2,7 +2,7 @@ import glob
 import json
 import os
 
-from PyQt6.QtCore import Qt, QPointF, QTimer
+from PyQt6.QtCore import Qt, QPointF
 from PyQt6.QtGui import QColor, QPen, QBrush
 from PyQt6.QtWidgets import (QGraphicsItem, QGraphicsRectItem, QGraphicsTextItem,
                              QGraphicsScene, QGraphicsProxyWidget, QLineEdit)
@@ -50,11 +50,11 @@ class VisualBlock(QGraphicsRectItem):
             edit.setText(str(inp.get('value', inp.get('default', ''))))
             edit.setFixedWidth(100)
             edit.setStyleSheet("""
-                        background: #1a1a1a; 
-                        color: #00ffcc; 
-                        border: 1px solid #444; 
-                        font-size: 10px; 
-                        font-family: 'Consolas';
+                        background: #1a1a1a 
+                        color: #00ffcc 
+                        border: 1px solid #444 
+                        font-size: 10px 
+                        font-family: 'Consolas'
                     """)
             edit.textChanged.connect(self.on_input_changed)
 
@@ -137,7 +137,8 @@ class VisualBlock(QGraphicsRectItem):
 
     def find_block_at_bottom(self, parent_item):
         scene = self.scene()
-        if not scene: return None
+        if not scene: 
+            return None
 
         tx = parent_item.scenePos().x()
         ty = parent_item.scenePos().y() + parent_item.rect().height()
@@ -163,9 +164,11 @@ class VisualBlock(QGraphicsRectItem):
         self.on_input_changed()
 
     def check_snap(self):
-        if self.is_start: return
+        if self.is_start: 
+            return
         scene = self.scene()
-        if not scene: return
+        if not scene: 
+            return
 
         x, y = self.scenePos().x(), self.scenePos().y()
 
@@ -265,7 +268,10 @@ class BlockCanvas(QGraphicsScene):
         self.blockSignals(True)
         self.clear()
 
-        start_inputs = [{"name": "Function", "default": "start"}]
+        start_inputs = [{
+            "name": "Function", 
+            "default": "start"
+        }]
 
         self.start_block = VisualBlock("START", "", inputs=start_inputs, is_start=True)
         self.addItem(self.start_block)
@@ -275,7 +281,8 @@ class BlockCanvas(QGraphicsScene):
     def refresh_vibrancy(self):
         if not self.start_block: return
         for item in self.items():
-            if isinstance(item, VisualBlock): item.set_vibrant(False)
+            if isinstance(item, VisualBlock): 
+                item.set_vibrant(False)
         visited, current = [self.start_block], self.start_block
         while True:
             found_next = False
@@ -288,10 +295,12 @@ class BlockCanvas(QGraphicsScene):
                         current = item
                         found_next = True
                         break
-            if not found_next: break
+            if not found_next: 
+                break
 
     def generate_code(self):
-        if not self.start_block: return ""
+        if not self.start_block: 
+            return ""
 
         code_output = []
         helpers = set()

@@ -27,24 +27,25 @@ class SettingsDialog(QDialog):
         super().__init__(parent)
         self.setWindowTitle("Project Settings")
         self.setFixedWidth(350)
-        self.setStyleSheet("background-color: #1e1e1e; color: white;")
+        self.setStyleSheet("background-color: #1e1e1e color: white")
         layout = QVBoxLayout(self)
         form = QFormLayout()
         self.name_input = QLineEdit(current_data.get("name", ""))
-        self.name_input.setStyleSheet("background: #2d2d2d; color: white; border: 1px solid #444; padding: 5px;")
+        self.name_input.setStyleSheet("background: #2d2d2d color: white border: 1px solid #444 padding: 5px")
         self.version_input = QLineEdit(current_data.get("version", "1.0.0"))
-        self.version_input.setStyleSheet("background: #2d2d2d; color: white; border: 1px solid #444; padding: 5px;")
+        self.version_input.setStyleSheet("background: #2d2d2d color: white border: 1px solid #444 padding: 5px")
         form.addRow("Project Name:", self.name_input)
         form.addRow("Version:", self.version_input)
         layout.addLayout(form)
         btns = QDialogButtonBox(QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel)
-        btns.setStyleSheet("QPushButton { background-color: #333; color: white; padding: 5px; }")
+        btns.setStyleSheet("QPushButton { background-color: #333 color: white padding: 5px }")
         btns.accepted.connect(self.accept)
         btns.rejected.connect(self.reject)
         layout.addWidget(btns)
 
-    def get_data(self): return {"name": self.name_input.text(), "version": self.version_input.text()}
-
+    def get_data(self): return {
+        "name": self.name_input.text(), "version": self.version_input.text()
+    }
 
 class ProjectTreeView(QTreeView):
     def __init__(self, parent=None):
@@ -131,32 +132,53 @@ class ProjectTreeView(QTreeView):
 class FindReplaceBar(QFrame):
     def __init__(self, editor_widget, container, parent=None):
         super().__init__(parent)
-        self.editor = editor_widget; self.container = container
+        self.editor = editor_widget
+        self.container = container
         self.setFixedHeight(45)
         self.setStyleSheet("""
-            QFrame { background-color: #2d2d2d; border-bottom: 1px solid #454545; }
-            QLineEdit { background: #3c3c3c; color: white; border: 1px solid #555; padding: 4px; }
-            QPushButton { background: #444; color: white; border: 1px solid #555; padding: 4px 10px; }
-            QPushButton:hover { background: #007acc; }
+            QFrame { background-color: #2d2d2d border-bottom: 1px solid #454545 }
+            QLineEdit { background: #3c3c3c color: white border: 1px solid #555 padding: 4px }
+            QPushButton { background: #444 color: white border: 1px solid #555 padding: 4px 10px }
+            QPushButton:hover { background: #007acc }
         """)
         layout = QHBoxLayout(self)
-        self.find_input = QLineEdit(); self.find_input.setPlaceholderText("Find...")
-        self.replace_input = QLineEdit(); self.replace_input.setPlaceholderText("Replace...")
+        self.find_input = QLineEdit()
+        self.find_input.setPlaceholderText("Find...")
+        self.replace_input = QLineEdit()
+        self.replace_input.setPlaceholderText("Replace...")
         self.replace_input.hide()
-        self.btn_next = QPushButton("Next"); self.btn_next.clicked.connect(self.find_next)
-        self.btn_replace = QPushButton("Replace"); self.btn_replace.clicked.connect(self.replace_current); self.btn_replace.hide()
-        self.btn_close = QPushButton("✕"); self.btn_close.setFixedWidth(30); self.btn_close.clicked.connect(self.hide_bar)
-        layout.addWidget(self.find_input); layout.addWidget(self.replace_input); layout.addWidget(self.btn_next); layout.addWidget(self.btn_replace)
-        layout.addStretch(); layout.addWidget(self.btn_close)
+        self.btn_next = QPushButton("Next")
+        self.btn_next.clicked.connect(self.find_next)
+        self.btn_replace = QPushButton("Replace")
+        self.btn_replace.clicked.connect(self.replace_current)
+        self.btn_replace.hide()
+        self.btn_close = QPushButton("✕")
+        self.btn_close.setFixedWidth(30)
+        self.btn_close.clicked.connect(self.hide_bar)
+        layout.addWidget(self.find_input)
+        layout.addWidget(self.replace_input)
+        layout.addWidget(self.btn_next)
+        layout.addWidget(self.btn_replace)
+        layout.addStretch()
+        layout.addWidget(self.btn_close)
 
     def show_find(self):
-        self.container.btn_toggle.hide(); self.replace_input.hide(); self.btn_replace.hide(); self.show(); self.find_input.setFocus()
+        self.container.btn_toggle.hide()
+        self.replace_input.hide()
+        self.btn_replace.hide()
+        self.show()
+        self.find_input.setFocus()
 
     def show_replace(self):
-        self.container.btn_toggle.hide(); self.replace_input.show(); self.btn_replace.show(); self.show(); self.find_input.setFocus()
+        self.container.btn_toggle.hide()
+        self.replace_input.show()
+        self.btn_replace.show()
+        self.show()
+        self.find_input.setFocus()
 
     def hide_bar(self):
-        self.hide(); self.editor.setFocus()
+        self.hide()
+        self.editor.setFocus()
         if self.container.file_path.lower().endswith('.asm'): self.container.btn_toggle.show()
 
     def find_next(self):
@@ -173,8 +195,13 @@ class FindReplaceBar(QFrame):
 
 
 class LineNumberArea(QWidget):
-    def __init__(self, editor): super().__init__(editor); self.editor = editor
-    def sizeHint(self): return QSize(self.editor.line_number_area_width(), 0)
+    def __init__(self, editor): 
+        super().__init__(editor)
+        self.editor = editor
+        
+    def sizeHint(self): 
+        return QSize(self.editor.line_number_area_width(), 0)
+    
     def paintEvent(self, event):
         painter = QPainter(self)
         painter.fillRect(event.rect(), self.palette().window().color())
@@ -185,15 +212,19 @@ class CodeEditor(QPlainTextEdit):
     def __init__(self, file_path, parent_window, plugin_manager, parent=None):
         super().__init__(parent)
         self.plugin_manager = plugin_manager
-        self.file_path = file_path; self.parent_window = parent_window
+        self.file_path = file_path
+        self.parent_window = parent_window
         self.line_number_area = LineNumberArea(self)
         self.blockCountChanged.connect(self.update_line_number_area_width)
-        self.updateRequest.connect(self.update_line_number_area); self.update_line_number_area_width(0)
+        self.updateRequest.connect(self.update_line_number_area)
+        self.update_line_number_area_width(0)
         self.setLineWrapMode(QPlainTextEdit.LineWrapMode.NoWrap)
-        self.setStyleSheet("color: #d4d4d4; font-family: 'Consolas'; font-size: 13px; border: none;")
-        self.save_timer = QTimer(); self.save_timer.setSingleShot(True); self.save_timer.timeout.connect(self.auto_save)
+        self.setStyleSheet("color: #d4d4d4 font-family: 'Consolas' font-size: 13px border: none")
+        self.save_timer = QTimer()
+        self.save_timer.setSingleShot(True)
+        self.save_timer.timeout.connect(self.auto_save)
         self.textChanged.connect(lambda: self.save_timer.start(500))
-        self.setStyleSheet("color: #d4d4d4; font-family: 'Consolas'; font-size: 13px; border: none;")
+        self.setStyleSheet("color: #d4d4d4 font-family: 'Consolas' font-size: 13px border: none")
 
     def auto_save(self):
         if self.file_path:
@@ -201,11 +232,18 @@ class CodeEditor(QPlainTextEdit):
         self.plugin_manager.apply_plugin_theme(self)
 
     def contextMenuEvent(self, event):
-        menu = QMenu(self); menu.setStyleSheet("QMenu { background: #252526; color: white; border: 1px solid #454545; }")
-        menu.addAction("Undo", self.undo); menu.addAction("Redo", self.redo); menu.addSeparator()
-        menu.addAction("Cut", self.cut); menu.addAction("Copy", self.copy); menu.addAction("Paste", self.paste); menu.addSeparator()
+        menu = QMenu(self)
+        menu.setStyleSheet("QMenu { background: #252526 color: white border: 1px solid #454545 }")
+        menu.addAction("Undo", self.undo)
+        menu.addAction("Redo", self.redo)
+        menu.addSeparator()
+        menu.addAction("Cut", self.cut)
+        menu.addAction("Copy", self.copy)
+        menu.addAction("Paste", self.paste)
+        menu.addSeparator()
         container = self.parentWidget().parentWidget()
-        menu.addAction("Find", container.find_bar.show_find); menu.addAction("Replace", container.find_bar.show_replace)
+        menu.addAction("Find", container.find_bar.show_find)
+        menu.addAction("Replace", container.find_bar.show_replace)
         menu.exec(event.globalPos())
 
     def line_number_area_width(self):
@@ -215,11 +253,14 @@ class CodeEditor(QPlainTextEdit):
         self.setViewportMargins(self.line_number_area_width(), 0, 0, 0)
 
     def update_line_number_area(self, rect, dy):
-        if dy: self.line_number_area.scroll(0, dy)
-        else: self.line_number_area.update(0, rect.y(), self.line_number_area.width(), rect.height())
+        if dy: 
+            self.line_number_area.scroll(0, dy)
+        else: 
+            self.line_number_area.update(0, rect.y(), self.line_number_area.width(), rect.height())
 
     def resizeEvent(self, event):
-        super().resizeEvent(event); cr = self.contentsRect()
+        super().resizeEvent(event)
+        cr = self.contentsRect()
         self.line_number_area.setGeometry(QRect(cr.left(), cr.top(), self.line_number_area_width(), cr.height()))
 
     def lineNumberAreaPaintEvent(self, event):
@@ -231,7 +272,8 @@ class CodeEditor(QPlainTextEdit):
             painter.setPen(QColor("#606060"))
             painter.drawText(0, top, self.line_number_area_width() - 5, self.fontMetrics().height(),
                              Qt.AlignmentFlag.AlignRight, str(block.blockNumber() + 1))
-            block = block.next(); top += round(self.blockBoundingRect(block).height())
+            block = block.next()
+            top += round(self.blockBoundingRect(block).height())
         self.plugin_manager.apply_plugin_theme(self)
 
 
@@ -239,7 +281,7 @@ class BlockView(QGraphicsView):
     def __init__(self, scene, parent=None):
         super().__init__(scene, parent)
         self.setAcceptDrops(True)
-        self.setStyleSheet("border: none;")
+        self.setStyleSheet("border: none")
         self.setTransformationAnchor(QGraphicsView.ViewportAnchor.AnchorUnderMouse)
         self.setResizeAnchor(QGraphicsView.ViewportAnchor.AnchorUnderMouse)
 
@@ -249,8 +291,11 @@ class BlockView(QGraphicsView):
             self.scale(z, z)
         else: super().wheelEvent(event)
 
-    def dragEnterEvent(self, e): e.accept() if e.mimeData().hasText() else e.ignore()
-    def dragMoveEvent(self, e): e.accept() if e.mimeData().hasText() else e.ignore()
+    def dragEnterEvent(self, e): 
+        e.accept() if e.mimeData().hasText() else e.ignore()
+        
+    def dragMoveEvent(self, e): 
+        e.accept() if e.mimeData().hasText() else e.ignore()
 
     def dropEvent(self, e):
         name = e.mimeData().text()
@@ -292,7 +337,7 @@ class HelpDialog(QDialog):
         super().__init__(parent)
         self.setWindowTitle("Operation Crafter - Help")
         self.setFixedSize(350, 150)
-        self.setStyleSheet("background: #1e1e1e; color: white;")
+        self.setStyleSheet("background: #1e1e1e color: white")
 
         layout = QVBoxLayout(self)
 
@@ -300,7 +345,7 @@ class HelpDialog(QDialog):
         self.msg_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(self.msg_label)
 
-        self.link_label = QLabel('README.md: <a href="https://github.com/RedstoneMaster011/OperationCrafter/blob/master/README.md" style="color: #007acc;">README.MD</a>')
+        self.link_label = QLabel('README.md: <a href="https://github.com/RedstoneMaster011/OperationCrafter/blob/master/README.md" style="color: #007acc">README.MD</a>')
         self.link_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.link_label.setOpenExternalLinks(True)
         layout.addWidget(self.link_label)
@@ -310,12 +355,12 @@ class HelpDialog(QDialog):
         self.close_btn.setFixedWidth(80)
         self.close_btn.setStyleSheet("""
             QPushButton { 
-                background: #444; 
-                color: white; 
-                padding: 5px; 
-                border-radius: 4px; 
+                background: #444 
+                color: white 
+                padding: 5px 
+                border-radius: 4px 
             }
-            QPushButton:hover { background: #555; }
+            QPushButton:hover { background: #555 }
         """)
         self.close_btn.clicked.connect(self.accept)
 
@@ -326,18 +371,27 @@ class HelpDialog(QDialog):
 
 class BlockContainerSidebar(QTreeWidget):
     def __init__(self, parent=None):
-        super().__init__(parent); self.setDragEnabled(True); self.setHeaderHidden(True)
-        self.setStyleSheet("QTreeWidget { color: #ccc; border: none; font-size: 11px; }")
+        super().__init__(parent)
+        self.setDragEnabled(True)
+        self.setHeaderHidden(True)
+        self.setStyleSheet("QTreeWidget { color: #ccc border: none font-size: 11px }")
 
     def startDrag(self, actions):
         item = self.currentItem()
         if item and item.parent():
-            drag = QDrag(self); mime = QMimeData(); mime.setText(item.text(0)); drag.setMimeData(mime); drag.exec(Qt.DropAction.CopyAction)
+            drag = QDrag(self)
+            mime = QMimeData()
+            mime.setText(item.text(0))
+            drag.setMimeData(mime)
+            drag.exec(Qt.DropAction.CopyAction)
 
 
 class IDEWindow(QMainWindow):
     def __init__(self, compiler, parent=None):
-        super().__init__(parent); self.compiler = compiler; self.launcher = OSLauncher(self.compiler.root_dir); self.opened_files = {}
+        super().__init__(parent)
+        self.compiler = compiler
+        self.launcher = OSLauncher(self.compiler.root_dir)
+        self.opened_files = {}
         self.plugin_manager = PluginManager(self.compiler.root_dir)
         self.plugin_manager.load_plugins()
         self.terminal = QTextEdit()
@@ -346,7 +400,8 @@ class IDEWindow(QMainWindow):
 
     def import_and_convert_ogg(self):
         src_path, _ = QFileDialog.getOpenFileName(self, "Import OGG for Beeps", "", "Audio (*.ogg)")
-        if not src_path: return
+        if not src_path: 
+            return
 
         progress = QProgressDialog("Processing Audio... Please wait.", "Cancel", 0, 100, self)
         progress.setWindowTitle("Converting Sound")
@@ -372,7 +427,8 @@ class IDEWindow(QMainWindow):
             total_steps = pitches.shape[1]
 
             for t in range(total_steps):
-                if progress.wasCanceled(): return
+                if progress.wasCanceled(): 
+                    return
 
                 magnitudes_at_t = magnitudes[:, t]
 
@@ -461,7 +517,7 @@ class IDEWindow(QMainWindow):
         msg.setWindowTitle(title)
         msg.setText(message)
         msg.setStyleSheet(
-            "background-color: #2d2d2d; color: white; QPushButton { background: #444; color: white; padding: 5px; }")
+            "background-color: #2d2d2d color: white QPushButton { background: #444 color: white padding: 5px }")
         msg.exec()
         self.plugin_manager.apply_plugin_theme(self)
 
@@ -477,24 +533,43 @@ class IDEWindow(QMainWindow):
         self.setWindowIcon(QApplication.windowIcon())
 
     def setup_ui(self):
-        central = QWidget(); self.setCentralWidget(central); layout = QVBoxLayout(central)
+        central = QWidget()
+        self.setCentralWidget(central)
+        layout = QVBoxLayout(central)
         t_bar = QHBoxLayout()
         for txt, func in [("Build (F5)", self.handle_build), ("Run (F6)", self.handle_run), ("Settings", self.open_settings_gui), ("Plugins", self.open_plugins_gui),
                           ("Help", self.open_help_gui)]:
-            btn = QPushButton(txt); btn.clicked.connect(func); t_bar.addWidget(btn)
-        t_bar.addStretch(); layout.addLayout(t_bar)
+            btn = QPushButton(txt)
+            btn.clicked.connect(func)
+            t_bar.addWidget(btn)
+        t_bar.addStretch()
+        layout.addLayout(t_bar)
 
         self.splitter = QSplitter(Qt.Orientation.Horizontal)
-        self.model = QFileSystemModel(); self.model.setRootPath(self.compiler.project_dir); self.model.setReadOnly(False)
-        self.tree = ProjectTreeView(); self.tree.setModel(self.model); self.tree.setRootIndex(self.model.index(self.compiler.project_dir))
+        self.model = QFileSystemModel()
+        self.model.setRootPath(self.compiler.project_dir)
+        self.model.setReadOnly(False)
+        self.tree = ProjectTreeView()
+        self.tree.setModel(self.model)
+        self.tree.setRootIndex(self.model.index(self.compiler.project_dir))
         for i in range(1, 4): self.tree.setColumnHidden(i, True)
-        self.tree.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu); self.tree.customContextMenuRequested.connect(self.show_context_menu)
+        self.tree.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+        self.tree.customContextMenuRequested.connect(self.show_context_menu)
         self.tree.doubleClicked.connect(self.open_file)
 
-        self.tabs = QTabWidget(); self.tabs.setTabsClosable(True); self.tabs.tabCloseRequested.connect(self.close_tab); self.tabs.tabBar().installEventFilter(self)
-        self.tabs.setStyleSheet("QTabBar::tab { background: #141414; color: #888; padding: 8px 12px; border: 1px solid #252526; } QTabBar::tab:selected { background: #1e1e1e; color: white; border-bottom: 2px solid #007acc; }")
-        self.splitter.addWidget(self.tree); self.splitter.addWidget(self.tabs); self.splitter.setSizes([250, 750]); layout.addWidget(self.splitter)
-        self.terminal = QTextEdit(); self.terminal.setFixedHeight(120); self.terminal.setReadOnly(True); self.terminal.setStyleSheet("background: #000; color: #d4d4d4; font-family: Consolas;");
+        self.tabs = QTabWidget()
+        self.tabs.setTabsClosable(True)
+        self.tabs.tabCloseRequested.connect(self.close_tab)
+        self.tabs.tabBar().installEventFilter(self)
+        self.tabs.setStyleSheet("QTabBar::tab { background: #141414 color: #888 padding: 8px 12px border: 1px solid #252526 } QTabBar::tab:selected { background: #1e1e1e color: white border-bottom: 2px solid #007acc }")
+        self.splitter.addWidget(self.tree)
+        self.splitter.addWidget(self.tabs)
+        self.splitter.setSizes([250, 750])
+        layout.addWidget(self.splitter)
+        self.terminal = QTextEdit()
+        self.terminal.setFixedHeight(120)
+        self.terminal.setReadOnly(True)
+        self.terminal.setStyleSheet("background: #000 color: #d4d4d4 font-family: Consolas")
         layout.addWidget(self.terminal)
         central.setObjectName("main_window_central")
         self.plugin_manager.apply_plugin_theme(self)
@@ -564,7 +639,8 @@ class IDEWindow(QMainWindow):
                     self.show_error("Delete Error", f"Could not delete {path}: {e}")
 
     def rename_item(self, idx):
-        old = self.model.filePath(idx); name, ok = QInputDialog.getText(self, "Rename", "Name:", text=os.path.basename(old))
+        old = self.model.filePath(idx)
+        name, ok = QInputDialog.getText(self, "Rename", "Name:", text=os.path.basename(old))
         if ok and name: os.rename(old, os.path.join(os.path.dirname(old), name))
 
     def show_context_menu(self, pos):
@@ -598,7 +674,10 @@ class IDEWindow(QMainWindow):
             with open(p_file, "r") as f:
                 data = json.load(f)
         except:
-            data = {"name": "Project", "version": "1.0.0"}
+            data = {
+                "name": "Project", 
+                "version": "1.0.0"
+            }
         dlg = SettingsDialog(data, self)
         if dlg.exec():
             new_stuff = dlg.get_data()
@@ -623,7 +702,8 @@ class IDEWindow(QMainWindow):
         except Exception as e:
             self.show_error("Build Error", f"A serious error occurred:\n\n{str(e)}")
             self.terminal.append(f"Error: {str(e)}")
-    def handle_run(self): self.launcher.run(self.compiler.project_dir, self.terminal.append)
+    def handle_run(self): 
+        self.launcher.run(self.compiler.project_dir, self.terminal.append)
 
     def setup_shortcuts(self):
         QShortcut(QKeySequence("F5"), self, self.handle_build)
@@ -632,7 +712,9 @@ class IDEWindow(QMainWindow):
     def close_tab(self, index):
         w = self.tabs.widget(index)
         for p, c in list(self.opened_files.items()):
-            if c == w: c.editor.auto_save(); del self.opened_files[p]; break
+            if c == w: c.editor.auto_save()
+            del self.opened_files[p]
+            break
         self.tabs.removeTab(index)
         self.plugin_manager.apply_plugin_theme(self)
 
@@ -677,31 +759,32 @@ class IDEWindow(QMainWindow):
 
     def eventFilter(self, obj, event):
         if obj == self.tabs.tabBar() and event.type() == QEvent.Type.MouseButtonPress and event.button() == Qt.MouseButton.MiddleButton:
-            self.close_tab(self.tabs.tabBar().tabAt(event.pos())); return True
+            self.close_tab(self.tabs.tabBar().tabAt(event.pos()))
+            return True
         return super().eventFilter(obj, event)
 
 
 class EditorContainer(QWidget):
     def __init__(self, file_path, parent_window, plugin_manager, parent=None):
-        super().__init__(parent);
+        super().__init__(parent)
         self.plugin_manager = plugin_manager
-        self.file_path = file_path;
+        self.file_path = file_path
         self.parent_window = parent_window
-        self.layout = QVBoxLayout(self);
-        self.layout.setContentsMargins(0, 0, 0, 0);
+        self.layout = QVBoxLayout(self)
+        self.layout.setContentsMargins(0, 0, 0, 0)
         self.layout.setSpacing(0)
 
-        self.find_bar = FindReplaceBar(None, self, self);
-        self.find_bar.hide();
+        self.find_bar = FindReplaceBar(None, self, self)
+        self.find_bar.hide()
         self.layout.addWidget(self.find_bar)
         self.stack = QStackedWidget()
 
         self.editor = CodeEditor(file_path, parent_window, plugin_manager)
         self.find_bar.editor = self.editor
 
-        self.visual_root = QWidget();
-        v_layout = QHBoxLayout(self.visual_root);
-        v_layout.setContentsMargins(0, 0, 0, 0);
+        self.visual_root = QWidget()
+        v_layout = QHBoxLayout(self.visual_root)
+        v_layout.setContentsMargins(0, 0, 0, 0)
         v_layout.setSpacing(0)
         self.sidebar = BlockContainerSidebar()
 
@@ -709,11 +792,11 @@ class EditorContainer(QWidget):
         self.canvas_scene.update_callback = self.sync_code_from_blocks
 
         self.canvas_view = BlockView(self.canvas_scene)
-        v_layout.addWidget(self.sidebar, 1);
+        v_layout.addWidget(self.sidebar, 1)
         v_layout.addWidget(self.canvas_view, 4)
 
-        self.stack.addWidget(self.editor);
-        self.stack.addWidget(self.visual_root);
+        self.stack.addWidget(self.editor)
+        self.stack.addWidget(self.visual_root)
         self.layout.addWidget(self.stack)
 
         self.btn_toggle = QPushButton("Visual Blocks", self)
@@ -724,7 +807,8 @@ class EditorContainer(QWidget):
         if not file_path.lower().endswith('.asm'): self.btn_toggle.hide()
 
     def resizeEvent(self, event):
-        super().resizeEvent(event); self.btn_toggle.move(self.width() - 120, 5)
+        super().resizeEvent(event)
+        self.btn_toggle.move(self.width() - 120, 5)
 
     def sync_code_from_blocks(self):
         if self.btn_toggle.isChecked():
@@ -791,5 +875,6 @@ class EditorContainer(QWidget):
 
 class TabButton(QPushButton):
     def __init__(self, text, parent=None):
-        super().__init__(text, parent); self.setFixedSize(16, 16)
-        self.setStyleSheet("QPushButton { color: #666; background: transparent; border: none; font-weight: bold; } QPushButton:hover { color: #bbb; background: #333; }")
+        super().__init__(text, parent)
+        self.setFixedSize(16, 16)
+        self.setStyleSheet("QPushButton { color: #666 background: transparent border: none font-weight: bold } QPushButton:hover { color: #bbb background: #333 }")

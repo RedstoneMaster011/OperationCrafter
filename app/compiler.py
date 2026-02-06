@@ -21,7 +21,8 @@ class Compiler:
             if "build" in dirs: dirs.remove("build")
 
             for file in files:
-                if file == ".projectdata": continue
+                if file == ".projectdata":
+                    continue
 
                 rel_path = os.path.relpath(root, self.project_dir)
                 target_folder = os.path.join(build_dir, rel_path)
@@ -60,5 +61,5 @@ class Compiler:
                     f_out.write(b'\x00' * padding)
 
             return True
-        except Exception as e:
+        except:
             return False

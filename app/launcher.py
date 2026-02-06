@@ -115,12 +115,14 @@ class Launcher(QWidget):
 
     def browse_folder(self):
         path = QFileDialog.getExistingDirectory(self, "Select Parent Folder")
-        if path: self.path_input.setText(path)
+        if path:
+            self.path_input.setText(path)
 
     def create_project_logic(self):
         name = self.name_input.text().strip()
         base_path = self.path_input.text().strip()
-        if not name or not base_path: return
+        if not name or not base_path:
+            return
 
         full_path = os.path.join(base_path, name)
 
