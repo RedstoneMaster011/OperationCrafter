@@ -2,5 +2,5 @@
     "name": "Clear Screen (Graphics)",
     "color": "#8b5cf6",
     "group": "Graphics",
-    "asm_code": "mov ax, 0xA000\nmov es, ax\nxor di, di\nmov al, 0\nmov cx, 64000\nrep stosb\nmov ah, 0x06\nmov al, 0\nmov bh, 0x07\nmov cx, 0\nmov dx, 0x184F\nint 0x10\nmov ah, 0x02\nmov bh, 0\nmov dx, 0\nint 0x10"
+    "asm_code": "mov ax, 0xA000\nmov es, ax\nxor di, di\nmov al, 0\nmov cx, 64000\nrep stosb\nmov ah, 0x06\nmov al, 0\nmov bh, 0x00\nmov cx, 0\nmov dx, 0x184F\nint 0x10\nmov ah, 0x02\nmov bh, 0\nmov dx, 0\nint 0x10"
 }
