@@ -104,6 +104,10 @@ class Launcher(QWidget):
         setup_layout.addWidget(btn_back)
         setup_layout.addStretch()
 
+        bottom_row = QHBoxLayout()
+        bottom_row.addWidget(QLabel(app.metadata.version), alignment=Qt.AlignmentFlag.AlignLeft)
+        bottom_row.addStretch()
+        bottom_row.addWidget(QLabel(app.metadata.copyright), alignment=Qt.AlignmentFlag.AlignRight)
         setup_layout.addLayout(bottom_row)
 
         self.stack.addWidget(self.home_page)
