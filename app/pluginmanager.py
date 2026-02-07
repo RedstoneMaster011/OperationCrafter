@@ -79,7 +79,7 @@ class PluginManager:
                     "version": "-",
                     "author": "-",
                     "description": str(e),
-                    "status": "Error",
+                    "status": "Broken",
                     "path": zip_path
                 })
                 self.failed_to_load = f"Plugin Error in {zip_name}: {e}"
