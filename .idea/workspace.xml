@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 more code cleanup">
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 changes and code clean up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/PluginManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/PluginManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/compiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/compiler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/editor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -540,7 +537,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770415801312</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="v1.1 changes and code clean up">
+      <option name="closed" value="true" />
+      <created>1770424641757</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1770424641757</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -579,6 +584,7 @@
     <MESSAGE value="v1.1 even more code cleanup" />
     <MESSAGE value="v1.1 fixed gui after code cleanup cus it broke." />
     <MESSAGE value="v1.1 more code cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.1 more code cleanup" />
+    <MESSAGE value="v1.1 changes and code clean up" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.1 changes and code clean up" />
   </component>
 </project>

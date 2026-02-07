@@ -16,7 +16,7 @@ from PyQt6.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
                              QFileDialog, QProgressDialog)
 
 import app.metadata
-from .PluginManager import PluginManager, PluginDialog
+from .pluginmanager import PluginManager, PluginDialog
 from .block import BlockCanvas, VisualBlock
 from .emulator import OSLauncher
 from .highlight import SyntaxHighlighter
