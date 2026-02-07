@@ -136,6 +136,8 @@ IfRandomCallFunction: if random is equal to a number, call function
 
 ### Graphics
 
+ChangeColorPallet (Graphics): changes a color ID (0 - 15) to a RGB value (0 - 63)
+
 EnableGraphicsMode: Enables graphics mode so you can use stuff in graphics.
 
 DisableGraphicsMode: Disables graphics mode.
@@ -154,6 +156,8 @@ DrawPicture: Draws a imported compiled picture file. (To import picures, right c
 view and click import/convert .PNG (Raw Data))
 
 ### Display
+
+ChangeColorPallet (Text): changes a color ID (0 - 15) to a RGB value (0 - 63)
 
 PrintToScreen (Text): Prints text to the screen
 

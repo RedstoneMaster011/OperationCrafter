@@ -408,84 +408,6 @@ class IDEWindow(QMainWindow):
         self.terminal.setObjectName("terminal")
         self.plugin_manager.apply_plugin_theme(self)
 
-    def import_and_convert_ogg(self):
-        src_path, _ = QFileDialog.getOpenFileName(self, "Import OGG for Beeps", "", "Audio (*.ogg)")
-        if not src_path: 
-            return
-
-        progress = QProgressDialog("Processing Audio... Please wait.", "Cancel", 0, 100, self)
-        progress.setWindowTitle("Converting Sound")
-        progress.setWindowModality(Qt.WindowModality.WindowModal)
-        progress.show()
-        QApplication.processEvents()
-
-        try:
-            progress.setLabelText("Loading OGG file...")
-            progress.setValue(10)
-            QApplication.processEvents()
-
-            y, sr = librosa.load(src_path, sr=22050, mono=True)
-
-            progress.setLabelText("Analyzing...")
-            progress.setValue(30)
-            QApplication.processEvents()
-
-            hop_length = int(sr * 0.1)
-            pitches, magnitudes = librosa.piptrack(y=y, sr=sr, hop_length=hop_length)
-
-            notes = []
-            total_steps = pitches.shape[1]
-
-            for t in range(total_steps):
-                if progress.wasCanceled(): 
-                    return
-
-                magnitudes_at_t = magnitudes[:, t]
-
-                if magnitudes_at_t.max() > 0.2:
-                    index = magnitudes_at_t.argmax()
-                    pitch = pitches[index, t]
-
-                    if pitch > 1500:
-                        pitch = pitch / 2
-
-                    if 50 < pitch < 4000:
-                        notes.append(int(pitch))
-                    else:
-                        notes.append(pitch * 15)
-                else:
-                    index = magnitudes_at_t.argmax()
-                    pitch = pitches[index, t]
-                    notes.append(pitch * 15)
-
-                if t % 5 == 0:
-                    val = 30 + int((t / total_steps) * 60)
-                    progress.setValue(val)
-                    progress.setLabelText(f"Processing frame {t} of {total_steps}...")
-                    QApplication.processEvents()
-
-            progress.setValue(95)
-
-            base_name = os.path.splitext(os.path.basename(src_path))[0]
-            res_name, ok = QInputDialog.getText(self, "Sound Name", "Enter name for file:", text=base_name + ".asm")
-            if ok and res_name:
-                asm_content = f"dw {len(notes)}\n"
-                for freq in notes:
-                    asm_content += f"dw {freq}, 100\n"
-
-                dest_path = os.path.join(self.compiler.project_dir, res_name)
-                with open(dest_path, "w") as f:
-                    f.write(asm_content)
-
-                self.model.setRootPath(self.compiler.project_dir)
-
-            progress.setValue(100)
-            progress.close()
-
-        except Exception as e:
-            progress.close()
-            self.show_error("Conversion Error", f"Audio processing failed: {str(e)}")
-
     def import_and_convert_png(self):
         src_path, _ = QFileDialog.getOpenFileName(self, "Import PNG for OperationCrafter", "", "Images (*.png)")
         if not src_path:
@@ -499,11 +421,17 @@ class IDEWindow(QMainWindow):
         img = img.convertToFormat(QImage.Format.Format_Indexed8)
 
         base_name = os.path.splitext(os.path.basename(src_path))[0]
-        res_name, ok = QInputDialog.getText(self, "Resource Name", "Enter name for file:", text=base_name+".asm")
+        res_name, ok = QInputDialog.getText(self, "Resource Name", "Enter name for file:", text=base_name + ".asm")
         if not ok or not res_name:
             return
 
         hex_values = []
+        for i in range(256):
+            c = QColor(img.colorTable()[i]) if i < img.colorCount() else QColor(0, 0, 0)
+            hex_values.append(f"0x{c.red() // 4:02x}")
+            hex_values.append(f"0x{c.green() // 4:02x}")
+            hex_values.append(f"0x{c.blue() // 4:02x}")
+
         for y in range(img.height()):
             for x in range(img.width()):
                 hex_values.append(f"0x{img.pixelIndex(x, y):02x}")
@@ -666,7 +594,6 @@ class IDEWindow(QMainWindow):
         menu.addAction("Rename", lambda: self.rename_item(idx))
         menu.addAction("Delete", self.delete_item)
         menu.addAction("Import/Convert .PNG (Raw Data)", self.import_and_convert_png)
-        menu.addAction("Import/Convert .OGG (Beeps)", self.import_and_convert_ogg)
 
         p_act = menu.addAction("Paste")
         p_act.setEnabled(hasattr(self.tree, 'clipboard_path'))

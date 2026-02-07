@@ -2,9 +2,9 @@
     "name": "Draw Picture",
     "color": "#9c27b0",
     "group": "Graphics",
-    "asm_code": "jmp after_draw_{ID}\npicture_data_{ID}:\n%include \"{FILE}\"\nafter_draw_{ID}:\nmov si, picture_data_{ID}\nmov cx, {X}\nmov dx, {Y}\ncall draw_picture",
+    "asm_code": "jmp after_draw_{ID}\n%include \"{FILE}\"\nafter_draw_{ID}:\nmov si, {FILE}_data\nmov dx, 0x03c8\nxor al, al\nout dx, al\ninc dx\nmov cx, 768\n.pal_load_{ID}:\nlodsb\nout dx, al\nloop .pal_load_{ID}\nmov cx, {X}\nmov dx, {Y}\nmov di, [{FILE}_width]\nmov bx, [{FILE}_height]\ncall draw_picture",
     "req_funcs": [
-        "draw_picture:\n    pusha\n    lodsw\n    mov bp, ax\n    lodsw\n    mov bx, ax\n.row_loop:\n    push cx\n    mov di, bp\n.col_loop:\n    lodsb\n    mov ah, 0x0c\n    push bx\n    xor bh, bh\n    int 0x10\n    pop bx\n    inc cx\n    dec di\n    jnz .col_loop\n    pop cx\n    inc dx\n    dec bx\n    jnz .row_loop\n    popa\n    ret"
+        "draw_picture:\n    pusha\n    mov bp, di\n.row_loop:\n    push cx\n    mov di, bp\n.col_loop:\n    lodsb\n    mov ah, 0x0c\n    push bx\n    xor bh, bh\n    int 0x10\n    pop bx\n    inc cx\n    dec di\n    jnz .col_loop\n    pop cx\n    inc dx\n    dec bx\n    jnz .row_loop\n    popa\n    ret"
     ],
     "inputs": [
         { "name": "ID", "default": "1" },

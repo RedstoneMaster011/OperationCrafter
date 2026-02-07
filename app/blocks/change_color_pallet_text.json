@@ -1,0 +1,12 @@
+{
+    "name": "Change Color Palette (Text)",
+    "color": "#ec4899",
+    "group": "Display",
+    "asm_code": "mov dx, 0x03c8\nmov al, {COLOR}\nout dx, al\ninc dx\nmov al, {RED}\nout dx, al\nmov al, {GREEN}\nout dx, al\nmov al, {BLUE}\nout dx, al",
+    "inputs": [
+        { "name": "COLOR", "default": "1" },
+        { "name": "RED", "default": "0" },
+        { "name": "GREEN", "default": "0" },
+        { "name": "BLUE", "default": "63" }
+    ]
+}

@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 changed some formatting">
-      <change beforePath="$PROJECT_DIR$/app/pluginmanager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/pluginmanager.py" afterDir="false" />
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 added more error msgs for more debug">
+      <change afterPath="$PROJECT_DIR$/app/blocks/change_color_pallet_graphics.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/blocks/change_color_pallet_text.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/draw_picture.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/draw_picture.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/play_sound.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/editor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,21 +60,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Batch.build.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lucas/Desktop/Tools/Python/OperationCrafter&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Batch.build.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Lucas/Desktop/Tools/Python/OperationCrafter/app/blocks",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Lucas\Desktop\Tools\Python\OperationCrafter\app\blocks" />
@@ -160,14 +165,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1769741627613</updated>
-    </task>
-    <task id="LOCAL-00001" summary="setup for v1.0">
-      <option name="closed" value="true" />
-      <created>1769797176393</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1769797176393</updated>
     </task>
     <task id="LOCAL-00002" summary="setup for v1.0">
       <option name="closed" value="true" />
@@ -553,7 +550,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770425910975</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="v1.1 added more error msgs for more debug">
+      <option name="closed" value="true" />
+      <created>1770426004178</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1770426004178</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -568,7 +573,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.0" />
     <MESSAGE value="v1.0 bugfixes, and changing codeblocks and additions" />
     <MESSAGE value="v1.0 codeblock additions" />
     <MESSAGE value="v1.0 bugfixes" />
@@ -593,6 +597,7 @@
     <MESSAGE value="v1.1 more code cleanup" />
     <MESSAGE value="v1.1 changes and code clean up" />
     <MESSAGE value="v1.1 changed some formatting" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.1 changed some formatting" />
+    <MESSAGE value="v1.1 added more error msgs for more debug" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.1 added more error msgs for more debug" />
   </component>
 </project>
