@@ -20,6 +20,7 @@ class PluginManager:
         self.loaded_blocks = []
         self.plugin_statuses = []
         self.ui_themes = []
+        self.failed_to_load = ""
 
         if not os.path.exists(self.plugins_dir):
             os.makedirs(self.plugins_dir)
@@ -41,7 +42,7 @@ class PluginManager:
                             with zip_ref.open("ui/colors.json") as f:
                                 self.ui_themes.append(json.load(f))
                         except Exception as te:
-                            print(f"Theme Error in {zip_name}: {te}")
+                            self.failed_to_load = f"Theme Error in {zip_name}: {te}"
 
                     if "plugin.json" in file_list:
                         with zip_ref.open("plugin.json") as f:
@@ -102,6 +103,7 @@ class PluginManager:
 
         if hasattr(window, 'terminal'):
             window.terminal.setStyleSheet("")
+            window.terminal.append(self.failed_to_load)
         if hasattr(window, 'tabs'):
             window.tabs.setStyleSheet("")
 

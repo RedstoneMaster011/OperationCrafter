@@ -9,7 +9,7 @@ class Compiler:
         self.nasm_exe = os.path.join(self.root_dir, "nasm", "nasm.exe")
         self.project_dir = ""
 
-    def compile_to_img(self):
+    def compile_to_img(self, terminal):
         build_dir = os.path.join(self.project_dir, "build")
         if os.path.exists(build_dir):
             shutil.rmtree(build_dir)
@@ -38,7 +38,7 @@ class Compiler:
                     if result.returncode == 0:
                         bin_map[file.lower()] = target_bin
                     else:
-                        print(f"Skipped {file}: {result.stderr}")
+                        terminal.append(f"Skipped {file}: {result.stderr}")
                 else:
                     shutil.copy2(os.path.join(root, file), os.path.join(target_folder, file))
 

@@ -60,6 +60,15 @@ class ProjectTreeView(QTreeView):
         self._rubber_band = None
         self._origin = QPoint()
 
+    def show_error(self, title, message):
+        msg = QMessageBox(self)
+        msg.setIcon(QMessageBox.Icon.Critical)
+        msg.setWindowTitle(title)
+        msg.setText(message)
+        msg.setStyleSheet(
+            "background-color: #2d2d2d color: white QPushButton { background: #444 color: white padding: 5px }")
+        msg.exec()
+
     def mousePressEvent(self, event):
         index = self.indexAt(event.pos())
         if not index.isValid() and event.button() == Qt.MouseButton.LeftButton:
@@ -126,7 +135,8 @@ class ProjectTreeView(QTreeView):
                 target = os.path.join(dest, f"{base}_copy{ext}")
             if os.path.isdir(src): shutil.copytree(src, target)
             else: shutil.copy2(src, target)
-        except Exception as e: print(f"Paste Error: {e}")
+        except Exception as e:
+            self.show_error(f"Paste Error: {e}")
 
 
 class FindReplaceBar(QFrame):
@@ -694,7 +704,7 @@ class IDEWindow(QMainWindow):
             return
 
         try:
-            self.compiler.compile_to_img()
+            self.compiler.compile_to_img(self.terminal)
             self.terminal.append("Build Finished successfully.")
 
         except PermissionError:
@@ -850,7 +860,7 @@ class EditorContainer(QWidget):
             if hasattr(self.parent_window, 'show_error'):
                 self.parent_window.show_error("Sync Error", error_msg)
             else:
-                print(f"CRITICAL ERROR: {error_msg}")
+               self.parent_window.show_error(f"CRITICAL ERROR: {error_msg}")
 
     def refresh_toolbox(self):
         self.sidebar.clear()
