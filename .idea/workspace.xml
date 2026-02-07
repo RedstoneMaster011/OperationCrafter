@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 changes and code clean up">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 changed some formatting">
+      <change beforePath="$PROJECT_DIR$/app/pluginmanager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/pluginmanager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -545,7 +545,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770424641757</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="v1.1 changed some formatting">
+      <option name="closed" value="true" />
+      <created>1770425910975</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1770425910975</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -560,7 +568,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="setup for v1.0" />
     <MESSAGE value="v1.0" />
     <MESSAGE value="v1.0 bugfixes, and changing codeblocks and additions" />
     <MESSAGE value="v1.0 codeblock additions" />
@@ -585,6 +592,7 @@
     <MESSAGE value="v1.1 fixed gui after code cleanup cus it broke." />
     <MESSAGE value="v1.1 more code cleanup" />
     <MESSAGE value="v1.1 changes and code clean up" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.1 changes and code clean up" />
+    <MESSAGE value="v1.1 changed some formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.1 changed some formatting" />
   </component>
 </project>

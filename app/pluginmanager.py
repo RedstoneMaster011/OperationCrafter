@@ -72,6 +72,7 @@ class PluginManager:
                             "status": "Broken",
                             "path": zip_path
                         })
+                        self.failed_to_load = f"Plugin Error in {zip_name}"
             except Exception as e:
                 self.plugin_statuses.append({
                     "name": zip_name,
@@ -81,6 +82,7 @@ class PluginManager:
                     "status": "Error",
                     "path": zip_path
                 })
+                self.failed_to_load = f"Plugin Error in {zip_name}: {e}"
         return self.loaded_blocks
 
     def apply_plugin_theme(self, window):
