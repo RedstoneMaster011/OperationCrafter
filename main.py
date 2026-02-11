@@ -41,6 +41,7 @@ def main():
     if app.styleHints().colorScheme() == Qt.ColorScheme.Light:
         app.setStyle('Fusion')
         app.styleHints().setColorScheme(Qt.ColorScheme.Dark)
+        qdarktheme.load_stylesheet("dark")
 
     icon_path = get_icon_path()
     if icon_path:
