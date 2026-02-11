@@ -18,7 +18,7 @@
 [Plugins](#plugins)\
 [Example Project](#example-project)\
 [More Info](#more-info)\
-[Compile From Source](#compile-from-source)\
+[Run From Source](#run-from-source)\
 [Linux](#linux)
 
 # Creating Workspace
@@ -239,7 +239,7 @@ with them included.\
 https://github.com/netwide-assembler/nasm \
 https://www.qemu.org/
 
-# Compile From Source
+# Run From Source
 
 Download the source code from the repository.
 
@@ -261,7 +261,7 @@ Install all required Python libraries:
 For linux support, You will have to, 1: run from source, 2 install nasm and qemu with command line
 support.
 
-First do all the steps in [[Compile From Source](#compile-from-source)] other then the 
+First do all the steps in [[Run From Source](#run-from-source)] other then the 
 downloading QEMU and NASM part.
 
 then in terminal, run
