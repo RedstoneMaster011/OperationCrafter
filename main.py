@@ -29,7 +29,6 @@ def get_icon_path():
     return None
 
 def main():
-
     if sys.platform == 'win32':
         sys.argv += ['-platform', 'windows:darkmode=2']
 
