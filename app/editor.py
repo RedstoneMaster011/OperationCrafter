@@ -42,9 +42,10 @@ class SettingsDialog(QDialog):
         btns.rejected.connect(self.reject)
         layout.addWidget(btns)
 
-    def get_data(self): return {
-        "name": self.name_input.text(), "version": self.version_input.text()
-    }
+    def get_data(self):
+        return {
+            "name": self.name_input.text(), "version": self.version_input.text()
+        }
 
 class ProjectTreeView(QTreeView):
     def __init__(self, parent=None):
@@ -132,8 +133,10 @@ class ProjectTreeView(QTreeView):
             if os.path.exists(target):
                 base, ext = os.path.splitext(name)
                 target = os.path.join(dest, f"{base}_copy{ext}")
-            if os.path.isdir(src): shutil.copytree(src, target)
-            else: shutil.copy2(src, target)
+            if os.path.isdir(src):
+                shutil.copytree(src, target)
+            else:
+                shutil.copy2(src, target)
         except Exception as e:
             self.show_error(f"Paste Error: {e}")
 
@@ -408,6 +411,42 @@ class IDEWindow(QMainWindow):
 
         self.plugin_manager.apply_plugin_theme(self)
 
+    def handle_export(self):
+        source_path = os.path.join(self.compiler.project_dir, "build", "boot.img")
+
+        if not os.path.exists(source_path):
+            self.show_error("Export Error", "Error: boot.img not found. Run Build first.")
+            return
+
+        p_file = os.path.join(self.compiler.project_dir, ".projectdata")
+        try:
+            with open(p_file, "r") as f:
+                data = json.load(f)
+        except:
+            data = {
+                "name": "Project",
+                "version": "1.0.0"
+            }
+        dlg = SettingsDialog(data, self)
+        new_data = dlg.get_data()
+
+        project_name = new_data["name"]
+        project_version = new_data["version"]
+
+        dest_path, _ = QFileDialog.getSaveFileName(
+            self,
+            "Export Boot Image",
+            os.path.join(os.path.expanduser("~"), f"{project_name}-{project_version}.img"),
+            "Image Files (*.img)"
+        )
+
+        if dest_path:
+            try:
+                shutil.copy2(source_path, dest_path)
+                self.terminal.append(f"Successfully exported.")
+            except Exception as e:
+                self.show_error("Export Error", f"Failed to export file: {str(e)}")
+
     def import_and_convert_png(self):
         src_path, _ = QFileDialog.getOpenFileName(self, "Import PNG for OperationCrafter", "", "Images (*.png)")
         if not src_path:
@@ -475,7 +514,11 @@ class IDEWindow(QMainWindow):
         self.setCentralWidget(central)
         layout = QVBoxLayout(central)
         t_bar = QHBoxLayout()
-        for txt, func in [("Build (F5)", self.handle_build), ("Run (F6)", self.handle_run), ("Settings", self.open_settings_gui), ("Plugins", self.open_plugins_gui),
+        for txt, func in [("Build (F5)", self.handle_build),
+                          ("Run (F6)", self.handle_run),
+                          ("Settings", self.open_settings_gui),
+                          ("Plugins", self.open_plugins_gui),
+                          ("Export (F8)", self.handle_export),
                           ("Help", self.open_help_gui)]:
             btn = QPushButton(txt)
             btn.clicked.connect(func)
@@ -646,6 +689,7 @@ class IDEWindow(QMainWindow):
     def setup_shortcuts(self):
         QShortcut(QKeySequence("F5"), self, self.handle_build)
         QShortcut(QKeySequence("F6"), self, self.handle_run)
+        QShortcut(QKeySequence("F8"), self, self.handle_export)
 
     def close_tab(self, index):
         w = self.tabs.widget(index)

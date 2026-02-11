@@ -33,7 +33,7 @@ class OSLauncher:
             terminal_callback("Error: boot.img not found. Run Build first.")
             return
 
-        terminal_callback("Starting Emulation...")
+        terminal_callback("Starting Emulation.")
 
         if sys.platform == 'win32':
             cmd = [
@@ -44,15 +44,13 @@ class OSLauncher:
             ]
         else:
             cmd = [
-                self.qemu_path,
+                "qemu-system-x86_64"
                 "-drive", f"format=raw,file={img_path}",
                 "-audiodev", "pa,id=snd0",
                 "-machine", "pcspk-audiodev=snd0"
             ]
 
-        executable = cmd[0] if os.path.exists(self.qemu_path) else "qemu-system-x86_64"
-
         try:
-            self.proc = subprocess.Popen([executable] + cmd[1:])
+            self.proc = subprocess.Popen(cmd)
         except Exception as e:
             terminal_callback(f"QEMU failed: {e}")
