@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 fixed requirements.txt">
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 TRUE TESTED LINUX SUPPORT!!!!!!!!!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/compiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/compiler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/emulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/emulator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +85,7 @@
       <command value="goto e" />
     </option>
   </component>
-  <component name="RunManager" selected="Batch.build">
+  <component name="RunManager" selected="Python.main">
     <configuration name="build" type="BatchConfigurationType" factoryName="Batch">
       <module name="OperationCrafter" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -164,22 +160,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1769741627613</updated>
-    </task>
-    <task id="LOCAL-00006" summary="v1.0">
-      <option name="closed" value="true" />
-      <created>1769801355257</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1769801355257</updated>
-    </task>
-    <task id="LOCAL-00007" summary="v1.0">
-      <option name="closed" value="true" />
-      <created>1769801616201</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1769801616201</updated>
     </task>
     <task id="LOCAL-00008" summary="v1.0">
       <option name="closed" value="true" />
@@ -557,7 +537,23 @@
       <option name="project" value="LOCAL" />
       <updated>1770829104301</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="v1.1 TRUE TESTED LINUX SUPPORT!!!!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1770830675344</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1770830675344</updated>
+    </task>
+    <task id="LOCAL-00056" summary="v1.1 TRUE TESTED LINUX SUPPORT!!!!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1770830728307</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1770830728307</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -572,7 +568,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.0 block additions or changes" />
     <MESSAGE value="v1.0 block additions" />
     <MESSAGE value="fixed readme / git_readme folder" />
     <MESSAGE value="v1.1 added codeblocks" />
@@ -597,6 +592,7 @@
     <MESSAGE value="v1.1 changed 1 string." />
     <MESSAGE value="v1.1 well i just realized i sould have support for linux (aka it loads on linux {should}) also made it not look very ugly in light mode on windows." />
     <MESSAGE value="v1.1 fixed requirements.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.1 fixed requirements.txt" />
+    <MESSAGE value="v1.1 TRUE TESTED LINUX SUPPORT!!!!!!!!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.1 TRUE TESTED LINUX SUPPORT!!!!!!!!!!" />
   </component>
 </project>

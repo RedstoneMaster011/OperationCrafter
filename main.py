@@ -31,7 +31,6 @@ def get_icon_path():
 def main():
 
     if sys.platform == 'win32':
-
         sys.argv += ['-platform', 'windows:darkmode=2']
 
         modelid = 'redstone.operation_crafter'
