@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 well i just realized i sould have support for linux (aka it loads on linux {should}) also made it not look very ugly in light mode on windows.">
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 fixed requirements.txt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/compiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/compiler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/emulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/emulator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +89,7 @@
       <command value="goto e" />
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Batch.build">
     <configuration name="build" type="BatchConfigurationType" factoryName="Batch">
       <module name="OperationCrafter" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -160,14 +164,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1769741627613</updated>
-    </task>
-    <task id="LOCAL-00005" summary="v1.0">
-      <option name="closed" value="true" />
-      <created>1769800533762</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1769800533762</updated>
     </task>
     <task id="LOCAL-00006" summary="v1.0">
       <option name="closed" value="true" />
@@ -553,7 +549,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770826469899</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="v1.1 fixed requirements.txt">
+      <option name="closed" value="true" />
+      <created>1770829104300</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1770829104301</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -568,7 +572,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.0 misc" />
     <MESSAGE value="v1.0 block additions or changes" />
     <MESSAGE value="v1.0 block additions" />
     <MESSAGE value="fixed readme / git_readme folder" />
@@ -593,6 +596,7 @@
     <MESSAGE value="v1.1 removed converting sound (sucks, and idc abt it) added 2 new codeblocks, and made converting images to code have FULL RGB (mostly) support instead of like 16 colors (i think?)" />
     <MESSAGE value="v1.1 changed 1 string." />
     <MESSAGE value="v1.1 well i just realized i sould have support for linux (aka it loads on linux {should}) also made it not look very ugly in light mode on windows." />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.1 well i just realized i sould have support for linux (aka it loads on linux {should}) also made it not look very ugly in light mode on windows." />
+    <MESSAGE value="v1.1 fixed requirements.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.1 fixed requirements.txt" />
   </component>
 </project>

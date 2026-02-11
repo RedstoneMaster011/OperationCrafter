@@ -1,13 +1,18 @@
 import os
 import shutil
 import subprocess
+import sys
 
 
 class Compiler:
     def __init__(self, root_dir):
         self.root_dir = root_dir
-        self.nasm_exe = os.path.join(self.root_dir, "nasm", "nasm.exe")
-        self.project_dir = ""
+
+        if sys.platform == 'win32':
+            self.nasm_exe = os.path.join(self.root_dir, "nasm", "nasm.exe")
+            self.project_dir = ""
+        else:
+            self.nasm_exe = "nasm"
 
     def compile_to_img(self, terminal):
         build_dir = os.path.join(self.project_dir, "build")

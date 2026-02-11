@@ -1,10 +1,17 @@
 import os
 import subprocess
+import sys
+
 
 class OSLauncher:
     def __init__(self, root_dir):
         self.root_dir = root_dir
-        self.qemu_path = os.path.abspath(os.path.join(self.root_dir, "qemu", "qemu-system-x86_64.exe"))
+
+        if sys.platform == 'win32':
+            self.qemu_path = os.path.abspath(os.path.join(self.root_dir, "qemu", "qemu-system-x86_64.exe"))
+        else:
+            self.qemu_path = os.path.abspath("qemu-system-x86_64")
+
         self.proc = None
 
     def is_running(self):
@@ -27,12 +34,22 @@ class OSLauncher:
             return
 
         terminal_callback("Starting Emulation...")
-        cmd = [
-            self.qemu_path,
-            "-drive", f"format=raw,file={img_path}",
-            "-audiodev", "dsound,id=snd0",
-            "-machine", "pcspk-audiodev=snd0"
-        ]
+
+        if sys.platform == 'win32':
+            cmd = [
+                self.qemu_path,
+                "-drive", f"format=raw,file={img_path}",
+                "-audiodev", "dsound,id=snd0",
+                "-machine", "pcspk-audiodev=snd0"
+            ]
+        else:
+            cmd = [
+                self.qemu_path,
+                "-drive", f"format=raw,file={img_path}",
+                "-audiodev", "pa,id=snd0",
+                "-machine", "pcspk-audiodev=snd0"
+            ]
+
         executable = cmd[0] if os.path.exists(self.qemu_path) else "qemu-system-x86_64"
 
         try:

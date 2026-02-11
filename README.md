@@ -18,7 +18,8 @@
 [Plugins](#plugins)\
 [Example Project](#example-project)\
 [More Info](#more-info)\
-[Compile From Source](#compile-from-source)
+[Compile From Source](#compile-from-source)\
+[Linux](#linux)
 
 # Creating Workspace
 
@@ -254,3 +255,22 @@ Install all required Python libraries:
    ```bash
    pip install -r requirements.txt
    ```
+
+# Linux
+
+For linux support, You will have to, 1: run from source, 2 install nasm and qemu with command line
+support.
+
+First do all the steps in [[Compile From Source](#compile-from-source)] other then the 
+downloading QEMU and NASM part.
+
+then in terminal, run
+``` bash
+sudo apt-get install qemu-system
+sudo apt install nasm
+```
+
+then run the main.py file.
+``` bash
+python3 main.py
+```
