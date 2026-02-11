@@ -3,7 +3,6 @@ import json
 import os
 import shutil
 
-import librosa
 from PyQt6.QtCore import Qt, QEvent, QTimer, QRect, QPoint, QSize, QMimeData
 from PyQt6.QtGui import (QFileSystemModel, QShortcut, QKeySequence, QPainter,
                          QColor, QTextCursor, QDrag, QImage)
@@ -13,7 +12,7 @@ from PyQt6.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
                              QTabBar, QRubberBand, QPlainTextEdit, QLineEdit,
                              QFrame, QDialog, QFormLayout, QDialogButtonBox,
                              QStackedWidget, QTreeWidget, QTreeWidgetItem, QGraphicsView, QApplication, QLabel,
-                             QFileDialog, QProgressDialog)
+                             QFileDialog)
 
 import app.metadata
 from .pluginmanager import PluginManager, PluginDialog
@@ -406,6 +405,7 @@ class IDEWindow(QMainWindow):
         self.plugin_manager.load_plugins()
         self.terminal = QTextEdit()
         self.terminal.setObjectName("terminal")
+
         self.plugin_manager.apply_plugin_theme(self)
 
     def import_and_convert_png(self):

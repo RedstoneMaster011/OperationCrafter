@@ -2,6 +2,8 @@ import ctypes
 import os
 import sys
 
+import qdarktheme
+from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication
 
@@ -28,10 +30,18 @@ def get_icon_path():
 
 def main():
 
-    modelid = 'redstone.operation_crafter'
-    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(modelid)
+    if sys.platform == 'win32':
+
+        sys.argv += ['-platform', 'windows:darkmode=2']
+
+        modelid = 'redstone.operation_crafter'
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(modelid)
 
     app = QApplication(sys.argv)
+
+    if app.styleHints().colorScheme() == Qt.ColorScheme.Light:
+        app.setStyle('Fusion')
+        app.styleHints().setColorScheme(Qt.ColorScheme.Dark)
 
     icon_path = get_icon_path()
     if icon_path:
@@ -45,6 +55,7 @@ def main():
         root_dir = os.path.dirname(os.path.abspath(__file__))
 
     compiler = Compiler(root_dir)
+
     ide = IDEWindow(compiler)
     launcher = Launcher(ide)
 
