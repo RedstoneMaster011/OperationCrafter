@@ -386,7 +386,16 @@ class BlockContainerSidebar(QTreeWidget):
         super().__init__(parent)
         self.setDragEnabled(True)
         self.setHeaderHidden(True)
-        self.setStyleSheet("QTreeWidget { color: #ccc border: none font-size: 11px }")
+        self.setStyleSheet("""
+                    QTreeWidget { 
+                        border: none; 
+                        font-family: 'Segoe UI', sans-serif;
+                        font-size: 10px; 
+                    }
+                    QTreeWidget::item {
+                        padding: 0px;
+                    }
+                """)
 
     def startDrag(self, actions):
         item = self.currentItem()

@@ -22,7 +22,6 @@ class VisualBlock(QGraphicsRectItem):
         self.is_vibrant = False
         self.input_widgets = {}
         self._is_updating = False
-        self.vars = []
 
         h = max(BLOCK_HEIGHT, 30 + (len(self.input_list) * 25))
         super().__init__(0, 0, BLOCK_WIDTH, h)
@@ -54,9 +53,10 @@ class VisualBlock(QGraphicsRectItem):
                                     background: #1a1a1a; 
                                     color: #00ffcc; 
                                     border: 1px solid #444; 
-                                    font-size: 10px; 
+                                    font-size: 13px; 
                                     font-family: 'Consolas';
                                 """)
+
             edit.textChanged.connect(self.on_input_changed)
 
             proxy = QGraphicsProxyWidget(self)
