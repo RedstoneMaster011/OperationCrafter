@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 VARS!!!!, (at least worked in my testing)">
-      <change afterPath="$PROJECT_DIR$/app/blocks/add_var_int.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/blocks/convert_int_to_string.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blocks/set_var_int.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/set_var_int.json" afterDir="false" />
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 MORE VARS!!!">
+      <change beforePath="$PROJECT_DIR$/app/block.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/block.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,14 +162,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1769741627613</updated>
-    </task>
-    <task id="LOCAL-00015" summary="v1.0 codeblock additions">
-      <option name="closed" value="true" />
-      <created>1769809581756</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1769809581756</updated>
     </task>
     <task id="LOCAL-00016" summary="v1.0 bugfixes">
       <option name="closed" value="true" />
@@ -558,7 +547,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770912742987</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="v1.1 MORE VARS!!!">
+      <option name="closed" value="true" />
+      <created>1770913950618</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1770913950618</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -573,7 +570,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.1 added version to title of editor.py" />
     <MESSAGE value="v1.1 changed version" />
     <MESSAGE value="v1.1 new codeblock!" />
     <MESSAGE value="v1.1 codeblock fixes" />
@@ -598,6 +594,7 @@
     <MESSAGE value="v1.1 oops, broke linux emulating. reverted." />
     <MESSAGE value="v1.1 oops, broke linux emulating (again). reverted. fully" />
     <MESSAGE value="v1.1 VARS!!!!, (at least worked in my testing)" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.1 VARS!!!!, (at least worked in my testing)" />
+    <MESSAGE value="v1.1 MORE VARS!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.1 MORE VARS!!!" />
   </component>
 </project>

@@ -369,6 +369,21 @@ class BlockCanvas(QGraphicsScene):
                 else:
                     split_code[inde - 1] = line.replace(f"'%var[{var}]'", var)
 
+            if "%var[" in line and "'%var[" not in line:
+                if "]" in line and "]'" not in line:
+                    start = line.index("%var[")
+                    end = line.index("]")
+                    var = line[start + 5 : end]
+                else:
+                    var = "0"
+            else:
+                var = "0"
+            if "0" not in var:
+                if "db" in line or "dw" in line:
+                    split_code[inde-1] = line.replace(f"%var[{var}]", var).replace("db", "equ").replace("dw", "equ").replace(", 0", "")
+                else:
+                    split_code[inde - 1] = line.replace(f"%var[{var}]", var)
+
         full_code = "\n".join(split_code)
 
         return full_code
