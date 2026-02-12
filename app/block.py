@@ -22,6 +22,7 @@ class VisualBlock(QGraphicsRectItem):
         self.is_vibrant = False
         self.input_widgets = {}
         self._is_updating = False
+        self.vars = []
 
         h = max(BLOCK_HEIGHT, 30 + (len(self.input_list) * 25))
         super().__init__(0, 0, BLOCK_WIDTH, h)
@@ -239,8 +240,14 @@ class VisualBlock(QGraphicsRectItem):
             return f"{label_text}:"
 
         code = self.asm_template
+        self.vars = []
+
         for key, widget in self.input_widgets.items():
-            code = code.replace(f"{{{key}}}", widget.text())
+
+            current_text = widget.text()
+
+            text_input = current_text
+            code = code.replace(f"{{{key}}}", text_input)
 
         indent = ""
         scene = self.scene()
@@ -339,6 +346,30 @@ class BlockCanvas(QGraphicsScene):
         full_code = "\n".join(code_output)
         if helpers:
             full_code += "\n\n" + "\n".join(helpers)
+
+        code_string = full_code
+        inde = 0
+
+        split_code = code_string.split("\n")
+        for line in split_code:
+            inde += 1
+
+            if "'%var[" in line:
+                if "]'" in line:
+                    start = line.index("'%var[")
+                    end = line.index("]'")
+                    var = line[start + 6 : end]
+                else:
+                    var = "0"
+            else:
+                var = "0"
+            if "0" not in var:
+                if "db" in line or "dw" in line:
+                    split_code[inde-1] = line.replace(f"'%var[{var}]'", var).replace("db", "equ").replace("dw", "equ").replace(", 0", "")
+                else:
+                    split_code[inde - 1] = line.replace(f"'%var[{var}]'", var)
+
+        full_code = "\n".join(split_code)
 
         return full_code
 

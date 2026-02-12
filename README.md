@@ -98,6 +98,9 @@ Blocks connected to the Start block will be coded. Blocks not connected will not
 The blocks will change to a darker or lighter color when connected to
 the start block.
 
+In any input of a block (other then setting var blocks) do "%var[<varname>]" you can instead have it
+use a var instead!
+
 If the block has input "ID", then thats the ID of the block, every time you use that block in same file, change it
 so dont have dupe ID's for codeblocks in 1 file.
 
