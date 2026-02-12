@@ -116,6 +116,20 @@ The Help button is a help button.
 
 # Blocks
 
+### Logic
+
+SetVar (Text): Sets a var to a string
+
+SetVar (Int): Sets a var to a int
+
+SetVar Global (Int): Sets a global var to a int
+
+SetVar Global (String): Sets a global var to a string
+
+ImportGlobalVar: Imports a global var to a file
+
+IntToString: Converts a int var into a string var
+
 ### Core
 
 Bootloader: Handles the bootloader side (main.asm is your bootloader; this handles all the code other than the registry).
