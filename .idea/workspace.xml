@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 simple file Exporting!" />
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 oops, broke linux emulating. reverted." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -160,14 +160,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1769741627613</updated>
-    </task>
-    <task id="LOCAL-00012" summary="v1.0 codeblock additions">
-      <option name="closed" value="true" />
-      <created>1769808795362</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1769808795362</updated>
     </task>
     <task id="LOCAL-00013" summary="v1.0 codeblock additions">
       <option name="closed" value="true" />
@@ -553,7 +545,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770848598483</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="v1.1 oops, broke linux emulating. reverted.">
+      <option name="closed" value="true" />
+      <created>1770848994480</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1770848994480</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -568,7 +568,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.1 changed print_text_graphics.json to have dif vars as print_text.json" />
     <MESSAGE value="v1.1 fixed clear_screen_graphics.json to clear graphics text too." />
     <MESSAGE value="v1.1 added metadata.py and version and copyright to launcher.py" />
     <MESSAGE value="v1.1 added version to title of editor.py" />
@@ -593,6 +592,7 @@
     <MESSAGE value="v1.1 fixed colors (again.)" />
     <MESSAGE value="v1.1 1 line change." />
     <MESSAGE value="v1.1 simple file Exporting!" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.1 simple file Exporting!" />
+    <MESSAGE value="v1.1 oops, broke linux emulating. reverted." />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.1 oops, broke linux emulating. reverted." />
   </component>
 </project>
