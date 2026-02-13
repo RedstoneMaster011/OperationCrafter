@@ -282,6 +282,9 @@ terminal in the app's directory and run then it will run!
 
 ``` bash
 chmod +x OperationCrafter qemu/qemu-system-x86_64 nasm/nasm
+
+# or if the file name is OperationCrafter-Linux then do (v1.2 will be named this)
+chmod +x OperationCrafter-Linux qemu/qemu-system-x86_64 nasm/nasm
 ``` 
 
 ### Run from source for linux
@@ -298,7 +301,7 @@ sudo apt install nasm
 then copy them from where they downloaded into them into their folders
 
 ``` bash
-    #help coping them run these after install to copy them to desktop
+    # help coping them run these after install to copy them to desktop
     
 cp /usr/bin/nasm ~/Desktop/
 chmod +x ~/Desktop/nasm

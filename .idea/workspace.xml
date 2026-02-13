@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.2 changed metadata to 1.2-DEV and forgot to say max picture size 80x80 (about)" />
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.2 changed gitgore">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,12 +66,13 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lucas/Desktop/Tools/Python/OperationCrafter/plugins&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lucas/Desktop/Tools/Python/OperationCrafter/Official-Plugins&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Lucas\Desktop\Tools\Python\OperationCrafter\Official-Plugins" />
       <recent name="C:\Users\Lucas\Desktop\Tools\Python\OperationCrafter\plugins" />
       <recent name="C:\Users\Lucas\Desktop\Tools\Python\OperationCrafter\app\blocks" />
       <recent name="C:\Users\Lucas\Desktop\Tools\Python\OperationCrafter" />
@@ -161,14 +164,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1769741627613</updated>
-    </task>
-    <task id="LOCAL-00023" summary="v1.0 block additions">
-      <option name="closed" value="true" />
-      <created>1769821178149</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1769821178149</updated>
     </task>
     <task id="LOCAL-00024" summary="fixed readme / git_readme folder">
       <option name="closed" value="true" />
@@ -554,7 +549,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770989156535</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="v1.2 added a Official-Plugins folder to have any Official plugins people make (aka me).">
+      <option name="closed" value="true" />
+      <created>1770989318769</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1770989318769</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -569,7 +572,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.1 code cleanup (very much needed)" />
     <MESSAGE value="v1.1 even more code cleanup" />
     <MESSAGE value="v1.1 fixed gui after code cleanup cus it broke." />
     <MESSAGE value="v1.1 more code cleanup" />
@@ -594,6 +596,7 @@
     <MESSAGE value="v1.1 better linux support" />
     <MESSAGE value="v1.1 RELEASED!" />
     <MESSAGE value="v1.2 changed metadata to 1.2-DEV and forgot to say max picture size 80x80 (about)" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.2 changed metadata to 1.2-DEV and forgot to say max picture size 80x80 (about)" />
+    <MESSAGE value="v1.2 added a Official-Plugins folder to have any Official plugins people make (aka me)." />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.2 added a Official-Plugins folder to have any Official plugins people make (aka me)." />
   </component>
 </project>
