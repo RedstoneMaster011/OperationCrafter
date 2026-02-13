@@ -171,7 +171,7 @@ DrawRectangle: Sets a selection of pixels to a color (colors are 0 - 15).
 PrintToScreen (Graphics): Prints text to the screen
 
 DrawPicture: Draws a imported compiled picture file. (To import picures, right click tree
-view and click import/convert .PNG (Raw Data))
+view and click import/convert .PNG (Raw Data) MAX 80x80)
 
 ### Display
 
