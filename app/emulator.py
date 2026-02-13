@@ -10,7 +10,7 @@ class OSLauncher:
         if sys.platform == 'win32':
             self.qemu_path = os.path.abspath(os.path.join(self.root_dir, "qemu", "qemu-system-x86_64.exe"))
         else:
-            self.qemu_path = os.path.abspath("qemu-system-x86_64")
+            self.qemu_path = os.path.abspath(os.path.join(self.root_dir, "qemu", "qemu-system-x86_64"))
 
         self.proc = None
 
@@ -51,9 +51,7 @@ class OSLauncher:
                 "-machine", "pcspk-audiodev=snd0"
             ]
 
-        executable = cmd[0] if os.path.exists(self.qemu_path) else "qemu-system-x86_64"
-
         try:
-            self.proc = subprocess.Popen([executable] + cmd[1:])
+            self.proc = subprocess.Popen(cmd)
         except Exception as e:
             terminal_callback(f"QEMU failed: {e}")

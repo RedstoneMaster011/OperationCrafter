@@ -12,7 +12,7 @@ class Compiler:
             self.nasm_exe = os.path.join(self.root_dir, "nasm", "nasm.exe")
             self.project_dir = ""
         else:
-            self.nasm_exe = "nasm"
+            self.nasm_exe = os.path.join(self.root_dir, "nasm", "nasm")
 
     def compile_to_img(self, terminal):
         build_dir = os.path.join(self.project_dir, "build")

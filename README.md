@@ -275,8 +275,9 @@ Install all required Python libraries:
 
 # Linux
 
-For linux support, You will have to, 1: run from source, 2 install nasm and qemu with command line
-support.
+the release will have a already compiled app!
+
+### Run from source for linux
 
 First do all the steps in [[Run From Source](#run-from-source)] other then the 
 downloading QEMU and NASM part.
@@ -285,6 +286,18 @@ then in terminal, run
 ``` bash
 sudo apt-get install qemu-system
 sudo apt install nasm
+```
+
+then copy them from where they downloaded into them into their folders
+
+``` bash
+    #help coping them run these after install to copy them to desktop
+    
+cp /usr/bin/nasm ~/Desktop/
+chmod +x ~/Desktop/nasm
+
+cp /usr/bin/qemu-system-x86_64 ~/Desktop/
+chmod +x ~/Desktop/qemu
 ```
 
 then run the main.py file.
