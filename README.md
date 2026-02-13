@@ -275,7 +275,13 @@ Install all required Python libraries:
 
 # Linux
 
-the release will have a already compiled app!
+The release will have a already compiled app! yYou will have to make them a executable. Open 
+terminal in the app's directory and run then it will run! 
+(version 1.1+ will have linux support)
+
+``` bash
+chmod +x OperationCrafter qemu/qemu-system-x86_64 nasm/nasm
+``` 
 
 ### Run from source for linux
 

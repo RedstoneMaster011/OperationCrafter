@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 some random changes">
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.1 better linux support">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/compiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/compiler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/emulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/emulator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,14 +163,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1769741627613</updated>
-    </task>
-    <task id="LOCAL-00019" summary="v1.0 misc">
-      <option name="closed" value="true" />
-      <created>1769818041264</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1769818041264</updated>
     </task>
     <task id="LOCAL-00020" summary="v1.0 block additions">
       <option name="closed" value="true" />
@@ -559,7 +548,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770920814981</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="v1.1 better linux support">
+      <option name="closed" value="true" />
+      <created>1770982846480</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1770982846481</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -574,7 +571,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.1 changed default sector size to 32 instead of 2" />
     <MESSAGE value="v1.1 changed old blocks, and added a new block" />
     <MESSAGE value="v1.1 changed play sound and import sound to be slighty better" />
     <MESSAGE value="v1.1 code cleanup (very much needed)" />
@@ -599,6 +595,7 @@
     <MESSAGE value="v1.1 var fixes" />
     <MESSAGE value="v1.1 more var blocks" />
     <MESSAGE value="v1.1 some random changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.1 some random changes" />
+    <MESSAGE value="v1.1 better linux support" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.1 better linux support" />
   </component>
 </project>
