@@ -1,0 +1,12 @@
+{
+    "name": "Store In Registry Slot",
+    "color": "#ffcc00",
+    "group": "Variables",
+    "asm_code": "mov si, {LOCAL_VAR}\nmov di, 0x2000\nadd di, {SLOT}\n.copy_{ID}:\nlodsb\nstosb\nor al, al\njnz .copy_{ID}",
+    "inputs": [
+        { "name": "ID", "default": "1" },
+        { "name": "LOCAL_VAR", "default": "my_var" },
+        { "name": "SLOT", "default": "0" }
+    ],
+    "req_funcs": []
+}

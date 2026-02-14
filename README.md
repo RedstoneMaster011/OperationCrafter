@@ -118,17 +118,19 @@ The Help button is a help button.
 
 # Blocks
 
-### Logic
+### Varables
+
+AddVarInt: Increments a int var by a amount
 
 SetVar (Text): Sets a var to a string
 
 SetVar (Int): Sets a var to a int
 
-SetVar Global (Int): Sets a global var to a int
+StoreRegistrySlot: stores a var in a slot in the registry to allow vars to be global
 
-SetVar Global (String): Sets a global var to a string
+LoadRegistrySlot: loads a var from a slot in the registry to allow vars to be global
 
-ImportGlobalVar: Imports a global var to a file
+### Logic
 
 IntToString: Converts a int var into a string var
 

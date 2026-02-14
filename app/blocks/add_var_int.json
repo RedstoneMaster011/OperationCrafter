@@ -2,7 +2,7 @@
     "name": "Add Var (Int)",
     "color": "#a4a832",
     "asm_code": "add byte [{VAR}], {VALUE}",
-    "group": "Logic",
+    "group": "Variables",
     "inputs": [
         {
             "name": "VAR",

@@ -2,7 +2,7 @@
     "name": "Set Var (Int)",
     "color": "#a4a832",
     "asm_code": "{VAR} db {VALUE}\nmov si, {VAR}",
-    "group": "Logic",
+    "group": "Variables",
     "inputs": [
         {
             "name": "VAR",
