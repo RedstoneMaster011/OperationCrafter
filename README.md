@@ -289,10 +289,10 @@ The release will have a already compiled app! yYou will have to make them a exec
 terminal in the app's directory and run then it will run!
 
 ``` bash
-chmod +x OperationCrafter qemu/qemu-system-x86_64 nasm/nasm
-
-# or if the file name is OperationCrafter-Linux then do (v1.2 will be named this)
 chmod +x OperationCrafter-Linux qemu/qemu-system-x86_64 nasm/nasm
+
+# or if version is pre 1.2
+chmod +x OperationCrafter qemu/qemu-system-x86_64 nasm/nasm
 ``` 
 
 ### Run from source for linux
