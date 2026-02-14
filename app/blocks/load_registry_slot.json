@@ -2,7 +2,7 @@
     "name": "Load Registry Slot",
     "color": "#ffcc00",
     "group": "Variables",
-    "asm_code": "jmp after_load_{ID}\n{NEW_VAR} times 50 db 0\nafter_load_{ID}:\nmov si, 0x2000\nadd si, {SLOT}\nmov di, {NEW_VAR}\n.pull_{ID}:\nlodsb\nstosb\nor al, al\njnz .pull_{ID}",
+    "asm_code": "jmp .after_load_{ID}\n.{NEW_VAR} times 50 db 0\n.after_load_{ID}:\nmov si, 0x2000\nadd si, {SLOT}\nmov di, .{NEW_VAR}\n.pull_{ID}:\nlodsb\nstosb\nor al, al\njnz .pull_{ID}",
     "inputs": [
         { "name": "ID", "default": "1" },
         { "name": "SLOT", "default": "0" },

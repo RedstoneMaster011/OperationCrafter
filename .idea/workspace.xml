@@ -4,8 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.2 changed README.md">
-      <change beforePath="$PROJECT_DIR$/app/metadata.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/metadata.py" afterDir="false" />
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.3 changed metadata to 1.3-DEV">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/block.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/block.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/add_var_int.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/add_var_int.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/convert_int_to_string.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/convert_int_to_string.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/draw_picture.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/draw_picture.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/draw_rectangle.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/draw_rectangle.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/load_registry_slot.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/load_registry_slot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/print_text.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/print_text.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/print_text_graphics.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/print_text_graphics.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/set_var_int.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/set_var_int.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/set_var_text.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/set_var_text.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/store_registry_slot.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/store_registry_slot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/wait_for_key_press.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/wait_for_key_press.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +99,7 @@
       <command value="goto e" />
     </option>
   </component>
-  <component name="RunManager" selected="Batch.build">
+  <component name="RunManager" selected="Python.main">
     <configuration name="build" type="BatchConfigurationType" factoryName="Batch">
       <module name="OperationCrafter" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -164,14 +176,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1769741627613</updated>
-    </task>
-    <task id="LOCAL-00034" summary="v1.1 fixed clear_screen_graphics.json to clear graphics text too.">
-      <option name="closed" value="true" />
-      <created>1770340239708</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1770340239708</updated>
     </task>
     <task id="LOCAL-00035" summary="v1.1 added metadata.py and version and copyright to launcher.py">
       <option name="closed" value="true" />
@@ -557,7 +561,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771100708421</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="v1.3 changed metadata to 1.3-DEV">
+      <option name="closed" value="true" />
+      <created>1771101051154</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1771101051154</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -572,7 +584,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.1 changed 1 string." />
     <MESSAGE value="v1.1 well i just realized i sould have support for linux (aka it loads on linux {should}) also made it not look very ugly in light mode on windows." />
     <MESSAGE value="v1.1 fixed requirements.txt" />
     <MESSAGE value="v1.1 TRUE TESTED LINUX SUPPORT!!!!!!!!!!" />
@@ -597,6 +608,7 @@
     <MESSAGE value="v1.2 moved to var tab" />
     <MESSAGE value="v1.2 changed metadata to 1.2-RELEASE" />
     <MESSAGE value="v1.2 changed README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.2 changed README.md" />
+    <MESSAGE value="v1.3 changed metadata to 1.3-DEV" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.3 changed metadata to 1.3-DEV" />
   </component>
 </project>
