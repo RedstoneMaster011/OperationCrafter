@@ -2,7 +2,7 @@
     "name": "Print to Screen (Text)",
     "color": "#007acc",
     "group": "Display",
-    "asm_code": "mov si, .msg_{ID}\nmov bl, {COLOR}\ncall .print_string\njmp .after_{ID}\nmsg_{ID} db '{TEXT}', 0\nafter_{ID}:",
+    "asm_code": "mov si, msg_{ID}\nmov bl, {COLOR}\ncall .print_string\njmp .after_{ID}\nmsg_{ID} db '{TEXT}', 0\n.after_{ID}:",
     "inputs": [
         {
             "name": "ID",
