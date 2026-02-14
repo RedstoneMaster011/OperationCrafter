@@ -2,8 +2,9 @@
     "name": "Import Var",
     "color": "#a4a832",
     "group": "Logic",
+    "asm_code": "",
     "req_funcs": [
-        "%include {FILE}"
+        "%include '{FILE}'"
     ],
     "inputs": [
         {
