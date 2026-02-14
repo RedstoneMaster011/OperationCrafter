@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.2 moved to var tab" />
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.2 changed README.md">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +87,7 @@
       <command value="goto e" />
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Batch.build">
     <configuration name="build" type="BatchConfigurationType" factoryName="Batch">
       <module name="OperationCrafter" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -162,14 +164,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1769741627613</updated>
-    </task>
-    <task id="LOCAL-00031" summary="v1.1 added codeblocks">
-      <option name="closed" value="true" />
-      <created>1770337830547</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1770337830547</updated>
     </task>
     <task id="LOCAL-00032" summary="v1.1 added codeblocks">
       <option name="closed" value="true" />
@@ -555,7 +549,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771098822584</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="v1.2 changed README.md">
+      <option name="closed" value="true" />
+      <created>1771099107253</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1771099107253</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -570,7 +572,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.1 added more error msgs for more debug" />
     <MESSAGE value="v1.1 removed converting sound (sucks, and idc abt it) added 2 new codeblocks, and made converting images to code have FULL RGB (mostly) support instead of like 16 colors (i think?)" />
     <MESSAGE value="v1.1 changed 1 string." />
     <MESSAGE value="v1.1 well i just realized i sould have support for linux (aka it loads on linux {should}) also made it not look very ugly in light mode on windows." />
@@ -595,6 +596,7 @@
     <MESSAGE value="v1.2 removed global vars (broken i forgot to test them sadly) now you can just import all vars from file." />
     <MESSAGE value="v1.2 OKAY CHANGED VARS AND GLOBAL VARS (registrys) NOW WORK TESTED VARS WORK I THINK FULLY." />
     <MESSAGE value="v1.2 moved to var tab" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.2 moved to var tab" />
+    <MESSAGE value="v1.2 changed README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.2 changed README.md" />
   </component>
 </project>
