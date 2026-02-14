@@ -380,9 +380,9 @@ class BlockCanvas(QGraphicsScene):
                 var = "0"
             if "0" not in var:
                 if "db" in line or "dw" in line:
-                    split_code[inde-1] = line.replace(f"%var[{var}]", "."+var).replace("db", "equ").replace("dw", "equ").replace(", 0", "")
+                    split_code[inde-1] = line.replace(f"%var[{var}]", var).replace("db", "equ").replace("dw", "equ").replace(", 0", "")
                 else:
-                    split_code[inde - 1] = line.replace(f"%var[{var}]", "."+var)
+                    split_code[inde - 1] = line.replace(f"%var[{var}]", var)
 
         full_code = "\n".join(split_code)
 
