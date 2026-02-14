@@ -1,0 +1,14 @@
+{
+    "name": "Import Var",
+    "color": "#a4a832",
+    "group": "Logic",
+    "req_funcs": [
+        "%include {FILE}"
+    ],
+    "inputs": [
+        {
+            "name": "FILE",
+            "default": "vars.asm"
+        }
+    ]
+}
