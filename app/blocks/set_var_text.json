@@ -1,7 +1,7 @@
 {
     "name": "Set Var (Text)",
     "color": "#a4a832",
-    "asm_code": ".{VAR} db '{VALUE}', 0\nmov si, .{VAR}",
+    "asm_code": "{VAR} db '{VALUE}', 0\nmov si, {VAR}",
     "group": "Variables",
     "inputs": [
         {

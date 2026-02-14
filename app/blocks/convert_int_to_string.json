@@ -2,12 +2,12 @@
     "name": "Int to String",
     "color": "#ff9800",
     "group": "Variables",
-    "asm_code": ".{OUTPUT_VAR} db '', 0\nmov si, .{OUTPUT_VAR}\nmov al, [.{INPUT_VAR}]\nmov ah, 0\nmov di, .{OUTPUT_VAR}\ncall .int_to_string\nmov si, .{OUTPUT_VAR}",
+    "asm_code": "{OUTPUT_VAR} db '', 0\nmov si, {OUTPUT_VAR}\nmov al, [{INPUT_VAR}]\nmov ah, 0\nmov di, {OUTPUT_VAR}\ncall int_to_string\nmov si, {OUTPUT_VAR}",
     "inputs": [
-        {
-            "name": "ID",
-            "default": "1"
-        },
+
+
+
+
         {
             "name": "INPUT_VAR",
             "default": "my_int"
@@ -18,6 +18,6 @@
         }
     ],
     "req_funcs": [
-        ".int_to_string_{ID}:\n    pusha\n    mov bx, 10\n    add di, 2\n    mov byte [di+1], 0\n.clean:\n    mov byte [di], ' '\n    dec di\n    cmp di, .{OUTPUT_VAR}\n    jge .clean\n    add di, 2\n.loop:\n    xor dx, dx\n    div bx\n    add dl, '0'\n    mov [di], dl\n    dec di\n    or ax, ax\n    jnz .loop\n    popa\n    ret"
+        "int_to_string:\n    pusha\n    mov bx, 10\n    add di, 2\n    mov byte [di+1], 0\n.clean:\n    mov byte [di], ' '\n    dec di\n    cmp di, {OUTPUT_VAR}\n    jge .clean\n    add di, 2\n.loop:\n    xor dx, dx\n    div bx\n    add dl, '0'\n    mov [di], dl\n    dec di\n    or ax, ax\n    jnz .loop\n    popa\n    ret"
     ]
 }

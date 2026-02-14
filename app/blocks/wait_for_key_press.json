@@ -2,9 +2,9 @@
     "name": "Wait for Specific Key",
     "color": "#10b981",
     "group": "Input",
-    "asm_code": "mov bl, {KEY_CODE}\ncall .wait_for_key_func",
+    "asm_code": "mov bl, {KEY_CODE}\ncall wait_for_key_func",
     "req_funcs": [
-        ".wait_for_key_func:\n    mov ah, 0x00\n    int 0x16\n    cmp al, bl\n    jne .wait_for_key_func\n    ret"
+        "wait_for_key_func:\n    mov ah, 0x00\n    int 0x16\n    cmp al, bl\n    jne wait_for_key_func\n    ret"
     ],
     "inputs": [
         {"name": "KEY_CODE", "default": "13"}
