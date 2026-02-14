@@ -1,7 +1,7 @@
 {
     "name": "Int to String",
     "color": "#ff9800",
-    "group": "Logic",
+    "group": "Variables",
     "asm_code": "{OUTPUT_VAR} db '', 0\nmov si, {OUTPUT_VAR}\nmov al, [{INPUT_VAR}]\nmov ah, 0\nmov di, {OUTPUT_VAR}\ncall int_to_string\nmov si, {OUTPUT_VAR}",
     "inputs": [
         {
