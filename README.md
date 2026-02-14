@@ -245,6 +245,10 @@ they can do right now.
 You will need to know how to use x86 Assembly for code blocks.
 [[TestPlugin.zip](git_readme/TemplatePlugins/TestPlugin.zip)]
 
+You can submit Plugins to be added to the Official List (create a issue with your plugin,
+what it does, and ill try and check it out, and if i think its good, i can add it to the 
+Official List)
+
 # Example Project
 
 Here's an example project to help you start out.

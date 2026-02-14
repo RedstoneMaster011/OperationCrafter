@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.2 removed global vars (broken i forgot to test them sadly) now you can just import all vars from file.">
-      <change afterPath="$PROJECT_DIR$/app/blocks/load_registry_slot.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/blocks/store_registry_slot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blocks/import_var.json" beforeDir="false" />
-    </list>
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.2 moved to var tab" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -167,30 +162,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1769741627613</updated>
-    </task>
-    <task id="LOCAL-00028" summary="v1.1 added codeblocks">
-      <option name="closed" value="true" />
-      <created>1770337373000</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1770337373000</updated>
-    </task>
-    <task id="LOCAL-00029" summary="v1.1 added codeblocks">
-      <option name="closed" value="true" />
-      <created>1770337424927</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1770337424927</updated>
-    </task>
-    <task id="LOCAL-00030" summary="v1.1 added codeblocks">
-      <option name="closed" value="true" />
-      <created>1770337483719</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1770337483719</updated>
     </task>
     <task id="LOCAL-00031" summary="v1.1 added codeblocks">
       <option name="closed" value="true" />
@@ -560,7 +531,31 @@
       <option name="project" value="LOCAL" />
       <updated>1771096792139</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="v1.2 OKAY CHANGED VARS AND GLOBAL VARS (registrys) NOW WORK TESTED VARS WORK I THINK FULLY.">
+      <option name="closed" value="true" />
+      <created>1771098723839</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1771098723839</updated>
+    </task>
+    <task id="LOCAL-00078" summary="v1.2 OKAY CHANGED VARS AND GLOBAL VARS (registrys) NOW WORK TESTED VARS WORK I THINK FULLY.">
+      <option name="closed" value="true" />
+      <created>1771098744531</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1771098744531</updated>
+    </task>
+    <task id="LOCAL-00079" summary="v1.2 moved to var tab">
+      <option name="closed" value="true" />
+      <created>1771098822584</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1771098822584</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -575,8 +570,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.1 changes and code clean up" />
-    <MESSAGE value="v1.1 changed some formatting" />
     <MESSAGE value="v1.1 added more error msgs for more debug" />
     <MESSAGE value="v1.1 removed converting sound (sucks, and idc abt it) added 2 new codeblocks, and made converting images to code have FULL RGB (mostly) support instead of like 16 colors (i think?)" />
     <MESSAGE value="v1.1 changed 1 string." />
@@ -600,6 +593,8 @@
     <MESSAGE value="v1.2 changed readme for my build to work (will get updated on v1.2)" />
     <MESSAGE value="v1.2 added del block help" />
     <MESSAGE value="v1.2 removed global vars (broken i forgot to test them sadly) now you can just import all vars from file." />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.2 removed global vars (broken i forgot to test them sadly) now you can just import all vars from file." />
+    <MESSAGE value="v1.2 OKAY CHANGED VARS AND GLOBAL VARS (registrys) NOW WORK TESTED VARS WORK I THINK FULLY." />
+    <MESSAGE value="v1.2 moved to var tab" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.2 moved to var tab" />
   </component>
 </project>
