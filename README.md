@@ -98,6 +98,8 @@ Blocks connected to the Start block will be coded. Blocks not connected will not
 The blocks will change to a darker or lighter color when connected to
 the start block.
 
+To delete a block select it and press del.
+
 In any input of a block (other then setting var blocks) do "%var[<varname>]" you can instead have it
 use a var instead!
 
