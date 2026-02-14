@@ -7,6 +7,5 @@
         { "name": "ID", "default": "1" },
         { "name": "SLOT", "default": "0" },
         { "name": "NEW_VAR", "default": "var" }
-    ],
-    "req_funcs": []
+    ]
 }

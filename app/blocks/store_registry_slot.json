@@ -7,6 +7,5 @@
         { "name": "ID", "default": "1" },
         { "name": "LOCAL_VAR", "default": "my_var" },
         { "name": "SLOT", "default": "0" }
-    ],
-    "req_funcs": []
+    ]
 }
