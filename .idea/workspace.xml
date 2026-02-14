@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.2 changed metadata to 1.2-RELEASE" />
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.2 changed README.md">
+      <change beforePath="$PROJECT_DIR$/app/metadata.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/metadata.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,14 +164,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1769741627613</updated>
-    </task>
-    <task id="LOCAL-00033" summary="v1.1 changed print_text_graphics.json to have dif vars as print_text.json">
-      <option name="closed" value="true" />
-      <created>1770339993115</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1770339993115</updated>
     </task>
     <task id="LOCAL-00034" summary="v1.1 fixed clear_screen_graphics.json to clear graphics text too.">
       <option name="closed" value="true" />
@@ -555,7 +549,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771100269504</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="v1.2 changed README.md">
+      <option name="closed" value="true" />
+      <created>1771100708421</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1771100708421</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -593,8 +595,8 @@
     <MESSAGE value="v1.2 removed global vars (broken i forgot to test them sadly) now you can just import all vars from file." />
     <MESSAGE value="v1.2 OKAY CHANGED VARS AND GLOBAL VARS (registrys) NOW WORK TESTED VARS WORK I THINK FULLY." />
     <MESSAGE value="v1.2 moved to var tab" />
-    <MESSAGE value="v1.2 changed README.md" />
     <MESSAGE value="v1.2 changed metadata to 1.2-RELEASE" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.2 changed metadata to 1.2-RELEASE" />
+    <MESSAGE value="v1.2 changed README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.2 changed README.md" />
   </component>
 </project>
