@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.3 UNDID THE LOCAL VARS (IT BROKE STUFF AND DID NOT FIX ANYTHING I WANTED IT TO)">
-      <change afterPath="$PROJECT_DIR$/app/blocks/if_var_e_int_then_call_function.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/blocks/if_var_e_string_then_call_function.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/editor.py" afterDir="false" />
-    </list>
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.3 bug fixes, and 2 new codeblocks." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,21 +53,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Batch.build.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.main.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Lucas/Desktop/Tools/Python/OperationCrafter/app/blocks",
-    "settings.editor.selected.configurable": "terminal"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Batch.build.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.main.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lucas/Desktop/Tools/Python/OperationCrafter/app/blocks&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Lucas\Desktop\Tools\Python\OperationCrafter\app\blocks" />
@@ -167,14 +162,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1769741627613</updated>
-    </task>
-    <task id="LOCAL-00039" summary="v1.1 new codeblock!">
-      <option name="closed" value="true" />
-      <created>1770396158559</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1770396158559</updated>
     </task>
     <task id="LOCAL-00040" summary="v1.1 codeblock fixes">
       <option name="closed" value="true" />
@@ -560,7 +547,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771109880393</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="v1.3 bug fixes, and 2 new codeblocks.">
+      <option name="closed" value="true" />
+      <created>1772120681507</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1772120681507</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -575,7 +570,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.1 fixed colors (again.)" />
     <MESSAGE value="v1.1 1 line change." />
     <MESSAGE value="v1.1 simple file Exporting!" />
     <MESSAGE value="v1.1 oops, broke linux emulating. reverted." />
@@ -600,7 +594,8 @@
     <MESSAGE value="v1.3 BUGFIXES WITH VARS! all vars are now local. (testing now)" />
     <MESSAGE value="v1.3 fixed 1 codeblock" />
     <MESSAGE value="v1.3 UNDID THE LOCAL VARS (IT BROKE STUFF AND DID NOT FIX ANYTHING I WANTED IT TO)" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.3 UNDID THE LOCAL VARS (IT BROKE STUFF AND DID NOT FIX ANYTHING I WANTED IT TO)" />
+    <MESSAGE value="v1.3 bug fixes, and 2 new codeblocks." />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.3 bug fixes, and 2 new codeblocks." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

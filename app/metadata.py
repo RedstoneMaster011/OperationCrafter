@@ -1,2 +1,2 @@
-version = "v1.3-DEV"
+version = "v1.3-RELEASE"
 copyright = "© 2026"
