@@ -388,6 +388,7 @@ class BlockContainerSidebar(QTreeWidget):
         self.setHeaderHidden(True)
         self.setStyleSheet("""
                     QTreeWidget { 
+                        background-color: #1a1a1a;
                         border: none; 
                         font-family: 'Segoe UI', sans-serif;
                         font-size: 10px; 

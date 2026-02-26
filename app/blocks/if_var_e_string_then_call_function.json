@@ -1,0 +1,16 @@
+{
+    "name": "If Variable Equals String, Run Function",
+    "color": "#ff5555",
+    "group": "Variables",
+    "asm_code": "jmp .str_target_{ID}\n.str_val_{ID} db '{VALUE}', 0\n.str_target_{ID}:\nmov si, {VAR_NAME}\nmov di, .str_val_{ID}\n.compare_{ID}:\nlodsb\nscasb\njne .skip_{ID}\nor al, al\njnz .compare_{ID}\ncall {FUNCTION}\n.skip_{ID}:",
+    "req_funcs": [
+        "%include \"{FILE}\""
+    ],
+    "inputs": [
+        { "name": "ID", "default": "1" },
+        { "name": "VAR_NAME", "default": "my_var" },
+        { "name": "VALUE", "default": "Text" },
+        { "name": "FILE", "default": "functions.asm" },
+        { "name": "FUNCTION", "default": "my_function" }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "name": "If Variable Equals Int, Run Function",
+    "color": "#ff5555",
+    "group": "Variables",
+    "asm_code": "cmp byte [{VAR_NAME}], {VALUE}\njne .skip_{ID}\ncall {FUNCTION}\n.skip_{ID}:",
+    "req_funcs": [
+        "%include \"{FILE}\""
+    ],
+    "inputs": [
+        { "name": "ID", "default": "1" },
+        { "name": "VAR_NAME", "default": "my_var" },
+        { "name": "VALUE", "default": "1" },
+        { "name": "FILE", "default": "functions.asm" },
+        { "name": "FUNCTION", "default": "my_function" }
+    ]
+}
