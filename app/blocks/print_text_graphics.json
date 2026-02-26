@@ -2,7 +2,7 @@
     "name": "Print to Screen (Graphics)",
     "color": "#007acc",
     "group": "Graphics",
-    "asm_code": "mov si, msg_gfx_{ID}\nmov bl, {COLOR}\ncall print_string_gfx_{ID}\njmp after_gfx_{ID}\nmsg_gfx_{ID} db '{TEXT}', 0\nprint_string_gfx_{ID}:\n    pusha\n.loop:\n    lodsb\n    or al, al\n    jz .done\n    mov ah, 0x0e\n    int 0x10\n    jmp .loop\n.done:\n    popa\n    ret\nafter_gfx_{ID}:",
+    "asm_code": "mov si, msg_gfx_{ID}\nmov bl, {COLOR}\ncall print_string_gfx_{ID}\njmp after_gfx_{ID}\nmsg_gfx_{ID} db '{TEXT}', 0\nprint_string_gfx_{ID}:\n    pusha\n.loop:\n    lodsb\n    or al, al\n    jz .done\n    mov ah, 0x0e\n    int 0x10\n    jmp .loop\n.done:\n    popa\n    ret\nafter_gfx_{ID}:\n",
     "inputs": [
         {
             "name": "ID",
