@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.4 very critical bug fixes.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/block.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/block.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blocks/convert_int_to_string.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/convert_int_to_string.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blocks/print_text.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/print_text.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blocks/print_text_graphics.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/print_text_graphics.json" afterDir="false" />
-    </list>
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.3.5. setting up for another release" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -168,22 +162,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1769741627613</updated>
-    </task>
-    <task id="LOCAL-00043" summary="v1.1 changed play sound and import sound to be slighty better">
-      <option name="closed" value="true" />
-      <created>1770408382075</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1770408382075</updated>
-    </task>
-    <task id="LOCAL-00044" summary="v1.1 code cleanup (very much needed)">
-      <option name="closed" value="true" />
-      <created>1770415252811</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1770415252811</updated>
     </task>
     <task id="LOCAL-00045" summary="v1.1 even more code cleanup">
       <option name="closed" value="true" />
@@ -561,7 +539,23 @@
       <option name="project" value="LOCAL" />
       <updated>1772127515758</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="v1.4 more critical bug fixes.">
+      <option name="closed" value="true" />
+      <created>1772128532480</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1772128532480</updated>
+    </task>
+    <task id="LOCAL-00093" summary="v1.3.5. setting up for another release">
+      <option name="closed" value="true" />
+      <created>1772128577217</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1772128577217</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -576,8 +570,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.1 oops, broke linux emulating (again). reverted. fully" />
-    <MESSAGE value="v1.1 VARS!!!!, (at least worked in my testing)" />
     <MESSAGE value="v1.1 MORE VARS!!!" />
     <MESSAGE value="v1.1 var fixes" />
     <MESSAGE value="v1.1 more var blocks" />
@@ -601,7 +593,9 @@
     <MESSAGE value="v1.3 setup for release" />
     <MESSAGE value="v1.4 v1.4" />
     <MESSAGE value="v1.4 very critical bug fixes." />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.4 very critical bug fixes." />
+    <MESSAGE value="v1.4 more critical bug fixes." />
+    <MESSAGE value="v1.3.5. setting up for another release" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.3.5. setting up for another release" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
