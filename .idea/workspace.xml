@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.3.5. setting up for another release" />
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.4 back to v1.4">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,14 +164,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1769741627613</updated>
-    </task>
-    <task id="LOCAL-00045" summary="v1.1 even more code cleanup">
-      <option name="closed" value="true" />
-      <created>1770415286440</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1770415286440</updated>
     </task>
     <task id="LOCAL-00046" summary="v1.1 fixed gui after code cleanup cus it broke.">
       <option name="closed" value="true" />
@@ -555,7 +549,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772128577217</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="v1.4 back to v1.4">
+      <option name="closed" value="true" />
+      <created>1772129279706</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1772129279706</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -570,7 +572,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.1 MORE VARS!!!" />
     <MESSAGE value="v1.1 var fixes" />
     <MESSAGE value="v1.1 more var blocks" />
     <MESSAGE value="v1.1 some random changes" />
@@ -595,7 +596,8 @@
     <MESSAGE value="v1.4 very critical bug fixes." />
     <MESSAGE value="v1.4 more critical bug fixes." />
     <MESSAGE value="v1.3.5. setting up for another release" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.3.5. setting up for another release" />
+    <MESSAGE value="v1.4 back to v1.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.4 back to v1.4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

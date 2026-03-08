@@ -2,7 +2,7 @@
     "name": "Bootloader",
     "color": "#8cba00",
     "group": "Core",
-    "asm_code": "KERNEL_OFFSET equ {Kernel Address}\n\nmov [BOOT_DRIVE], dl\nmov bp, 0x9000\nmov sp, bp\n\ncall load_kernel\njmp KERNEL_OFFSET\n\n%include \"disk.asm\"\n\nload_kernel:\n    mov bx, KERNEL_OFFSET\n    mov dh, {SECTORS}\n    mov dl, [BOOT_DRIVE]\n    call disk_load\n    ret\n\nBOOT_DRIVE db 0\n\ntimes 510-($-$$) db 0\ndw 0xaa55",
+    "asm_code": "KERNEL_OFFSET equ {Kernel Address}\n\njmp 0:start\n\nstart:\n    xor ax, ax\n    mov ds, ax\n    mov es, ax\n    mov ss, ax\n    mov sp, 0x7c00\n    \n    mov [0x7e00], dl\n\n    call load_kernel\n    \n    jmp 0x0000:KERNEL_OFFSET\n\n%include \"disk.asm\"\n\nload_kernel:\n    mov bx, KERNEL_OFFSET\n    mov dh, {SECTORS}\n    mov dl, [0x7e00]\n    call disk_load\n    ret\n\ntimes 510-($-$$) db 0\ndw 0xaa55",
     "inputs": [
         {
             "name": "Kernel Address",
@@ -10,7 +10,7 @@
         },
         {
             "name": "SECTORS",
-            "default": "32"
+            "default": "1"
         }
     ]
 }
