@@ -1,6 +1,8 @@
 # Operation Crafter
 
-**Operation Crafter** is a visual IDE for creating bootable 16-bit floppy disk operating systems using block-based coding - like Scratch, but for OS development!
+**Operation Crafter** is a visual IDE for creating bootable 16-bit 
+(floppy disk image) operating systems using block-based coding - like Scratch,
+but for OS development!
 
 # Features
 - Visual block editor (mostly no assembly knowledge required)

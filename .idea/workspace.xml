@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.4 back to v1.4">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.4 it's bootable on real hardware! (well my own computer im using to code this.)">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,21 +55,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Batch.build.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.main.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lucas/Desktop/Tools/Python/OperationCrafter/app/blocks&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Batch.build.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.main.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Lucas/Desktop/Tools/Python/OperationCrafter",
+    "settings.editor.selected.configurable": "terminal"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Lucas\Desktop\Tools\Python\OperationCrafter\app\blocks" />
@@ -164,14 +164,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1769741627613</updated>
-    </task>
-    <task id="LOCAL-00046" summary="v1.1 fixed gui after code cleanup cus it broke.">
-      <option name="closed" value="true" />
-      <created>1770415583162</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1770415583162</updated>
     </task>
     <task id="LOCAL-00047" summary="v1.1 more code cleanup">
       <option name="closed" value="true" />
@@ -557,7 +549,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772129279706</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="v1.4 it's bootable on real hardware! (well my own computer im using to code this.)">
+      <option name="closed" value="true" />
+      <created>1772997853862</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1772997853862</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -572,7 +572,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.1 var fixes" />
     <MESSAGE value="v1.1 more var blocks" />
     <MESSAGE value="v1.1 some random changes" />
     <MESSAGE value="v1.1 better linux support" />
@@ -597,7 +596,8 @@
     <MESSAGE value="v1.4 more critical bug fixes." />
     <MESSAGE value="v1.3.5. setting up for another release" />
     <MESSAGE value="v1.4 back to v1.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.4 back to v1.4" />
+    <MESSAGE value="v1.4 it's bootable on real hardware! (well my own computer im using to code this.)" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.4 it's bootable on real hardware! (well my own computer im using to code this.)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
