@@ -213,10 +213,7 @@ WaitForSpecificKey: Pauses until a specific key is pressed.
 
 ### Sound
 
-PlayBeep: Plays a beep sound.
-
-PlaySound: Plays a sound file. (To import sounds, right click tree
-view and click import/convert .OGG (Beeps). It will convert sound file to beep sounds.)
+PlayBeep: Plays a beep sound
 
 # Functions
 To use functions, first create a new file and name it something, but it must be a .asm file.
