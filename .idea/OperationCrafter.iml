@@ -140,8 +140,9 @@
       <excludeFolder url="file://$MODULE_DIR$/qemu/share/icons/hicolor/scalable/status" />
       <excludeFolder url="file://$MODULE_DIR$/qemu/share/icons/hicolor/scalable/stock" />
       <excludeFolder url="file://$MODULE_DIR$/qemu/share/icons/hicolor/symbolic" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.13" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.14 (OperationCrafter)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PackageRequirementsSettings">
