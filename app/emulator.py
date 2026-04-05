@@ -1,17 +1,17 @@
 import os
 import subprocess
 import sys
-
+import shutil
 
 class OSLauncher:
     def __init__(self, root_dir):
         self.root_dir = root_dir
-
         if sys.platform == 'win32':
             self.qemu_path = os.path.abspath(os.path.join(self.root_dir, "qemu", "qemu-system-x86_64.exe"))
         else:
-            self.qemu_path = os.path.abspath(os.path.join(self.root_dir, "qemu", "qemu-system-x86_64"))
-
+            system = shutil.which("qemu-system-x86_64")
+            bundled = os.path.abspath(os.path.join(self.root_dir, "qemu", "qemu-system-x86_64"))
+            self.qemu_path = system if system else bundled
         self.proc = None
 
     def is_running(self):
@@ -24,18 +24,13 @@ class OSLauncher:
 
     def run(self, project_dir, terminal_callback):
         img_path = os.path.abspath(os.path.join(project_dir, "build", "boot.img"))
-
         if self.is_running():
             terminal_callback("Emulator is already running!")
             return
-
         if not os.path.exists(img_path):
             terminal_callback("Error: boot.img not found. Run Build first.")
             return
-
         terminal_callback("Starting Emulation.")
-
-
         if sys.platform == 'win32':
             cmd = [
                 self.qemu_path,
@@ -46,11 +41,12 @@ class OSLauncher:
         else:
             cmd = [
                 self.qemu_path,
+                "-L", os.path.join(self.root_dir, "qemu"),
                 "-drive", f"format=raw,file={img_path}",
                 "-audiodev", "pa,id=snd0",
                 "-machine", "pcspk-audiodev=snd0"
             ]
-
+            print(cmd, self.qemu_path, img_path)
         try:
             self.proc = subprocess.Popen(cmd)
         except Exception as e:
