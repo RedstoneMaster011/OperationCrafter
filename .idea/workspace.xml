@@ -93,7 +93,7 @@
       <command value="goto e" />
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Shell Script.build">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="OperationCrafter" />
       <option name="ENV_FILES" value="" />
