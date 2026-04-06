@@ -4,6 +4,7 @@ import os
 import shutil
 import tempfile
 import zipfile
+import webbrowser
 
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QColor
@@ -214,6 +215,13 @@ class PluginDialog(QDialog):
         """)
         self.toggle_btn.clicked.connect(self.toggle_plugin_status)
 
+        self.plugins_list = QPushButton("Official Plugins List")
+        self.plugins_list.setStyleSheet("""
+            QPushButton { background: #464; color: white; padding: 10px; border-radius: 4px; }
+            QPushButton:hover { background: #5a5a5a; }
+        """)
+        self.plugins_list.clicked.connect(self.open_plugins_list)
+
         self.install_btn = QPushButton("Install Plugin")
         self.install_btn.setStyleSheet("""
                     QPushButton { 
@@ -230,6 +238,7 @@ class PluginDialog(QDialog):
         self.install_btn.clicked.connect(self.install_plugin)
 
         btn_layout.addWidget(self.toggle_btn)
+        btn_layout.addWidget(self.plugins_list)
         btn_layout.addWidget(self.install_btn)
         layout.addLayout(btn_layout)
 
@@ -273,6 +282,10 @@ class PluginDialog(QDialog):
                 item.setForeground(3, QColor("#007acc"))
 
             self.list_widget.addTopLevelItem(item)
+
+    def open_plugins_list(self):
+        webbrowser.open("https://github.com/RedstoneMaster011/OperationCrafter/tree/master/Official-Plugins")
+
 
     def toggle_plugin_status(self):
         selected = self.list_widget.currentItem()
