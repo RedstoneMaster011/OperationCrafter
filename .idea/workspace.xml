@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.5 added button to Plugins menu to open the Plugins List">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.5 changed to release">
       <change beforePath="$PROJECT_DIR$/app/metadata.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/metadata.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,15 +192,7 @@
       <workItem from="1775501946121" duration="614000" />
       <workItem from="1775503813491" duration="610000" />
       <workItem from="1775511744129" duration="23000" />
-      <workItem from="1775764583207" duration="4463000" />
-    </task>
-    <task id="LOCAL-00055" summary="v1.1 TRUE TESTED LINUX SUPPORT!!!!!!!!!!">
-      <option name="closed" value="true" />
-      <created>1770830675344</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1770830675344</updated>
+      <workItem from="1775764583207" duration="4799000" />
     </task>
     <task id="LOCAL-00056" summary="v1.1 TRUE TESTED LINUX SUPPORT!!!!!!!!!!">
       <option name="closed" value="true" />
@@ -587,7 +578,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775501448754</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="v1.5 changed to release">
+      <option name="closed" value="true" />
+      <created>1775769056907</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1775769056908</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,7 +608,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.2 added a Official-Plugins folder to have any Official plugins people make (aka me)." />
     <MESSAGE value="v1.2 changed readme for my build to work (will get updated on v1.2)" />
     <MESSAGE value="v1.2 added del block help" />
     <MESSAGE value="v1.2 removed global vars (broken i forgot to test them sadly) now you can just import all vars from file." />
@@ -634,7 +632,8 @@
     <MESSAGE value="v1.5 version change" />
     <MESSAGE value="v1.5 vixed wait_for_key_press.json" />
     <MESSAGE value="v1.5 added button to Plugins menu to open the Plugins List" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.5 added button to Plugins menu to open the Plugins List" />
+    <MESSAGE value="v1.5 changed to release" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.5 changed to release" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
