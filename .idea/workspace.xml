@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.5 vixed wait_for_key_press.json">
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.5 added button to Plugins menu to open the Plugins List">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/pluginmanager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/pluginmanager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/metadata.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/metadata.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,26 +56,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Batch.build.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.main.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHELLCHECK.PATH&quot;: &quot;/home/redstonemaster01/.local/share/JetBrains/PyCharm2026.1/Shell Script/shellcheck&quot;,
-    &quot;Shell Script.build.executor&quot;: &quot;Debug&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/mnt/7CBE9C77BE9C2C20/Users/Lucas/Desktop/Programs/Python/OperationCrafter&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Batch.build.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.main.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHELLCHECK.PATH": "/home/redstonemaster01/.local/share/JetBrains/PyCharm2026.1/Shell Script/shellcheck",
+    "Shell Script.build.executor": "Debug",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "/mnt/7CBE9C77BE9C2C20/Users/Lucas/Desktop/Programs/Python/OperationCrafter",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -94,7 +94,7 @@
       <command value="goto e" />
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Shell Script.build">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="OperationCrafter" />
       <option name="ENV_FILES" value="" />
@@ -189,15 +189,11 @@
       <workItem from="1775487745270" duration="62000" />
       <workItem from="1775498877986" duration="408000" />
       <workItem from="1775499475429" duration="679000" />
-      <workItem from="1775500826773" duration="301000" />
-    </task>
-    <task id="LOCAL-00054" summary="v1.1 fixed requirements.txt">
-      <option name="closed" value="true" />
-      <created>1770829104300</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1770829104301</updated>
+      <workItem from="1775500826773" duration="845000" />
+      <workItem from="1775501946121" duration="614000" />
+      <workItem from="1775503813491" duration="610000" />
+      <workItem from="1775511744129" duration="23000" />
+      <workItem from="1775764583207" duration="4463000" />
     </task>
     <task id="LOCAL-00055" summary="v1.1 TRUE TESTED LINUX SUPPORT!!!!!!!!!!">
       <option name="closed" value="true" />
@@ -583,7 +579,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775499066881</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="v1.5 added button to Plugins menu to open the Plugins List">
+      <option name="closed" value="true" />
+      <created>1775501448754</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1775501448754</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -605,7 +609,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.2 changed metadata to 1.2-DEV and forgot to say max picture size 80x80 (about)" />
     <MESSAGE value="v1.2 added a Official-Plugins folder to have any Official plugins people make (aka me)." />
     <MESSAGE value="v1.2 changed readme for my build to work (will get updated on v1.2)" />
     <MESSAGE value="v1.2 added del block help" />
@@ -630,7 +633,8 @@
     <MESSAGE value="v1.4 fixed, now linux QEMU works. and gonna upload it to github" />
     <MESSAGE value="v1.5 version change" />
     <MESSAGE value="v1.5 vixed wait_for_key_press.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.5 vixed wait_for_key_press.json" />
+    <MESSAGE value="v1.5 added button to Plugins menu to open the Plugins List" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.5 added button to Plugins menu to open the Plugins List" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -644,6 +648,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/OperationCrafter$main.coverage" NAME="main Coverage Results" MODIFIED="1775501180497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/OperationCrafter$main.coverage" NAME="main Coverage Results" MODIFIED="1775502005311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
