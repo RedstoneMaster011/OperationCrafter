@@ -2,11 +2,15 @@
     "name": "Play Beep Sound",
     "color": "#e67e22",
     "group": "Sound",
-    "asm_code": "mov al, 182\nout 67, al\nmov ax, {PITCH}\nout 66, al\nmov al, ah\nout 66, al\nin al, 97\nor al, 3\nout 97, al\nmov ax, {MS}\nmov cx, 1000\nmul cx\nmov cx, dx\nmov dx, ax\nmov ah, 0x86\nint 0x15\nin al, 97\nand al, 252\nout 97, al",
+    "asm_code": "mov bx, {FREQUENCY}\nor bx, bx\njz .beep_done_{ID}\nmov al, 0xb6\nout 0x43, al\nmov dx, 0x0012\nmov ax, 0x34dc\ndiv bx\nout 0x42, al\nmov al, ah\nout 0x42, al\nin al, 0x61\nor al, 3\nout 0x61, al\nmov ax, {MS}\nmov cx, 1000\nmul cx\nmov cx, dx\nmov dx, ax\nmov ah, 0x86\nint 0x15\nin al, 0x61\nand al, 0xfc\nout 0x61, al\n.beep_done_{ID}:",
     "inputs": [
         {
-            "name": "PITCH",
-            "default": "500"
+            "name": "ID",
+            "default": "1"
+        },
+        {
+            "name": "FREQUENCY",
+            "default": "440"
         },
         {
             "name": "MS",

@@ -4,8 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="v1.5 changed to release">
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="changed to v1.6">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Official-Plugins/PurpleUI.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/block.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/block.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/add_var_int.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/add_var_int.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/disk_setup.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/disk_setup.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/draw_picture.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/draw_picture.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/play_beep.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/play_beep.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/random_call_function.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/random_call_function.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/set_screen_color.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/set_screen_color.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/set_var_int.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/set_var_int.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blocks/set_var_text.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/set_var_text.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/compiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/compiler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/emulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/emulator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/launcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/launcher.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/metadata.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/metadata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pluginmanager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/pluginmanager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/git_readme/create_project_help_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git_readme/create_project_help_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git_readme/create_project_help_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git_readme/developing_project_help_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git_readme/developing_project_help_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git_readme/developing_project_help_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git_readme/developing_project_help_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git_readme/developing_project_help_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git_readme/example_help_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git_readme/example_help_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git_readme/example_help_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git_readme/example_help_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git_readme/functions_help_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git_readme/functions_help_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git_readme/functions_help_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git_readme/opening_project_help_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/git_readme/plugins_help_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +108,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "/mnt/7CBE9C77BE9C2C20/Users/Lucas/Desktop/Programs/Python/OperationCrafter",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
@@ -93,7 +131,7 @@
       <command value="goto e" />
     </option>
   </component>
-  <component name="RunManager" selected="Shell Script.build">
+  <component name="RunManager" selected="Python.main">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="OperationCrafter" />
       <option name="ENV_FILES" value="" />
@@ -192,15 +230,8 @@
       <workItem from="1775501946121" duration="614000" />
       <workItem from="1775503813491" duration="610000" />
       <workItem from="1775511744129" duration="23000" />
-      <workItem from="1775764583207" duration="4799000" />
-    </task>
-    <task id="LOCAL-00056" summary="v1.1 TRUE TESTED LINUX SUPPORT!!!!!!!!!!">
-      <option name="closed" value="true" />
-      <created>1770830728307</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1770830728307</updated>
+      <workItem from="1775764583207" duration="5032000" />
+      <workItem from="1775870418238" duration="26000" />
     </task>
     <task id="LOCAL-00057" summary="v1.1 TRUE TESTED LINUX SUPPORT!!!!!!!!!!">
       <option name="closed" value="true" />
@@ -586,7 +617,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775769056908</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="changed to v1.6">
+      <option name="closed" value="true" />
+      <created>1775769607016</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1775769607016</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,7 +647,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.2 changed readme for my build to work (will get updated on v1.2)" />
     <MESSAGE value="v1.2 added del block help" />
     <MESSAGE value="v1.2 removed global vars (broken i forgot to test them sadly) now you can just import all vars from file." />
     <MESSAGE value="v1.2 OKAY CHANGED VARS AND GLOBAL VARS (registrys) NOW WORK TESTED VARS WORK I THINK FULLY." />
@@ -633,7 +671,8 @@
     <MESSAGE value="v1.5 vixed wait_for_key_press.json" />
     <MESSAGE value="v1.5 added button to Plugins menu to open the Plugins List" />
     <MESSAGE value="v1.5 changed to release" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.5 changed to release" />
+    <MESSAGE value="changed to v1.6" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed to v1.6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

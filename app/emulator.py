@@ -39,13 +39,15 @@ class OSLauncher:
                 "-machine", "pcspk-audiodev=snd0"
             ]
         else:
-            cmd = [
-                self.qemu_path,
-                "-L", os.path.join(self.root_dir, "qemu"),
+            cmd = [self.qemu_path]
+            bundled_firmware = os.path.join(self.root_dir, "qemu")
+            if os.path.isdir(bundled_firmware):
+                cmd.extend(["-L", bundled_firmware])
+            cmd.extend([
                 "-drive", f"format=raw,file={img_path}",
                 "-audiodev", "pa,id=snd0",
                 "-machine", "pcspk-audiodev=snd0"
-            ]
+            ])
             print(cmd, self.qemu_path, img_path)
         try:
             self.proc = subprocess.Popen(cmd)

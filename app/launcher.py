@@ -3,17 +3,21 @@ import os
 from datetime import date
 import app.metadata
 
-from PyQt6.QtCore import Qt
+from PyQt6.QtCore import QDir, Qt
 from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QPushButton, QFileDialog,
-                             QLabel, QHBoxLayout, QLineEdit, QStackedWidget, QApplication)
+                             QLabel, QHBoxLayout, QLineEdit, QStackedWidget,
+                             QApplication, QDialog, QMessageBox)
+
+from .theme import install_window_title_bar, themed_file_dialog, themed_message
 
 
 class Launcher(QWidget):
     def __init__(self, ide_window):
         super().__init__()
         self.ide = ide_window
+        self._drag_offset = None
         self.setWindowTitle("Operation Crafter")
-        self.setFixedSize(450, 400)
+        self.setFixedSize(480, 430)
         self.setWindowFlags(Qt.WindowType.FramelessWindowHint | Qt.WindowType.Window)
 
         self.stack = QStackedWidget()
@@ -27,11 +31,15 @@ class Launcher(QWidget):
         self.home_page = QWidget()
         home_layout = QVBoxLayout(self.home_page)
         self.setStyleSheet("""
-            QWidget { background-color: #1e1e1e; color: #ffffff; font-family: 'Segoe UI'; }
-            QLabel#Title { font-size: 26px; font-weight: bold; color: #007acc; }
-            QLineEdit { background: #2d2d2d; border: 1px solid #444; padding: 8px; border-radius: 4px; color: white; }
-            QPushButton { background-color: #333333; border: 1px solid #444444; border-radius: 6px; padding: 12px; color: white; outline: none; }
-            QPushButton:hover { background-color: #007acc; border: 1px solid #0099ff; }
+            QWidget { background-color: #06111c; color: #e6f3fb; font-family: 'Segoe UI'; }
+            QStackedWidget { border: 1px solid #19445f; border-radius: 12px; }
+            QLabel#Title { background: transparent; font-size: 28px; font-weight: bold; color: #62d0f2; letter-spacing: 1px; }
+            QLabel#AppIcon { background: transparent; }
+            QLineEdit { background: #081724; border: 1px solid #1d4b68; padding: 9px; border-radius: 6px; color: white; }
+            QLineEdit:focus { border-color: #56c7e9; }
+            QPushButton { background-color: #0d2a3f; border: 1px solid #1d4b68; border-radius: 7px; padding: 11px; color: white; outline: none; }
+            QPushButton:hover { background-color: #286a86; border: 1px solid #62d0f2; }
+            QPushButton:pressed { background-color: #173e50; }
             QPushButton#CloseBtn { background-color: transparent; border: none; font-size: 18px; }
             QPushButton#CloseBtn:hover { background-color: transparent; color: #ff5555; }
         """)
@@ -41,6 +49,7 @@ class Launcher(QWidget):
 
         close_btn = QPushButton("✕")
         close_btn.setObjectName("CloseBtn")
+        close_btn.setFixedSize(34, 30)
         close_btn.clicked.connect(self.close)
         header.addWidget(close_btn)
         home_layout.addLayout(header)
@@ -60,6 +69,7 @@ class Launcher(QWidget):
 
         home_layout.addSpacing(30)
         icon_label = QLabel()
+        icon_label.setObjectName("AppIcon")
         app_icon = QApplication.windowIcon()
         if not app_icon.isNull():
             icon_pixmap = app_icon.pixmap(75, 85)
@@ -114,7 +124,11 @@ class Launcher(QWidget):
         self.stack.addWidget(self.setup_page)
 
     def browse_folder(self):
-        path = QFileDialog.getExistingDirectory(self, "Select Parent Folder")
+        path, _ = themed_file_dialog(
+            self,
+            "Select Parent Folder",
+            file_mode=QFileDialog.FileMode.Directory,
+        )
         if path:
             self.path_input.setText(path)
 
@@ -156,9 +170,60 @@ class Launcher(QWidget):
                     f.write(content)
 
     def open_project(self):
-        path = QFileDialog.getExistingDirectory(self, "Select Project Folder")
-        if path: self.launch_path(path)
+        picker = QFileDialog(self, "Open Operation Crafter Project")
+        picker.setFileMode(QFileDialog.FileMode.ExistingFile)
+        picker.setAcceptMode(QFileDialog.AcceptMode.AcceptOpen)
+        picker.setNameFilter("Operation Crafter Project (*.projectdata)")
+        picker.setLabelText(QFileDialog.DialogLabel.Accept, "Open Project")
+        picker.setOption(QFileDialog.Option.DontUseNativeDialog, True)
+        picker.setFilter(
+            QDir.Filter.AllDirs | QDir.Filter.Files | QDir.Filter.Drives
+            | QDir.Filter.NoDotAndDotDot | QDir.Filter.Hidden
+        )
+        picker.setStyleSheet(self.styleSheet())
+        install_window_title_bar(picker)
+        if picker.exec() != QDialog.DialogCode.Accepted:
+            return
+
+        selected = picker.selectedFiles()
+        if not selected:
+            return
+        metadata_path = os.path.abspath(selected[0])
+        if os.path.basename(metadata_path).casefold() != ".projectdata":
+            themed_message(
+                self, QMessageBox.Icon.Warning,
+                "Not an Operation Crafter Project",
+                "Select the .projectdata file inside the project you want to open.",
+            )
+            return
+        self.launch_path(os.path.dirname(metadata_path))
 
     def launch_path(self, path):
         self.ide.launch_ide(path)
         self.close()
+
+    def showEvent(self, event):
+        super().showEvent(event)
+        screen = QApplication.primaryScreen()
+        if screen:
+            frame = self.frameGeometry()
+            frame.moveCenter(screen.availableGeometry().center())
+            self.move(frame.topLeft())
+
+    def mousePressEvent(self, event):
+        if event.button() == Qt.MouseButton.LeftButton:
+            self._drag_offset = event.globalPosition().toPoint() - self.frameGeometry().topLeft()
+            event.accept()
+            return
+        super().mousePressEvent(event)
+
+    def mouseMoveEvent(self, event):
+        if self._drag_offset is not None and event.buttons() & Qt.MouseButton.LeftButton:
+            self.move(event.globalPosition().toPoint() - self._drag_offset)
+            event.accept()
+            return
+        super().mouseMoveEvent(event)
+
+    def mouseReleaseEvent(self, event):
+        self._drag_offset = None
+        super().mouseReleaseEvent(event)

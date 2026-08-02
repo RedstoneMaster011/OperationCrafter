@@ -2,7 +2,7 @@
     "name": "Set Screen Color",
     "color": "#8b5cf6",
     "group": "Graphics",
-    "asm_code": "mov ax, 0xA000\nmov es, ax\nxor di, di\nmov al, {COLOR}\nmov cx, 64000\nrep stosb",
+    "asm_code": "push es\nmov ax, 0xA000\nmov es, ax\nxor di, di\nmov al, {COLOR}\nmov cx, 64000\ncld\nrep stosb\npop es",
     "inputs": [
         {
             "name": "COLOR",

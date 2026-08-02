@@ -15,15 +15,22 @@ class Compiler:
             self.nasm_exe = os.path.join(self.root_dir, "nasm", "nasm")
 
     def compile_to_img(self, terminal):
+        if not getattr(self, "project_dir", None) or not os.path.isdir(self.project_dir):
+            return False, "Error: select or create a valid project before building."
+        if not os.path.isfile(self.nasm_exe):
+            return False, f"Error: NASM was not found at {self.nasm_exe}."
+
         build_dir = os.path.join(self.project_dir, "build")
         if os.path.exists(build_dir):
             shutil.rmtree(build_dir)
         os.makedirs(build_dir, exist_ok=True)
 
         bin_map = {}
+        assembly_failures = []
 
         for root, dirs, files in os.walk(self.project_dir):
             if "build" in dirs: dirs.remove("build")
+            if "blocks" in dirs: dirs.remove("blocks")
 
             for file in files:
                 if file == ".projectdata":
@@ -37,16 +44,33 @@ class Compiler:
                     name_bin = file.replace(".asm", ".bin")
                     target_bin = os.path.join(target_folder, name_bin)
 
-                    cmd = f'"{self.nasm_exe}" -f bin "{file}" -o "{target_bin}"'
-                    result = subprocess.run(cmd, cwd=root, shell=True, capture_output=True, text=True)
+                    cmd = [self.nasm_exe, "-f", "bin", file, "-o", target_bin]
+                    result = subprocess.run(
+                        cmd, cwd=root, shell=False, capture_output=True, text=True
+                    )
 
                     if result.returncode == 0:
-                        bin_map[file.lower()] = target_bin
+                        relative_file = os.path.normpath(os.path.join(rel_path, file))
+                        if relative_file.startswith(f".{os.sep}"):
+                            relative_file = relative_file[2:]
+                        bin_map[relative_file.lower()] = target_bin
+                        if result.stderr.strip():
+                            terminal.append(f"NASM warning for {relative_file}: {result.stderr.strip()}")
                     else:
-                        terminal.append(f"Skipped {file}: {result.stderr}")
+                        relative_file = os.path.normpath(os.path.join(rel_path, file))
+                        if relative_file.startswith(f".{os.sep}"):
+                            relative_file = relative_file[2:]
+                        detail = result.stderr.strip() or "NASM returned an unknown error."
+                        assembly_failures.append(f"{relative_file}:\n{detail}")
+                        terminal.append(f"Assembly failed for {relative_file}:\n{detail}")
                 else:
                     shutil.copy2(os.path.join(root, file), os.path.join(target_folder, file))
 
+        if assembly_failures:
+            return False, (
+                f"Error: {len(assembly_failures)} assembly file(s) failed. "
+                "No boot image was created; review the NASM errors above."
+            )
         if "main.asm" not in bin_map:
             return False, "Error: main.bin not created. Check NASM errors."
 
@@ -66,5 +90,5 @@ class Compiler:
                     f_out.write(b'\x00' * padding)
 
             return True
-        except:
-            return False
+        except OSError as error:
+            return False, f"Error: could not create boot.img: {error}"
