@@ -9,6 +9,8 @@ assembly that makes it work. Beginners can connect nodes for variables, input,
 graphics, GUIs, sound, game logic, and disk operations; advanced users can edit
 or mix in NASM directly.
 
+(Example Project You can download and instantly import into OperationCrafter Located at: [ExampleProject](./ExampleProject/FakeDoom))
+
 > [!IMPORTANT]
 > The current `v1.6-DEV` target is a 16-bit x86, legacy-BIOS floppy image.
 > 32-bit, 64-bit, and UEFI targets are not implemented yet.

@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="INSANE UPDATE">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="INSANE UPDATE" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -196,14 +194,6 @@
       <workItem from="1775511744129" duration="23000" />
       <workItem from="1775764583207" duration="5032000" />
       <workItem from="1775870418238" duration="26000" />
-    </task>
-    <task id="LOCAL-00063" summary="v1.1 VARS!!!!, (at least worked in my testing)">
-      <option name="closed" value="true" />
-      <created>1770912742987</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1770912742987</updated>
     </task>
     <task id="LOCAL-00064" summary="v1.1 MORE VARS!!!">
       <option name="closed" value="true" />
@@ -589,7 +579,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785699115252</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="INSANE UPDATE">
+      <option name="closed" value="true" />
+      <created>1785703253466</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1785703253467</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
