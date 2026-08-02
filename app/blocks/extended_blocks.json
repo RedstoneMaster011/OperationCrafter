@@ -1,0 +1,612 @@
+{
+  "schema_version": 2,
+  "blocks": [
+    {
+      "name": "Function Entry",
+      "group": "Flow",
+      "color": "#14b8a6",
+      "description": "Begin an independent function chain in this assembly file.",
+      "tags": ["function", "entry", "multiple functions"],
+      "entry_point": true,
+      "flow_input": false,
+      "flow_output": true,
+      "asm_code": "{Function}:",
+      "inputs": [{"name": "Function", "label": "Function Name", "default": "function_1"}]
+    },
+    {
+      "name": "Comment",
+      "group": "Flow",
+      "color": "#64748b",
+      "description": "Add a readable assembly comment to generated code.",
+      "asm_code": "; {TEXT}",
+      "inputs": [{"name": "TEXT", "default": "Explain this step"}]
+    },
+    {
+      "name": "Label",
+      "group": "Flow",
+      "color": "#ef8354",
+      "description": "Create a local or global jump target.",
+      "asm_code": "{LABEL}:",
+      "inputs": [{"name": "LABEL", "default": ".loop"}]
+    },
+    {
+      "name": "Jump to Label",
+      "group": "Flow",
+      "color": "#ef8354",
+      "description": "Jump unconditionally to a label in this file.",
+      "asm_code": "jmp {LABEL}",
+      "inputs": [{"name": "LABEL", "default": ".loop"}]
+    },
+    {
+      "name": "Call Local Function",
+      "group": "Flow",
+      "color": "#ef8354",
+      "description": "Call a function label in the current assembly file.",
+      "asm_code": "call {FUNCTION}",
+      "inputs": [{"name": "FUNCTION", "default": "my_function"}]
+    },
+    {
+      "name": "Return from Function",
+      "group": "Flow",
+      "color": "#d96742",
+      "description": "Return to the instruction after the most recent call.",
+      "asm_code": "ret",
+      "flow_output": false
+    },
+    {
+      "name": "Loop CX to Label",
+      "group": "Flow",
+      "color": "#ef8354",
+      "description": "Decrement CX and jump while it is not zero.",
+      "asm_code": "loop {LABEL}",
+      "inputs": [{"name": "LABEL", "default": ".loop"}]
+    },
+    {
+      "name": "Set Loop Count",
+      "group": "Flow",
+      "color": "#ef8354",
+      "description": "Load CX with the number of loop iterations.",
+      "asm_code": "mov cx, {COUNT}",
+      "inputs": [{"name": "COUNT", "default": "10"}]
+    },
+    {
+      "name": "Compare Byte and Jump Equal",
+      "group": "Flow",
+      "color": "#e05d7b",
+      "description": "Compare a byte variable and jump when it equals a value.",
+      "asm_code": "cmp byte [{VAR}], {VALUE}\nje {LABEL}",
+      "inputs": [
+        {"name": "VAR", "default": "my_var"},
+        {"name": "VALUE", "default": "0"},
+        {"name": "LABEL", "default": ".equal"}
+      ]
+    },
+    {
+      "name": "Compare Byte and Jump Not Equal",
+      "group": "Flow",
+      "color": "#e05d7b",
+      "description": "Compare a byte variable and jump when values differ.",
+      "asm_code": "cmp byte [{VAR}], {VALUE}\njne {LABEL}",
+      "inputs": [
+        {"name": "VAR", "default": "my_var"},
+        {"name": "VALUE", "default": "0"},
+        {"name": "LABEL", "default": ".not_equal"}
+      ]
+    },
+    {
+      "name": "Jump If Carry",
+      "group": "Flow",
+      "color": "#e05d7b",
+      "description": "Jump when the carry flag is set.",
+      "asm_code": "jc {LABEL}",
+      "inputs": [{"name": "LABEL", "default": ".carry"}]
+    },
+    {
+      "name": "Jump If Zero",
+      "group": "Flow",
+      "color": "#e05d7b",
+      "description": "Jump when the zero flag is set.",
+      "asm_code": "jz {LABEL}",
+      "inputs": [{"name": "LABEL", "default": ".zero"}]
+    },
+    {
+      "name": "Define Byte",
+      "group": "Variables",
+      "color": "#a6a832",
+      "description": "Define a named 8-bit value.",
+      "asm_code": "jmp after_define_byte_{ID}\n{VAR} db {VALUE}\nafter_define_byte_{ID}:",
+      "inputs": [
+        {"name": "ID", "default": "1"},
+        {"name": "VAR", "default": "my_byte"},
+        {"name": "VALUE", "default": "0"}
+      ]
+    },
+    {
+      "name": "Define Word",
+      "group": "Variables",
+      "color": "#a6a832",
+      "description": "Define a named 16-bit value.",
+      "asm_code": "jmp after_define_word_{ID}\n{VAR} dw {VALUE}\nafter_define_word_{ID}:",
+      "inputs": [
+        {"name": "ID", "default": "1"},
+        {"name": "VAR", "default": "my_word"},
+        {"name": "VALUE", "default": "0"}
+      ]
+    },
+    {
+      "name": "Subtract Byte",
+      "group": "Variables",
+      "color": "#a6a832",
+      "description": "Subtract a constant from an 8-bit variable.",
+      "asm_code": "sub byte [{VAR}], {VALUE}",
+      "inputs": [
+        {"name": "VAR", "default": "my_byte"},
+        {"name": "VALUE", "default": "1"}
+      ]
+    },
+    {
+      "name": "Increment Byte",
+      "group": "Variables",
+      "color": "#a6a832",
+      "description": "Increase an 8-bit variable by one.",
+      "asm_code": "inc byte [{VAR}]",
+      "inputs": [{"name": "VAR", "default": "my_byte"}]
+    },
+    {
+      "name": "Decrement Byte",
+      "group": "Variables",
+      "color": "#a6a832",
+      "description": "Decrease an 8-bit variable by one.",
+      "asm_code": "dec byte [{VAR}]",
+      "inputs": [{"name": "VAR", "default": "my_byte"}]
+    },
+    {
+      "name": "Set Word",
+      "group": "Variables",
+      "color": "#a6a832",
+      "description": "Store a value in a named 16-bit variable.",
+      "asm_code": "mov word [{VAR}], {VALUE}",
+      "inputs": [
+        {"name": "VAR", "default": "my_word"},
+        {"name": "VALUE", "default": "0"}
+      ]
+    },
+    {
+      "name": "Add Word",
+      "group": "Math",
+      "color": "#26a269",
+      "description": "Add a constant to a 16-bit variable.",
+      "asm_code": "add word [{VAR}], {VALUE}",
+      "inputs": [
+        {"name": "VAR", "default": "my_word"},
+        {"name": "VALUE", "default": "1"}
+      ]
+    },
+    {
+      "name": "Subtract Word",
+      "group": "Math",
+      "color": "#26a269",
+      "description": "Subtract a constant from a 16-bit variable.",
+      "asm_code": "sub word [{VAR}], {VALUE}",
+      "inputs": [
+        {"name": "VAR", "default": "my_word"},
+        {"name": "VALUE", "default": "1"}
+      ]
+    },
+    {
+      "name": "Multiply Unsigned Bytes",
+      "group": "Math",
+      "color": "#26a269",
+      "description": "Multiply two byte values and store the low 8-bit result.",
+      "asm_code": "mov al, {LEFT}\nmov bl, {RIGHT}\nmul bl\nmov [{OUTPUT}], al",
+      "inputs": [
+        {"name": "LEFT", "default": "2"},
+        {"name": "RIGHT", "default": "3"},
+        {"name": "OUTPUT", "default": "result"}
+      ]
+    },
+    {
+      "name": "Multiply Unsigned Bytes to Word",
+      "group": "Math",
+      "color": "#26a269",
+      "description": "Multiply two byte values and store the full 16-bit result.",
+      "asm_code": "mov al, {LEFT}\nmov bl, {RIGHT}\nmul bl\nmov [{OUTPUT}], ax",
+      "inputs": [
+        {"name": "LEFT", "default": "2"},
+        {"name": "RIGHT", "default": "3"},
+        {"name": "OUTPUT", "default": "word_result"}
+      ]
+    },
+    {
+      "name": "Divide Unsigned Word",
+      "group": "Math",
+      "color": "#26a269",
+      "description": "Divide AX by a word and store quotient and remainder.",
+      "asm_code": "mov bx, {DIVISOR}\nor bx, bx\njz .divide_zero_{ID}\nmov ax, {DIVIDEND}\nxor dx, dx\ndiv bx\nmov [{QUOTIENT}], ax\nmov [{REMAINDER}], dx\njmp .divide_done_{ID}\n.divide_zero_{ID}:\nmov word [{QUOTIENT}], 0\nmov word [{REMAINDER}], 0\n.divide_done_{ID}:",
+      "inputs": [
+        {"name": "ID", "default": "1"},
+        {"name": "DIVIDEND", "default": "10"},
+        {"name": "DIVISOR", "default": "2"},
+        {"name": "QUOTIENT", "default": "quotient"},
+        {"name": "REMAINDER", "default": "remainder"}
+      ]
+    },
+    {
+      "name": "Negate Word",
+      "group": "Math",
+      "color": "#26a269",
+      "description": "Replace a word variable with its two's-complement negative.",
+      "asm_code": "neg word [{VAR}]",
+      "inputs": [{"name": "VAR", "default": "my_word"}]
+    },
+    {
+      "name": "Bitwise AND Byte",
+      "group": "Math",
+      "color": "#238b70",
+      "description": "Mask an 8-bit variable with a constant.",
+      "asm_code": "and byte [{VAR}], {MASK}",
+      "inputs": [
+        {"name": "VAR", "default": "flags"},
+        {"name": "MASK", "default": "0x0f"}
+      ]
+    },
+    {
+      "name": "Bitwise OR Byte",
+      "group": "Math",
+      "color": "#238b70",
+      "description": "Set selected bits in an 8-bit variable.",
+      "asm_code": "or byte [{VAR}], {MASK}",
+      "inputs": [
+        {"name": "VAR", "default": "flags"},
+        {"name": "MASK", "default": "0x01"}
+      ]
+    },
+    {
+      "name": "Bitwise XOR Byte",
+      "group": "Math",
+      "color": "#238b70",
+      "description": "Toggle selected bits in an 8-bit variable.",
+      "asm_code": "xor byte [{VAR}], {MASK}",
+      "inputs": [
+        {"name": "VAR", "default": "flags"},
+        {"name": "MASK", "default": "0xff"}
+      ]
+    },
+    {
+      "name": "Shift Word Left",
+      "group": "Math",
+      "color": "#238b70",
+      "description": "Shift a 16-bit variable left by a constant count.",
+      "asm_code": "shl word [{VAR}], {COUNT}",
+      "inputs": [
+        {"name": "VAR", "default": "my_word"},
+        {"name": "COUNT", "default": "1"}
+      ]
+    },
+    {
+      "name": "Shift Word Right",
+      "group": "Math",
+      "color": "#238b70",
+      "description": "Shift a 16-bit variable right by a constant count.",
+      "asm_code": "shr word [{VAR}], {COUNT}",
+      "inputs": [
+        {"name": "VAR", "default": "my_word"},
+        {"name": "COUNT", "default": "1"}
+      ]
+    },
+    {
+      "name": "Write Memory Byte",
+      "group": "Memory",
+      "color": "#8b5cf6",
+      "description": "Write an 8-bit value to a memory address.",
+      "asm_code": "mov byte [{ADDRESS}], {VALUE}",
+      "inputs": [
+        {"name": "ADDRESS", "default": "0x2000"},
+        {"name": "VALUE", "default": "0"}
+      ]
+    },
+    {
+      "name": "Write Memory Word",
+      "group": "Memory",
+      "color": "#8b5cf6",
+      "description": "Write a 16-bit value to a memory address.",
+      "asm_code": "mov word [{ADDRESS}], {VALUE}",
+      "inputs": [
+        {"name": "ADDRESS", "default": "0x2000"},
+        {"name": "VALUE", "default": "0"}
+      ]
+    },
+    {
+      "name": "Read Memory Byte",
+      "group": "Memory",
+      "color": "#8b5cf6",
+      "description": "Read a byte from memory into a register.",
+      "asm_code": "mov {REGISTER}, byte [{ADDRESS}]",
+      "inputs": [
+        {"name": "REGISTER", "default": "al"},
+        {"name": "ADDRESS", "default": "0x2000"}
+      ]
+    },
+    {
+      "name": "Read Memory Word",
+      "group": "Memory",
+      "color": "#8b5cf6",
+      "description": "Read a word from memory into a register.",
+      "asm_code": "mov {REGISTER}, word [{ADDRESS}]",
+      "inputs": [
+        {"name": "REGISTER", "default": "ax"},
+        {"name": "ADDRESS", "default": "0x2000"}
+      ]
+    },
+    {
+      "name": "Copy Memory Bytes",
+      "group": "Memory",
+      "color": "#8b5cf6",
+      "description": "Copy a fixed number of bytes from DS:SI to ES:DI.",
+      "asm_code": "mov si, {SOURCE}\nmov di, {DESTINATION}\nmov cx, {COUNT}\ncld\nrep movsb",
+      "inputs": [
+        {"name": "SOURCE", "default": "source"},
+        {"name": "DESTINATION", "default": "destination"},
+        {"name": "COUNT", "default": "16"}
+      ]
+    },
+    {
+      "name": "Fill Memory Bytes",
+      "group": "Memory",
+      "color": "#8b5cf6",
+      "description": "Fill ES:DI with an 8-bit value.",
+      "asm_code": "mov di, {DESTINATION}\nmov al, {VALUE}\nmov cx, {COUNT}\ncld\nrep stosb",
+      "inputs": [
+        {"name": "DESTINATION", "default": "buffer"},
+        {"name": "VALUE", "default": "0"},
+        {"name": "COUNT", "default": "16"}
+      ]
+    },
+    {
+      "name": "Reserve Bytes",
+      "group": "Memory",
+      "color": "#7650c8",
+      "description": "Reserve zero-initialized storage in the binary.",
+      "asm_code": "jmp after_reserve_bytes_{ID}\n{NAME} times {COUNT} db 0\nafter_reserve_bytes_{ID}:",
+      "inputs": [
+        {"name": "ID", "default": "1"},
+        {"name": "NAME", "default": "buffer"},
+        {"name": "COUNT", "default": "64"}
+      ]
+    },
+    {
+      "name": "Set Register",
+      "group": "Registers",
+      "color": "#15aabf",
+      "description": "Load a value into a CPU register.",
+      "asm_code": "mov {REGISTER}, {VALUE}",
+      "inputs": [
+        {"name": "REGISTER", "default": "ax"},
+        {"name": "VALUE", "default": "0"}
+      ]
+    },
+    {
+      "name": "Move Register",
+      "group": "Registers",
+      "color": "#15aabf",
+      "description": "Copy one register into another compatible register.",
+      "asm_code": "mov {DESTINATION}, {SOURCE}",
+      "inputs": [
+        {"name": "DESTINATION", "default": "ax"},
+        {"name": "SOURCE", "default": "bx"}
+      ]
+    },
+    {
+      "name": "Swap Registers",
+      "group": "Registers",
+      "color": "#15aabf",
+      "description": "Exchange the values of two compatible registers.",
+      "asm_code": "xchg {LEFT}, {RIGHT}",
+      "inputs": [
+        {"name": "LEFT", "default": "ax"},
+        {"name": "RIGHT", "default": "bx"}
+      ]
+    },
+    {
+      "name": "Zero Register",
+      "group": "Registers",
+      "color": "#15aabf",
+      "description": "Efficiently clear a register.",
+      "asm_code": "xor {REGISTER}, {REGISTER}",
+      "inputs": [{"name": "REGISTER", "default": "ax"}]
+    },
+    {
+      "name": "Push Register",
+      "group": "Stack",
+      "color": "#c678dd",
+      "description": "Save a register value on the stack.",
+      "asm_code": "push {REGISTER}",
+      "inputs": [{"name": "REGISTER", "default": "ax"}]
+    },
+    {
+      "name": "Pop Register",
+      "group": "Stack",
+      "color": "#c678dd",
+      "description": "Restore a register value from the stack.",
+      "asm_code": "pop {REGISTER}",
+      "inputs": [{"name": "REGISTER", "default": "ax"}]
+    },
+    {
+      "name": "Push All Registers",
+      "group": "Stack",
+      "color": "#c678dd",
+      "description": "Save all general-purpose 16-bit registers.",
+      "asm_code": "pusha"
+    },
+    {
+      "name": "Pop All Registers",
+      "group": "Stack",
+      "color": "#c678dd",
+      "description": "Restore all general-purpose 16-bit registers.",
+      "asm_code": "popa"
+    },
+    {
+      "name": "Read Key into Byte",
+      "group": "Input",
+      "color": "#10b981",
+      "description": "Wait for a key and save its ASCII value in a byte variable.",
+      "asm_code": "mov ah, 0x00\nint 0x16\nmov [{VAR}], al",
+      "inputs": [{"name": "VAR", "default": "last_key"}]
+    },
+    {
+      "name": "Check for Key",
+      "group": "Input",
+      "color": "#10b981",
+      "description": "Set a byte to 1 when a key is waiting, otherwise set it to 0.",
+      "asm_code": "mov byte [{VAR}], 0\nmov ah, 0x01\nint 0x16\njz .no_key_{ID}\nmov byte [{VAR}], 1\n.no_key_{ID}:",
+      "inputs": [
+        {"name": "ID", "default": "1"},
+        {"name": "VAR", "default": "key_ready"}
+      ]
+    },
+    {
+      "name": "Print Character",
+      "group": "Display",
+      "color": "#3b82f6",
+      "description": "Print one character using the current text display.",
+      "asm_code": "mov ah, 0x0e\nmov al, {CHARACTER}\nint 0x10",
+      "inputs": [{"name": "CHARACTER", "default": "'A'"}]
+    },
+    {
+      "name": "Print New Line",
+      "group": "Display",
+      "color": "#3b82f6",
+      "description": "Move text output to the beginning of the next line.",
+      "asm_code": "mov ah, 0x0e\nmov al, 13\nint 0x10\nmov al, 10\nint 0x10"
+    },
+    {
+      "name": "Set Text Color",
+      "group": "Display",
+      "color": "#3b82f6",
+      "description": "Load a text color attribute into BL for compatible print routines.",
+      "asm_code": "mov bl, {COLOR}",
+      "inputs": [{"name": "COLOR", "default": "15"}]
+    },
+    {
+      "name": "String Length",
+      "group": "Strings",
+      "color": "#f59e0b",
+      "description": "Count characters in a zero-terminated string into CX.",
+      "asm_code": "mov si, {STRING}\nxor cx, cx\n.length_{ID}:\nlodsb\nor al, al\njz .length_done_{ID}\ninc cx\njmp .length_{ID}\n.length_done_{ID}:\nmov [{OUTPUT}], cx",
+      "inputs": [
+        {"name": "ID", "default": "1"},
+        {"name": "STRING", "default": "my_string"},
+        {"name": "OUTPUT", "default": "string_length"}
+      ]
+    },
+    {
+      "name": "Copy String",
+      "group": "Strings",
+      "color": "#f59e0b",
+      "description": "Copy a zero-terminated string to another buffer.",
+      "asm_code": "mov si, {SOURCE}\nmov di, {DESTINATION}\n.copy_{ID}:\nlodsb\nstosb\nor al, al\njnz .copy_{ID}",
+      "inputs": [
+        {"name": "ID", "default": "1"},
+        {"name": "SOURCE", "default": "source_string"},
+        {"name": "DESTINATION", "default": "destination_buffer"}
+      ]
+    },
+    {
+      "name": "Include Assembly File",
+      "group": "Advanced",
+      "color": "#7c3aed",
+      "description": "Insert another assembly source file at this position.",
+      "asm_code": "jmp after_include_{ID}\n%include \"{FILE}\"\nafter_include_{ID}:",
+      "inputs": [
+        {"name": "ID", "default": "1"},
+        {"name": "FILE", "default": "library.asm"}
+      ]
+    },
+    {
+      "name": "Include Binary File",
+      "group": "Advanced",
+      "color": "#7c3aed",
+      "description": "Embed a binary resource in the output.",
+      "asm_code": "jmp after_binary_{ID}\n{LABEL}: incbin \"{FILE}\"\n{LABEL}_end:\nafter_binary_{ID}:",
+      "inputs": [
+        {"name": "ID", "default": "1"},
+        {"name": "LABEL", "default": "resource"},
+        {"name": "FILE", "default": "resource.bin"}
+      ]
+    },
+    {
+      "name": "Define Raw Bytes",
+      "group": "Advanced",
+      "color": "#7c3aed",
+      "description": "Add comma-separated byte values or quoted text.",
+      "asm_code": "jmp after_raw_bytes_{ID}\n{LABEL} db {VALUES}\nafter_raw_bytes_{ID}:",
+      "inputs": [
+        {"name": "ID", "default": "1"},
+        {"name": "LABEL", "default": "data"},
+        {"name": "VALUES", "default": "1, 2, 3, 0"}
+      ]
+    },
+    {
+      "name": "Align Output",
+      "group": "Advanced",
+      "color": "#7c3aed",
+      "description": "Pad output to the requested byte alignment.",
+      "asm_code": "jmp after_align_{ID}\nalign {BOUNDARY}, db {FILL}\nafter_align_{ID}:",
+      "inputs": [
+        {"name": "ID", "default": "1"},
+        {"name": "BOUNDARY", "default": "16"},
+        {"name": "FILL", "default": "0"}
+      ]
+    },
+    {
+      "name": "No Operation",
+      "group": "System",
+      "color": "#64748b",
+      "description": "Emit one NOP instruction.",
+      "asm_code": "nop"
+    },
+    {
+      "name": "Disable Interrupts",
+      "group": "System",
+      "color": "#dc5469",
+      "description": "Clear the interrupt flag.",
+      "asm_code": "cli"
+    },
+    {
+      "name": "Enable Interrupts",
+      "group": "System",
+      "color": "#dc5469",
+      "description": "Set the interrupt flag.",
+      "asm_code": "sti"
+    },
+    {
+      "name": "Read I/O Port",
+      "group": "Hardware I/O",
+      "color": "#c24176",
+      "description": "Read one byte from a hardware port into AL.",
+      "asm_code": "mov dx, {PORT}\nin al, dx\nmov [{OUTPUT}], al",
+      "inputs": [
+        {"name": "PORT", "default": "0x60"},
+        {"name": "OUTPUT", "default": "port_value"}
+      ]
+    },
+    {
+      "name": "Write I/O Port",
+      "group": "Hardware I/O",
+      "color": "#c24176",
+      "description": "Write one byte from AL to a hardware port.",
+      "asm_code": "mov dx, {PORT}\nmov al, {VALUE}\nout dx, al",
+      "inputs": [
+        {"name": "PORT", "default": "0x80"},
+        {"name": "VALUE", "default": "0"}
+      ]
+    },
+    {
+      "name": "Stop PC Speaker",
+      "group": "Sound",
+      "color": "#e67e22",
+      "description": "Turn off the PC speaker gate.",
+      "asm_code": "in al, 0x61\nand al, 0xfc\nout 0x61, al"
+    }
+  ]
+}

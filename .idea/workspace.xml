@@ -4,46 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="changed to v1.6">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Official-Plugins/PurpleUI.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/block.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/block.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blocks/add_var_int.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/add_var_int.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blocks/disk_setup.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/disk_setup.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blocks/draw_picture.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/draw_picture.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blocks/play_beep.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/play_beep.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blocks/random_call_function.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/random_call_function.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blocks/set_screen_color.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/set_screen_color.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blocks/set_var_int.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/set_var_int.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blocks/set_var_text.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/blocks/set_var_text.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/compiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/compiler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/editor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/emulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/emulator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/launcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/launcher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/metadata.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/metadata.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/pluginmanager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/pluginmanager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_readme/create_project_help_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_readme/create_project_help_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_readme/create_project_help_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_readme/developing_project_help_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_readme/developing_project_help_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_readme/developing_project_help_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_readme/developing_project_help_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_readme/developing_project_help_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_readme/example_help_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_readme/example_help_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_readme/example_help_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_readme/example_help_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_readme/functions_help_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_readme/functions_help_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_readme/functions_help_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_readme/opening_project_help_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/git_readme/plugins_help_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="0dd0c98b-60eb-43d1-885d-5ea5a72d0118" name="Changes" comment="INSANE UPDATE" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -232,14 +193,6 @@
       <workItem from="1775511744129" duration="23000" />
       <workItem from="1775764583207" duration="5032000" />
       <workItem from="1775870418238" duration="26000" />
-    </task>
-    <task id="LOCAL-00057" summary="v1.1 TRUE TESTED LINUX SUPPORT!!!!!!!!!!">
-      <option name="closed" value="true" />
-      <created>1770831383176</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1770831383176</updated>
     </task>
     <task id="LOCAL-00058" summary="v1.1 fixed colors (again.)">
       <option name="closed" value="true" />
@@ -625,7 +578,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775769607016</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="INSANE UPDATE">
+      <option name="closed" value="true" />
+      <created>1785698098777</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1785698098778</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,7 +608,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="v1.2 added del block help" />
     <MESSAGE value="v1.2 removed global vars (broken i forgot to test them sadly) now you can just import all vars from file." />
     <MESSAGE value="v1.2 OKAY CHANGED VARS AND GLOBAL VARS (registrys) NOW WORK TESTED VARS WORK I THINK FULLY." />
     <MESSAGE value="v1.2 moved to var tab" />
@@ -672,7 +632,8 @@
     <MESSAGE value="v1.5 added button to Plugins menu to open the Plugins List" />
     <MESSAGE value="v1.5 changed to release" />
     <MESSAGE value="changed to v1.6" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed to v1.6" />
+    <MESSAGE value="INSANE UPDATE" />
+    <option name="LAST_COMMIT_MESSAGE" value="INSANE UPDATE" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

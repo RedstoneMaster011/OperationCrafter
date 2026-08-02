@@ -1,0 +1,19 @@
+{
+  "schema_version": 2,
+  "blocks": [
+    {
+      "name": "Play MIDI Resource",
+      "group": "Sound",
+      "color": "#e67e22",
+      "description": "Include and play an imported MIDI resource through the PC speaker.",
+      "tags": ["midi", "music", "sound", "pc speaker", "import"],
+      "asm_code": "jmp midi_resource_ready_{ID}\n%include \"{FILE}\"\nmidi_resource_ready_{ID}:\npusha\nmov di, {LOOPS}\nor di, di\njz .midi_finished_{ID}\n.midi_restart_{ID}:\nmov si, {SYMBOL}_midi\n.midi_event_{ID}:\nlodsw\nmov bx, ax\nlodsw\nmov bp, ax\nor bp, bp\njz .midi_loop_done_{ID}\nor bx, bx\njz .midi_wait_{ID}\nmov al, 0xb6\nout 0x43, al\nmov dx, 0x0012\nmov ax, 0x34dc\ndiv bx\nout 0x42, al\nmov al, ah\nout 0x42, al\nin al, 0x61\nor al, 3\nout 0x61, al\n.midi_wait_{ID}:\nmov ax, bp\nmov cx, 1000\nmul cx\nmov cx, dx\nmov dx, ax\nmov ah, 0x86\nint 0x15\nin al, 0x61\nand al, 0xfc\nout 0x61, al\njmp .midi_event_{ID}\n.midi_loop_done_{ID}:\ndec di\njnz .midi_restart_{ID}\n.midi_finished_{ID}:\nin al, 0x61\nand al, 0xfc\nout 0x61, al\npopa",
+      "inputs": [
+        {"name": "ID", "default": "1"},
+        {"name": "FILE", "default": "music.asm", "description": "Imported MIDI assembly resource file."},
+        {"name": "SYMBOL", "default": "music", "description": "Resource symbol reported after import."},
+        {"name": "LOOPS", "default": "1", "description": "Number of times to play the resource."}
+      ]
+    }
+  ]
+}
