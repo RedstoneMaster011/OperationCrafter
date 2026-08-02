@@ -6,7 +6,7 @@ DIST_DIR="${DIST_DIR:-$SOURCE_DIR/dist}"
 BUILD_TARGET="linux"
 
 usage() {
-  echo "Usage: $0 [--linux|--windows|--all] [--dist OUTPUT_DIRECTORY]"
+  echo "Usage: $0 [--linux|--windows|--all|--assets-only] [--dist OUTPUT_DIRECTORY]"
   echo "Environment: PYTHON_BIN, WIN_PYTHON, DIST_DIR"
 }
 
@@ -15,6 +15,7 @@ while (($#)); do
     --linux) BUILD_TARGET="linux" ;;
     --windows) BUILD_TARGET="windows" ;;
     --all) BUILD_TARGET="all" ;;
+    --assets-only) BUILD_TARGET="assets" ;;
     --dist)
       shift
       if (($# == 0)); then
@@ -44,14 +45,6 @@ if [[ -z "${PYTHON_BIN:-}" ]]; then
   fi
 fi
 
-WORK_DIR="$(mktemp -d "$SOURCE_DIR/.pyinstaller-build.XXXXXX")"
-cleanup() {
-  if [[ -n "${WORK_DIR:-}" && "$WORK_DIR" == "$SOURCE_DIR"/.pyinstaller-build.* ]]; then
-    rm -rf -- "$WORK_DIR"
-  fi
-}
-trap cleanup EXIT
-
 mkdir -p "$DIST_DIR"
 
 common_assets() {
@@ -59,14 +52,31 @@ common_assets() {
   if [[ -d "$SOURCE_DIR/plugins" ]]; then
     cp -a "$SOURCE_DIR/plugins/." "$DIST_DIR/plugins/"
   fi
-  if [[ -d "$SOURCE_DIR/qemu" ]]; then
-    mkdir -p "$DIST_DIR/qemu"
-    cp -a "$SOURCE_DIR/qemu/." "$DIST_DIR/qemu/"
+  if [[ ! -d "$SOURCE_DIR/qemu" ]]; then
+    echo "Required QEMU directory was not found: $SOURCE_DIR/qemu" >&2
+    return 1
   fi
-  if [[ -d "$SOURCE_DIR/nasm" ]]; then
-    mkdir -p "$DIST_DIR/nasm"
-    cp -a "$SOURCE_DIR/nasm/." "$DIST_DIR/nasm/"
+  if [[ ! -d "$SOURCE_DIR/nasm" ]]; then
+    echo "Required NASM directory was not found: $SOURCE_DIR/nasm" >&2
+    return 1
   fi
+
+  mkdir -p "$DIST_DIR/qemu" "$DIST_DIR/nasm"
+  cp -a "$SOURCE_DIR/qemu/." "$DIST_DIR/qemu/"
+  cp -a "$SOURCE_DIR/nasm/." "$DIST_DIR/nasm/"
+
+  local required_asset
+  for required_asset in \
+    "qemu/qemu-system-x86_64" \
+    "qemu/qemu-system-x86_64.exe" \
+    "nasm/nasm" \
+    "nasm/nasm.exe"
+  do
+    if [[ ! -f "$DIST_DIR/$required_asset" ]]; then
+      echo "Asset copy failed; missing: $DIST_DIR/$required_asset" >&2
+      return 1
+    fi
+  done
   if [[ -f "$SOURCE_DIR/LICENCE" ]]; then
     cp "$SOURCE_DIR/LICENCE" "$DIST_DIR/LICENCE"
   fi
@@ -76,6 +86,67 @@ On Linux, make the bundled programs executable before the first launch:
 
 chmod +x OperationCrafter-Linux qemu/qemu-system-x86_64 nasm/nasm
 EOF
+
+  chmod +x "$DIST_DIR/qemu/qemu-system-x86_64" "$DIST_DIR/nasm/nasm"
+  echo "Copied and verified QEMU and NASM in: $DIST_DIR"
+}
+
+windows_python_ready() {
+  local candidate="$1"
+  [[ -f "$candidate" ]] && \
+    WINEDEBUG=-all wine "$candidate" -c \
+      "import PyInstaller, PyQt6" >/dev/null 2>&1
+}
+
+find_windows_python() {
+  if [[ -n "${WIN_PYTHON:-}" ]]; then
+    if windows_python_ready "$WIN_PYTHON"; then
+      return 0
+    fi
+    echo "WIN_PYTHON is not usable or is missing PyInstaller/PyQt6: $WIN_PYTHON" >&2
+    return 1
+  fi
+
+  local -a candidates=()
+  local windows_profile=""
+  local drive_prefix path_after_users candidate
+
+  candidates+=(
+    "$SOURCE_DIR/venv/Scripts/python.exe"
+    "$SOURCE_DIR/.venv/Scripts/python.exe"
+  )
+
+  if [[ "$SOURCE_DIR" == */Users/* ]]; then
+    drive_prefix="${SOURCE_DIR%%/Users/*}"
+    path_after_users="${SOURCE_DIR#*/Users/}"
+    windows_profile="$drive_prefix/Users/${path_after_users%%/*}"
+    shopt -s nullglob
+    candidates+=(
+      "$windows_profile"/AppData/Local/Programs/Python/Python*/python.exe
+    )
+    shopt -u nullglob
+  fi
+
+  for candidate in "${candidates[@]}"; do
+    if windows_python_ready "$candidate"; then
+      WIN_PYTHON="$candidate"
+      export WIN_PYTHON
+      echo "Using Windows Python: $WIN_PYTHON"
+      return 0
+    fi
+  done
+
+  echo "No Wine-accessible Windows Python with PyInstaller and PyQt6 was found." >&2
+  echo "Install the Windows dependencies or set WIN_PYTHON explicitly." >&2
+  return 1
+}
+
+preflight_windows() {
+  if ! command -v wine >/dev/null 2>&1 || ! command -v winepath >/dev/null 2>&1; then
+    echo "Windows packaging requires wine and winepath." >&2
+    return 1
+  fi
+  find_windows_python
 }
 
 build_linux() {
@@ -95,15 +166,6 @@ build_linux() {
 }
 
 build_windows() {
-  if ! command -v wine >/dev/null 2>&1 || ! command -v winepath >/dev/null 2>&1; then
-    echo "Windows packaging requires wine and winepath." >&2
-    exit 1
-  fi
-  if [[ -z "${WIN_PYTHON:-}" || ! -f "$WIN_PYTHON" ]]; then
-    echo "Set WIN_PYTHON to a Windows Python executable accessible through Wine." >&2
-    exit 1
-  fi
-
   local win_source win_dist win_work
   win_source="$(winepath -w "$SOURCE_DIR")"
   win_dist="$(winepath -w "$DIST_DIR")"
@@ -126,6 +188,28 @@ build_windows() {
     --hidden-import shutil
 }
 
+# Check the Windows toolchain before spending time on the Linux half of --all.
+case "$BUILD_TARGET" in
+  windows|all) preflight_windows ;;
+esac
+
+# Copy support tools before PyInstaller so a later build failure cannot leave an
+# otherwise successful executable without its QEMU and NASM directories.
+common_assets
+
+if [[ "$BUILD_TARGET" == "assets" ]]; then
+  echo "Asset packaging complete: $DIST_DIR"
+  exit 0
+fi
+
+WORK_DIR="$(mktemp -d "$SOURCE_DIR/.pyinstaller-build.XXXXXX")"
+cleanup() {
+  if [[ -n "${WORK_DIR:-}" && "$WORK_DIR" == "$SOURCE_DIR"/.pyinstaller-build.* ]]; then
+    rm -rf -- "$WORK_DIR"
+  fi
+}
+trap cleanup EXIT
+
 case "$BUILD_TARGET" in
   linux) build_linux ;;
   windows) build_windows ;;
@@ -135,5 +219,4 @@ case "$BUILD_TARGET" in
     ;;
 esac
 
-common_assets
 echo "Packaging complete: $DIST_DIR"

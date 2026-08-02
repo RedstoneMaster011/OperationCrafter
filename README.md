@@ -257,14 +257,19 @@ Other supported forms are:
 ./build.sh --linux --dist ./release
 ./build.sh --windows
 ./build.sh --all
+./build.sh --assets-only --dist ./release
 ```
 
-Linux-to-Windows packaging requires Wine and a Windows Python executable. Set
-`WIN_PYTHON` to that executable before using `--windows`. Set `PYTHON_BIN` to
-override the Python used for Linux packaging.
+Linux-to-Windows packaging requires Wine and a Windows Python installation with
+PyInstaller and PyQt6. `build.sh` checks the project's Windows environments and
+the current Windows user's standard Python installations automatically. Set
+`WIN_PYTHON` to override that detection, or set `PYTHON_BIN` to override the
+Python used for Linux packaging.
 
-Both scripts place output in `dist` by default and copy available `nasm`,
-`qemu`, `plugins`, and license files beside the executable. The scripts do not
+Both scripts place output in `dist` by default and copy `nasm`, `qemu`,
+`plugins`, and license files beside the executable. The required NASM and QEMU
+executables are verified after copying. `--assets-only` can repair or refresh
+those support folders without rebuilding the application. The scripts do not
 download third-party tools.
 
 ## Plugins
