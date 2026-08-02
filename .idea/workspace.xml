@@ -65,6 +65,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHELLCHECK.PATH": "/home/redstonemaster01/.local/share/JetBrains/PyCharm2026.1/Shell Script/shellcheck",
     "Shell Script.build.executor": "Debug",
+    "Shell Script.build.sh.executor": "Debug",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
@@ -193,30 +194,6 @@
       <workItem from="1775511744129" duration="23000" />
       <workItem from="1775764583207" duration="5032000" />
       <workItem from="1775870418238" duration="26000" />
-    </task>
-    <task id="LOCAL-00058" summary="v1.1 fixed colors (again.)">
-      <option name="closed" value="true" />
-      <created>1770840371290</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1770840371291</updated>
-    </task>
-    <task id="LOCAL-00059" summary="v1.1 1 line change.">
-      <option name="closed" value="true" />
-      <created>1770842873148</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1770842873152</updated>
-    </task>
-    <task id="LOCAL-00060" summary="v1.1 simple file Exporting!">
-      <option name="closed" value="true" />
-      <created>1770848598483</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1770848598483</updated>
     </task>
     <task id="LOCAL-00061" summary="v1.1 oops, broke linux emulating. reverted.">
       <option name="closed" value="true" />
@@ -586,7 +563,31 @@
       <option name="project" value="LOCAL" />
       <updated>1785698098778</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="INSANE UPDATE">
+      <option name="closed" value="true" />
+      <created>1785698131631</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1785698131631</updated>
+    </task>
+    <task id="LOCAL-00108" summary="INSANE UPDATE">
+      <option name="closed" value="true" />
+      <created>1785698150558</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1785698150558</updated>
+    </task>
+    <task id="LOCAL-00109" summary="INSANE UPDATE">
+      <option name="closed" value="true" />
+      <created>1785698388557</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1785698388557</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
