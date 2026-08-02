@@ -1,2 +1,4 @@
 /qemu/
 /nasm/
+/build.sh
+/build.cmd
